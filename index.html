@@ -1,2 +1,1032 @@
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>8-Day Acadia Trip Planner</title><style>*{margin:0;padding:0;box-sizing:border-box}html,body{font-family:Arial,sans-serif;line-height:1.6;color:#333}body{background:#f5f5f5;padding:20px}.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1)}.header{background:linear-gradient(135deg,#1a73e8,#1558b6);color:#fff;padding:40px 30px;text-align:center}.header h1{font-size:32px;margin-bottom:10px}.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:15px;padding:30px;background:#f9f9f9;border-bottom:2px solid #e0e0e0}.summary-item{text-align:center;padding:15px;background:#fff;border:1px solid #e0e0e0;border-radius:6px}.summary-value{font-size:24px;font-weight:bold;color:#1a73e8}.controls{padding:20px 30px;display:flex;gap:10px;flex-wrap:wrap;border-bottom:1px solid #e0e0e0}.btn{padding:10px 18px;border:1px solid #1a73e8;background:#fff;color:#1a73e8;border-radius:4px;cursor:pointer;font-weight:600;transition:0.3s}.btn:hover{background:#1a73e8;color:#fff}.btn.primary{background:#1a73e8;color:#fff}.day-section{border-bottom:2px solid #e0e0e0;padding:0}.day-title{background:linear-gradient(135deg,#1a73e8,#4285f4);color:#fff;padding:20px 30px;font-weight:bold;cursor:pointer;display:flex;justify-content:space-between;align-items:center}.day-content{display:none;padding:30px}.day-section.active .day-content{display:block}.tabs{display:flex;gap:0;border-bottom:2px solid #e0e0e0;margin-bottom:20px}.tab-btn{padding:12px 20px;background:#f5f5f5;border:none;cursor:pointer;font-weight:600;color:#666;border-bottom:3px solid transparent;transition:0.3s;text-transform:uppercase;font-size:12px}.tab-btn.active{background:#fff;color:#1a73e8;border-bottom-color:#1a73e8}.tab-panel{display:none}.tab-panel.active{display:block}.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin-bottom:20px}.info-box{background:#f5f5f5;border-left:4px solid #1a73e8;padding:15px;border-radius:4px}.info-box h4{color:#1a73e8;text-transform:uppercase;font-size:12px;margin-bottom:8px}.trail-card{background:#f5f5f5;border-left:4px solid #34a853;padding:15px;margin-bottom:12px;border-radius:4px}.trail-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:10px;margin-top:10px}.stat{background:#fff;padding:6px;border:1px solid #e0e0e0;border-radius:3px;font-size:11px}.stat-label{color:#1a73e8;font-weight:600;display:block}.link-btn{padding:6px 12px;background:#1a73e8;color:#fff;border:none;border-radius:3px;cursor:pointer;font-weight:600;margin:10px 5px 0 0;font-size:11px}.link-btn:hover{background:#1558b6}.timeline{background:#f5f5f5;padding:15px;border-radius:4px;margin-bottom:20px}.timeline-item{display:flex;gap:15px;margin-bottom:8px;font-size:12px}.timeline-time{font-weight:600;color:#1a73e8;min-width:60px}.restaurants{background:#f5f5f5;border-left:4px solid #ea4335;padding:15px;border-radius:4px;margin-bottom:20px}.charging{background:#f5f5f5;border-left:4px solid #fbbc04;padding:15px;border-radius:4px;margin-bottom:20px}.notes{background:#fffbea;border:1px solid #fcd34d;border-left:4px solid #fbbc04;padding:15px;border-radius:4px;margin-bottom:20px}.notes-input{width:100%;min-height:80px;border:1px solid #fcd34d;padding:10px;border-radius:3px;font-size:12px}.checklist{background:#f5f5f5;border-left:4px solid #34a853;padding:15px;border-radius:4px}.checklist-item{display:flex;align-items:center;margin-bottom:8px;font-size:12px}.checklist-item input{margin-right:10px;cursor:pointer}.footer{background:#f5f5f5;padding:20px 30px;border-top:2px solid #e0e0e0;text-align:center;font-size:12px;color:#666}@media print{.controls{display:none}.day-section{display:block;page-break-inside:avoid}}</style></head><body><div class="container"><div class="header"><h1>🗺️ 8-Day Acadia Road Trip Planner</h1><p>Cincinnati → Acadia National Park → Cincinnati</p></div><div class="summary"><div class="summary-item"><div style="font-size:12px;color:#666;text-transform:uppercase">Trip</div><div class="summary-value">8 Days</div></div><div class="summary-item"><div style="font-size:12px;color:#666;text-transform:uppercase">Miles</div><div class="summary-value">2,040</div></div><div class="summary-item"><div style="font-size:12px;color:#666;text-transform:uppercase">Budget</div><div class="summary-value">$1,595</div></div><div class="summary-item"><div style="font-size:12px;color:#666;text-transform:uppercase">Max Drive</div><div class="summary-value">9 hrs</div></div><div class="summary-item"><div style="font-size:12px;color:#666;text-transform:uppercase">Acadia Days</div><div class="summary-value">3</div></div></div><div class="controls"><button class="btn primary" onclick="expandAll()">📋 Expand All</button><button class="btn" onclick="goToDay(3)">🏔️ Acadia Days</button><button class="btn" onclick="window.print()">🖨️ Print</button><button class="btn" onclick="downloadJSON()">💾 Download Data</button></div><div id="content"></div><div class="footer"><p>📌 Print-friendly. Click day headers to expand. Checkboxes to track activities. Add personal notes.</p><p>Best season: Late August | Pet-friendly | Safe driving</p></div></div><script>const data=[{day:1,title:"Cincinnati → Hickory Run, PA",type:"DRIVE",distance:530,hours:9,arrival:"5 PM",lodging:110,food:55,charging:8,sunrise:"7:15 AM",sunset:"6:45 PM",timeline:[{time:"7:30 AM",act:"Depart"},{time:"12:00 PM",act:"Lunch"},{time:"5:00 PM",act:"Arrive"},{time:"5:30 PM",act:"Boulder Field"}],stops:[{name:"Hickory Run Boulder Field",desc:"Unique 7.5-acre geological wonder with massive quartzite boulders.",difficulty:"Easy",distance:"1.2 mi",time:"45 min",elevation:"Minimal",maps:"Hickory Run Boulder Field Pennsylvania",guide:"Hickory Run Boulder Field hiking"}],restaurants:[{name:"Jim Thorpe Historic Area",info:"Charming town with pet-friendly options"}],charging:[{name:"EA - Akron, OH",info:"I-76, 30-40 min charge"}]},{day:2,title:"Hickory Run → Bar Harbor, ME",type:"DRIVE",distance:450,hours:8.5,arrival:"4 PM",lodging:140,food:55,charging:12,sunrise:"7:10 AM",sunset:"6:50 PM",timeline:[{time:"8:00 AM",act:"Depart"},{time:"12:00 PM",act:"Lunch - Route 100"},{time:"4:00 PM",act:"Arrive Bar Harbor"}],stops:[{name:"Route 100 Vermont",desc:"Beautiful scenic mountain drive through Vermont",difficulty:"None",distance:"100 mi",time:"2-3 hrs",elevation:"2000 ft",maps:"Route 100 Vermont scenic byway",guide:"Green Mountains Vermont Route 100"},{name:"Bar Harbor Waterfront",desc:"Gateway to Acadia. Harbor walk, restaurants, shops.",difficulty:"Easy",distance:"1 mi",time:"1-2 hrs",elevation:"Flat",maps:"Bar Harbor Maine waterfront",guide:"Bar Harbor Maine attractions"}],restaurants:[{name:"Bluebird Farm Table",info:"Fresh local food, outdoor seating"},{name:"Geddy's Restaurant",info:"Harbor views, pet-friendly"}],charging:[{name:"ChargePoint - Bar Harbor",info:"Multiple locations"}]},{day:3,title:"Acadia - Full Coastal Route",type:"EXPLORE",distance:50,hours:0.5,arrival:"N/A",lodging:140,food:55,charging:6,sunrise:"7:08 AM",sunset:"6:52 PM",timeline:[{time:"8:00 AM",act:"Park Loop early"},{time:"8:30 AM",act:"Ocean Path"},{time:"1:00 PM",act:"Lunch - Sand Beach"},{time:"5:30 PM",act:"Otter Cliffs sunset"}],stops:[{name:"Ocean Path Trail",desc:"ICONIC trail. Granite cliffs, sea stacks, lighthouses. Arrive early.",difficulty:"Easy-Moderate",distance:"3.3 mi",time:"2.5 hrs",elevation:"300 ft",maps:"Ocean Path Acadia Maine",guide:"Ocean Path trail Acadia"},{name:"Thunder Hole",desc:"Wave-carved cave with booming sound at high tide.",difficulty:"Easy",distance:"0.5 mi",time:"45 min",elevation:"Minimal",maps:"Thunder Hole Acadia",guide:"Thunder Hole tide times"},{name:"Otter Cliffs",desc:"110-foot granite cliffs. Harbor seals. BEST SUNSET SPOT.",difficulty:"Easy",distance:"Short",time:"30 min",elevation:"Minimal",maps:"Otter Cliffs Acadia",guide:"Otter Cliffs sunset Acadia"}],restaurants:[{name:"Jordan Pond House",info:"Park restaurant, reservations recommended"}],charging:[{name:"Bar Harbor",info:"Charge at hotel"}]},{day:4,title:"Acadia - Forest & Quiet Side",type:"EXPLORE",distance:50,hours:0.5,arrival:"N/A",lodging:140,food:55,charging:5,sunrise:"7:06 AM",sunset:"6:54 PM",timeline:[{time:"6:45 AM",act:"Wake early"},{time:"7:00 AM",act:"Jordan Pond sunrise"},{time:"10:30 AM",act:"Carriage Roads"},{time:"2:00 PM",act:"Wonderland Trail"}],stops:[{name:"Jordan Pond Loop",desc:"MOST PHOTOGRAPHED. Crystal water reflecting mountains. Perfect sunrise.",difficulty:"Easy-Moderate",distance:"3.3 mi",time:"2.5-3 hrs",elevation:"500 ft",maps:"Jordan Pond Loop Acadia",guide:"Jordan Pond Trail Acadia"},{name:"Carriage Roads Network",desc:"45+ miles of scenic roads. Historic stone bridges. Built 1913.",difficulty:"Easy",distance:"2-5 mi",time:"1-2.5 hrs",elevation:"Varied",maps:"Acadia Carriage Roads",guide:"Carriage Roads Acadia guide"},{name:"Wonderland Trail",desc:"Quiet forest trail to salt marsh. Few crowds.",difficulty:"Easy",distance:"1.4 mi",time:"1 hr",elevation:"Minimal",maps:"Wonderland Trail Acadia",guide:"Wonderland Trail hiking"}],restaurants:[{name:"Bar Harbor Coffee Co",info:"Pastries & coffee"}],charging:[{name:"Bar Harbor",info:"Multiple locations"}]},{day:5,title:"Acadia - Deep Exploration Day",type:"EXPLORE",distance:50,hours:0.5,arrival:"N/A",lodging:140,food:55,charging:5,sunrise:"7:04 AM",sunset:"6:56 PM",timeline:[{time:"10:00 AM",act:"Penobscot Mountain"},{time:"1:00 PM",act:"Lunch"},{time:"2:00 PM",act:"Ship Harbor Trail"},{time:"3:30 PM",act:"Bass Harbor Lighthouse"},{time:"5:30 PM",act:"Sunset"}],stops:[{name:"Penobscot Mountain",desc:"Rocky summit with 360° PANORAMIC VIEWS of island.",difficulty:"Moderate",distance:"1.6 mi up",time:"1.5-2 hrs",elevation:"800 ft",maps:"Penobscot Mountain Acadia",guide:"Penobscot Mountain Acadia summit"},{name:"Bass Harbor Head Lighthouse",desc:"MOST PHOTOGRAPHED Maine lighthouse. Historic 1858 structure.",difficulty:"Easy",distance:"10 min",time:"45 min",elevation:"Minimal",maps:"Bass Harbor Head Lighthouse",guide:"Bass Harbor Lighthouse sunset"},{name:"Ship Harbor Trail",desc:"Rocky coast with TIDE POOLS. Starfish, urchins, anemones.",difficulty:"Easy",distance:"1.3 mi",time:"1-1.5 hrs",elevation:"Minimal",maps:"Ship Harbor Trail Acadia",guide:"Ship Harbor tide pools"}],restaurants:[{name:"Rosalie's Pizzeria",info:"Casual pizza"}],charging:[{name:"Bar Harbor",info:"Hotel charge"}]},{day:6,title:"Bar Harbor → Boston Area",type:"TRANSITION",distance:220,hours:5,arrival:"1 PM",lodging:130,food:55,charging:10,sunrise:"7:02 AM",sunset:"6:58 PM",timeline:[{time:"9:00 AM",act:"Depart"},{time:"11:00 AM",act:"Portland Head Light"},{time:"1:00 PM",act:"Lunch"},{time:"2:00 PM",act:"Eastern Promenade"},{time:"4:30 PM",act:"Boston"}],stops:[{name:"Portland Head Light",desc:"Oldest Maine lighthouse (1791). Fort Williams Park.",difficulty:"Easy",distance:"1 mi",time:"1-1.5 hrs",elevation:"Minimal",maps:"Portland Head Light Maine",guide:"Portland Head Light Fort Williams"},{name:"Portland Eastern Promenade",desc:"2-mile waterfront path. Harbor views. Dog-friendly.",difficulty:"Easy",distance:"2 mi",time:"1-2 hrs",elevation:"Flat",maps:"Eastern Promenade Portland",guide:"Portland Eastern Promenade"},{name:"Boston Seaport",desc:"Modern waterfront. Restaurants, shops, views.",difficulty:"Easy",distance:"Walk",time:"1-3 hrs",elevation:"Flat",maps:"Boston Seaport",guide:"Boston Seaport attractions"}],restaurants:[{name:"Holy Donut",info:"Portland institution"},{name:"Eventide Oyster Co",info:"Upscale seafood"}],charging:[{name:"Boston area",info:"Multiple chargers"}]},{day:7,title:"Boston → Columbus, OH",type:"DRIVE",distance:600,hours:9,arrival:"6 PM",lodging:130,food:55,charging:45,sunrise:"7:00 AM",sunset:"7:00 PM",timeline:[{time:"7:30 AM",act:"Depart"},{time:"12:30 PM",act:"Lunch"},{time:"4:00 PM",act:"CVNP optional"},{time:"6:00 PM",act:"Columbus"}],stops:[{name:"Cuyahoga Valley NP",desc:"Scenic valley with waterfalls. Great lunch break.",difficulty:"Easy-Moderate",distance:"1-3 mi",time:"1-2 hrs",elevation:"Varied",maps:"Cuyahoga Valley National Park Ohio",guide:"Cuyahoga Valley hiking waterfalls"}],restaurants:[{name:"I-76 Rest Stops",info:"Full-service PA stops"}],charging:[{name:"Electrify America - PA",info:"Multiple I-76 locations"}]},{day:8,title:"Columbus → Cincinnati (HOME)",type:"DRIVE",distance:110,hours:1.75,arrival:"11 AM",lodging:0,food:55,charging:0,sunrise:"6:58 AM",sunset:"7:02 PM",timeline:[{time:"9:30 AM",act:"Depart"},{time:"10:00 AM",act:"I-71 South"},{time:"11:00 AM",act:"HOME!"}],stops:[],restaurants:[{name:"Celebrate!",info:"Your favorite Cincinnati spot"}],charging:[]}];function render(d){const t=d.lodging+d.food+d.charging;const stops=d.stops.map(s=>`<div class="trail-card"><div style="font-weight:600">📍 ${s.name}</div><p style="font-size:12px;color:#666;margin:8px 0">${s.desc}</p><div class="trail-stats"><div class="stat"><span class="stat-label">Difficulty</span>${s.difficulty}</div><div class="stat"><span class="stat-label">Distance</span>${s.distance}</div><div class="stat"><span class="stat-label">Time</span>${s.time}</div><div class="stat"><span class="stat-label">Elevation</span>${s.elevation}</div></div><button class="link-btn" onclick="openMap('${s.maps}')">📍 Maps</button><button class="link-btn" onclick="openSearch('${s.guide}')">🔍 Guide</button></div>`).join('');const rests=d.restaurants.map(r=>`<div style="margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid #e0e0e0"><div style="font-weight:600">• ${r.name}</div><div style="font-size:11px;color:#666">${r.info}</div></div>`).join('');const charge=d.charging.map(c=>`<div style="margin-bottom:10px"><strong>• ${c.name}</strong><br><span style="font-size:11px;color:#666">${c.info}</span></div>`).join('');const timeline=d.timeline.map(t=>`<div class="timeline-item"><div class="timeline-time">${t.time}</div><div>${t.act}</div></div>`).join('');return `<div class="day-section" data-day="${d.day}"><div class="day-title" onclick="toggleDay(this)"><span><strong>Day ${d.day}</strong> ${d.title} <span style="background:rgba(255,255,255,0.2);padding:4px 12px;border-radius:20px;font-size:11px">${d.type}</span></span><span>▼</span></div><div class="day-content"><div class="tabs"><button class="tab-btn active" onclick="tab(event,'o${d.day}')">📊 At a Glance</button><button class="tab-btn" onclick="tab(event,'d${d.day}')">🏔️ Details</button><button class="tab-btn" onclick="tab(event,'l${d.day}')">📋 Logistics</button></div><div id="o${d.day}" class="tab-panel active"><div class="info-grid"><div class="info-box"><h4>⏱️ Drive</h4><p><strong>${d.distance} mi</strong></p><p>${d.hours} hrs | ${d.arrival}</p></div><div class="info-box"><h4>☀️ Light</h4><p>Rise: ${d.sunrise}</p><p>Set: ${d.sunset}</p></div><div class="info-box"><h4>💰 Budget</h4><p>Lodging: $${d.lodging}</p><p>Food: $${d.food} | Charge: $${d.charging}</p><p><strong>$${t}</strong></p></div></div><div class="timeline"><h4>⏰ Timeline</h4>${timeline}</div></div><div id="d${d.day}" class="tab-panel">${stops}${d.restaurants.length?`<div class="restaurants"><h4>🍽️ Dining</h4>${rests}</div>`:''}\n<div class="notes"><h4>📝 Notes for Day ${d.day}</h4><textarea class="notes-input" placeholder="Your personal notes..."></textarea></div></div><div id="l${d.day}" class="tab-panel"><div class="info-grid"><div class="info-box"><h4>🏨 Park Hours</h4><p>${d.day>=3&&d.day<=5?'Acadia: Sunrise-Sunset':'Check hours'}</p><p>${d.day>=3&&d.day<=5?'Pass: $30':'Details available'}</p></div><div class="info-box"><h4>🐾 Pet-Friendly</h4><p>${d.day>=3&&d.day<=5?'Leash on trails':'Check lodging'}</p></div><div class="info-box"><h4>📸 Photography</h4><p>Golden hour all day</p></div></div>${d.charging.length?`<div class="charging"><h4>🔌 EV Charging</h4>${charge}</div>`:''}\n<div class="checklist"><h4>✅ Checklist</h4><div class="checklist-item"><input type="checkbox"> Pack</div><div class="checklist-item"><input type="checkbox"> Weather</div><div class="checklist-item"><input type="checkbox"> Full charge</div><div class="checklist-item"><input type="checkbox"> Enjoy!</div></div></div></div></div>`;}document.getElementById('content').innerHTML=data.map(render).join('');function toggleDay(e){e.closest('.day-section').classList.toggle('active');}function tab(e,p){e.target.closest('.tabs').querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));e.target.classList.add('active');e.target.closest('.day-content').querySelectorAll('.tab-panel').forEach(x=>x.classList.remove('active'));document.getElementById(p).classList.add('active');}function expandAll(){document.querySelectorAll('.day-section').forEach(s=>s.classList.add('active'));}function goToDay(n){expandAll();document.querySelector(`[data-day="${n}"]`).scrollIntoView({behavior:'smooth'});}function openMap(q){window.open(`https://www.google.com/maps/search/${encodeURIComponent(q)}`,'_blank');}function openSearch(q){window.open(`https://www.google.com/search?q=${encodeURIComponent(q)}`,'_blank');}function downloadJSON(){const json=JSON.stringify(data,null,2);const blob=new Blob([json],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='acadia-trip.json';a.click();}</script></body></html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meher Ritu Road Trip 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #1e2220;
+  --bg2: #252b27;
+  --card: #2c3330;
+  --card2: #323a37;
+  --border: rgba(255,255,255,0.07);
+  --amber: #c8954a;
+  --amber2: #d4a46a;
+  --sage: #7aaa82;
+  --pine: #5d9068;
+  --sky: #7aaab8;
+  --ocean: #5a8fa8;
+  --red: #c47a72;
+  --text: #d8d4cc;
+  --muted: #8a9490;
+  --faint: #5e6a64;
+  --drive-g: linear-gradient(135deg,#5a3a1a,#8a5e2a);
+  --explore-g: linear-gradient(135deg,#1e3a28,#3a6648);
+  --transition-g: linear-gradient(135deg,#1e303a,#2a5068);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+
+/* ── HERO ── */
+.hero{
+  position:relative;background:var(--bg2);overflow:hidden;
+  padding:60px 20px 100px;text-align:center
+}
+/* Stars */
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:
+    radial-gradient(1.5px 1.5px at 10% 15%,rgba(255,255,255,.7) 0%,transparent 100%),
+    radial-gradient(1px 1px at 25% 40%,rgba(255,255,255,.5) 0%,transparent 100%),
+    radial-gradient(2px 2px at 40% 10%,rgba(255,255,255,.6) 0%,transparent 100%),
+    radial-gradient(1px 1px at 55% 30%,rgba(255,255,255,.4) 0%,transparent 100%),
+    radial-gradient(1.5px 1.5px at 70% 12%,rgba(255,255,255,.8) 0%,transparent 100%),
+    radial-gradient(1px 1px at 80% 45%,rgba(255,255,255,.5) 0%,transparent 100%),
+    radial-gradient(2px 2px at 90% 20%,rgba(255,255,255,.6) 0%,transparent 100%),
+    radial-gradient(1px 1px at 15% 60%,rgba(255,255,255,.3) 0%,transparent 100%),
+    radial-gradient(1.5px 1.5px at 60% 55%,rgba(255,255,255,.5) 0%,transparent 100%),
+    radial-gradient(1px 1px at 35% 70%,rgba(255,255,255,.4) 0%,transparent 100%);
+}
+/* Moon glow */
+.hero::after{
+  content:'';position:absolute;top:-60px;right:10%;
+  width:200px;height:200px;border-radius:50%;
+  background:radial-gradient(circle,rgba(251,191,36,.08) 0%,transparent 70%);
+  pointer-events:none
+}
+/* Mountain silhouette */
+.mountains{position:absolute;bottom:0;left:0;right:0;height:80px}
+
+.hero-badge{
+  display:inline-block;border:1px solid rgba(251,191,36,.4);
+  color:var(--amber2);padding:5px 16px;border-radius:50px;
+  font-size:11px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:20px;
+  background:rgba(251,191,36,.08)
+}
+.hero h1{
+  font-family:'Playfair Display',serif;font-size:clamp(38px,8vw,80px);
+  font-weight:900;letter-spacing:-2px;line-height:1;margin-bottom:10px;
+  color:#fff;text-shadow:0 0 40px rgba(74,222,128,.2)
+}
+.hero h1 em{color:var(--sage);font-style:normal}
+.hero-sub{color:var(--muted);font-size:14px;letter-spacing:.5px;margin-bottom:40px}
+
+.hero-stats{
+  display:flex;justify-content:center;flex-wrap:wrap;gap:12px;
+  position:relative;z-index:2
+}
+.hstat{
+  background:rgba(255,255,255,.04);border:1px solid var(--border);
+  border-radius:16px;padding:14px 22px;backdrop-filter:blur(10px);min-width:100px;
+  transition:.2s
+}
+.hstat:hover{border-color:rgba(74,222,128,.3);background:rgba(74,222,128,.05)}
+.hstat-n{
+  font-family:'Playfair Display',serif;font-size:28px;font-weight:700;
+  color:var(--sage);display:block;line-height:1
+}
+.hstat-l{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:var(--faint);margin-top:4px}
+
+/* ── NAV DOTS ── */
+.nav-strip{
+  background:var(--bg2);border-bottom:1px solid var(--border);
+  padding:14px 20px;position:sticky;top:0;z-index:50;
+  overflow-x:auto;-webkit-overflow-scrolling:touch
+}
+.nav-inner{display:flex;align-items:center;gap:4px;min-width:max-content;max-width:900px;margin:0 auto}
+.nav-dot{
+  display:flex;flex-direction:column;align-items:center;gap:4px;
+  padding:6px 10px;border-radius:10px;cursor:pointer;transition:.2s;flex-shrink:0
+}
+.nav-dot:hover{background:rgba(255,255,255,.06)}
+.nd-circle{
+  width:30px;height:30px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-size:12px;font-weight:700;color:#fff;flex-shrink:0
+}
+.nd-label{font-size:9px;font-weight:600;color:var(--faint);text-transform:uppercase;letter-spacing:.6px;white-space:nowrap}
+.nd-drive{background:var(--drive-g)}
+.nd-explore{background:var(--explore-g)}
+.nd-transition{background:var(--transition-g)}
+.nd-connector{flex:1;height:1px;background:var(--border);min-width:8px}
+
+/* ── CONTROLS ── */
+.controls{
+  max-width:960px;margin:24px auto 0;padding:0 16px;
+  display:flex;gap:8px;flex-wrap:wrap
+}
+.btn{
+  padding:9px 18px;border-radius:50px;border:none;cursor:pointer;
+  font-family:'Inter',sans-serif;font-weight:600;font-size:12px;
+  transition:.2s;display:inline-flex;align-items:center;gap:6px;letter-spacing:.3px
+}
+.btn svg{width:14px;height:14px}
+.btn-p{background:var(--amber);color:#0b0b0b}
+.btn-p:hover{background:var(--amber2)}
+.btn-o{background:transparent;color:var(--sage);border:1.5px solid rgba(74,222,128,.4)}
+.btn-o:hover{background:rgba(74,222,128,.1)}
+.btn-g{background:rgba(255,255,255,.06);color:var(--muted);border:1px solid var(--border)}
+.btn-g:hover{background:rgba(255,255,255,.1);color:var(--text)}
+
+/* ── TILE GRID ── */
+.grid{
+  max-width:960px;margin:24px auto 60px;padding:0 16px;
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px
+}
+.tile{
+  background:var(--card);border:1px solid var(--border);border-radius:20px;
+  overflow:hidden;cursor:pointer;transition:.25s;
+  display:flex;flex-direction:column
+}
+.tile:hover{border-color:rgba(255,255,255,.16);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.4)}
+.tile.open{border-color:rgba(74,222,128,.3);grid-column:1/-1}
+
+/* Tile top band */
+.tile-band{
+  padding:20px;display:flex;align-items:flex-start;gap:14px;
+  position:relative;overflow:hidden
+}
+.tile-band::after{
+  content:'';position:absolute;inset:0;opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='1'/%3E%3C/g%3E%3C/svg%3E")
+}
+.tile-num{
+  width:44px;height:44px;border-radius:12px;display:flex;align-items:center;
+  justify-content:center;font-family:'Playfair Display',serif;font-size:20px;
+  font-weight:700;color:#fff;flex-shrink:0;box-shadow:0 4px 12px rgba(0,0,0,.3)
+}
+.tile-band-text{flex:1;min-width:0}
+.tile-band-text h3{font-size:14px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:6px}
+.tile-type-badge{
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;
+  padding:3px 10px;border-radius:20px
+}
+.badge-drive{background:rgba(217,119,6,.2);color:#fbbf24}
+.badge-explore{background:rgba(34,197,94,.15);color:#4ade80}
+.badge-transition{background:rgba(59,130,246,.15);color:#93c5fd}
+
+/* Tile stats row */
+.tile-stats{
+  display:flex;gap:0;border-top:1px solid var(--border);
+  flex-wrap:wrap
+}
+.tile-stat{
+  flex:1;min-width:70px;padding:12px 14px;display:flex;flex-direction:column;gap:2px;
+  border-right:1px solid var(--border)
+}
+.tile-stat:last-child{border-right:none}
+.ts-label{
+  display:flex;align-items:center;gap:5px;
+  font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--faint)
+}
+.ts-label svg{width:10px;height:10px;opacity:.7}
+.ts-val{font-size:15px;font-weight:700;color:var(--text)}
+.ts-sub{font-size:10px;color:var(--faint)}
+
+/* Expand icon */
+.tile-chevron{
+  width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.06);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  color:var(--faint);transition:.3s;margin-top:0
+}
+.tile.open .tile-chevron{transform:rotate(180deg);color:var(--sage);background:rgba(74,222,128,.1)}
+
+/* ── DETAIL PANEL ── */
+.tile-detail{display:none;border-top:1px solid var(--border);background:var(--bg2)}
+.tile.open .tile-detail{display:block}
+
+/* Map route button */
+.map-route-btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;padding:11px 16px;border-radius:12px;border:none;cursor:pointer;
+  font-family:'Inter',sans-serif;font-size:12px;font-weight:700;letter-spacing:.4px;
+  background:linear-gradient(135deg,rgba(90,143,168,.25),rgba(42,80,104,.35));
+  color:var(--sky);border:1px solid rgba(90,143,168,.3);transition:.2s;text-decoration:none;
+  margin:16px 18px 4px;width:calc(100% - 36px)
+}
+.map-route-btn:hover{background:linear-gradient(135deg,rgba(90,143,168,.4),rgba(42,80,104,.5));border-color:var(--sky)}
+.map-route-btn svg{width:14px;height:14px;flex-shrink:0}
+/* Detail scroll */
+.detail-scroll{padding:4px 18px 20px}
+
+/* Info boxes */
+.info-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:16px}
+.info-box{
+  background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px
+}
+.info-box-lbl{
+  display:flex;align-items:center;gap:6px;
+  font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--faint);margin-bottom:8px
+}
+.info-box-lbl svg{width:12px;height:12px}
+.info-box-val{font-size:20px;font-weight:700;font-family:'Playfair Display',serif;color:var(--text)}
+.info-box-sub{font-size:11px;color:var(--faint);margin-top:3px}
+
+/* Timeline */
+.tl{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:14px}
+.tl h4{display:flex;align-items:center;gap:8px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--faint);margin-bottom:14px}
+.tl h4 svg{width:13px;height:13px}
+.tl-row{display:flex;gap:12px;margin-bottom:10px;align-items:flex-start}
+.tl-row:last-child{margin-bottom:0}
+.tl-time{font-size:11px;font-weight:700;color:var(--amber2);min-width:60px}
+.tl-line{display:flex;flex-direction:column;align-items:center;gap:0;padding-top:3px}
+.tl-dot{width:8px;height:8px;border-radius:50%;background:var(--sage);flex-shrink:0}
+.tl-bar{width:1px;flex:1;background:var(--border);min-height:14px;margin-top:2px}
+.tl-text{font-size:12px;color:var(--text);padding-top:1px}
+
+/* Trail cards */
+.trail{
+  background:var(--card);border:1px solid rgba(74,222,128,.15);border-radius:14px;
+  padding:16px;margin-bottom:12px;border-left:3px solid var(--pine)
+}
+.trail h4{font-size:14px;font-weight:700;color:#fff;margin-bottom:5px;display:flex;align-items:center;gap:7px}
+.trail h4 svg{width:14px;height:14px;color:var(--sage);flex-shrink:0}
+.trail-desc{font-size:12px;color:var(--muted);margin-bottom:12px;line-height:1.5}
+.trail-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.trail-chip{
+  background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);
+  border-radius:8px;padding:4px 10px;display:flex;flex-direction:column;gap:1px
+}
+.trail-chip span:first-child{font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--pine)}
+.trail-chip span:last-child{font-size:11px;font-weight:600;color:var(--text)}
+.trail-btns{display:flex;gap:7px;flex-wrap:wrap}
+.trail-btn{padding:6px 14px;border-radius:50px;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;transition:.2s;display:flex;align-items:center;gap:5px;letter-spacing:.3px}
+.trail-btn svg{width:11px;height:11px}
+.tbm{background:var(--ocean);color:#fff}
+.tbm:hover{background:var(--sky);color:#0b0b0b}
+.tbg{background:rgba(255,255,255,.08);color:var(--text);border:1px solid var(--border)}
+.tbg:hover{background:rgba(255,255,255,.15)}
+
+/* Dining */
+.dining{background:var(--card);border:1px solid rgba(248,113,113,.15);border-left:3px solid var(--red);border-radius:14px;padding:14px;margin-bottom:10px}
+.dining-name{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:#fff;margin-bottom:3px}
+.dining-name svg{width:13px;height:13px;color:var(--red)}
+.dining-info{font-size:11px;color:var(--muted)}
+
+/* Charging */
+.ev{background:var(--card);border:1px solid rgba(251,191,36,.15);border-left:3px solid var(--amber);border-radius:14px;padding:14px;margin-bottom:10px}
+.ev-name{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:#fff;margin-bottom:3px}
+.ev-name svg{width:13px;height:13px;color:var(--amber)}
+.ev-info{font-size:11px;color:var(--muted)}
+
+/* Notes */
+.notes{background:rgba(251,191,36,.05);border:1px solid rgba(251,191,36,.15);border-radius:14px;padding:16px;margin-bottom:14px}
+.notes h4{display:flex;align-items:center;gap:7px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--amber2);margin-bottom:10px}
+.notes h4 svg{width:12px;height:12px}
+.notes-input{width:100%;min-height:75px;background:rgba(0,0,0,.3);border:1px solid rgba(251,191,36,.2);border-radius:10px;padding:10px;font-family:'Inter',sans-serif;font-size:12px;color:var(--text);resize:vertical}
+.notes-input:focus{outline:none;border-color:var(--amber);box-shadow:0 0 0 3px rgba(251,191,36,.1)}
+.notes-input::placeholder{color:var(--faint)}
+
+/* Checklist */
+.cl-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.cl-item{display:flex;align-items:center;gap:9px;padding:9px 12px;background:var(--card);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:.2s}
+.cl-item:hover{border-color:rgba(74,222,128,.3);background:rgba(74,222,128,.04)}
+.cl-item input[type=checkbox]{width:15px;height:15px;accent-color:var(--pine);cursor:pointer;flex-shrink:0}
+.cl-item span{font-size:12px;font-weight:500;color:var(--text)}
+
+/* Section head */
+.sh{display:flex;align-items:center;gap:10px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--faint);margin:18px 0 10px}
+.sh::after{content:'';flex:1;height:1px;background:var(--border)}
+.sh svg{width:11px;height:11px}
+
+/* Budget bar */
+.bbar{background:rgba(255,255,255,.06);border-radius:4px;height:4px;margin-top:8px;overflow:hidden}
+.bfill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--pine),var(--sage))}
+
+/* Logistics info */
+.log-box{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:10px}
+.log-box h4{display:flex;align-items:center;gap:7px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--faint);margin-bottom:8px}
+.log-box h4 svg{width:12px;height:12px}
+.log-box p{font-size:12px;color:var(--text);line-height:1.6}
+
+/* FOOTER */
+.footer{text-align:center;padding:40px 20px;font-size:11px;color:var(--faint);border-top:1px solid var(--border)}
+
+/* ── BOOK EARLY ── */
+.bookearly-wrap{max-width:960px;margin:28px auto 0;padding:0 16px}
+.be-header{
+  display:flex;align-items:center;gap:10px;
+  font-size:15px;font-weight:700;color:#e8b86d;margin-bottom:6px
+}
+.be-header svg{color:#e8b86d;flex-shrink:0}
+.be-sub{font-size:12px;color:var(--muted);margin-bottom:14px}
+.be-sub strong{color:var(--text)}
+.be-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px}
+
+.bcard{
+  background:var(--card);border:1px solid var(--border);border-radius:16px;
+  padding:16px;display:flex;flex-direction:column;gap:10px;
+  border-left:3px solid var(--faint);transition:.2s
+}
+.bcard:hover{border-color:rgba(232,184,109,.4);background:var(--card2)}
+.bcard.urgent{border-left-color:#c05a4a}
+.bcard.high{border-left-color:#c8954a}
+.bcard.medium{border-left-color:var(--pine)}
+
+.bcard-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.bcard-title{font-size:13px;font-weight:700;color:var(--text);line-height:1.3}
+.urgency-badge{
+  font-size:9px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;
+  padding:3px 9px;border-radius:20px;white-space:nowrap;flex-shrink:0
+}
+.ub-urgent{background:rgba(192,90,74,.2);color:#e07060;border:1px solid rgba(192,90,74,.3)}
+.ub-high{background:rgba(200,149,74,.2);color:#d4a46a;border:1px solid rgba(200,149,74,.3)}
+.ub-medium{background:rgba(93,144,104,.2);color:#7aaa82;border:1px solid rgba(93,144,104,.3)}
+
+.bcard-desc{font-size:11px;color:var(--muted);line-height:1.5}
+.bcard-meta{display:flex;flex-direction:column;gap:5px}
+.bcard-row{display:flex;align-items:center;gap:7px;font-size:11px;color:var(--muted)}
+.bcard-row svg{width:11px;height:11px;flex-shrink:0;color:var(--faint)}
+.bcard-row strong{color:var(--text)}
+.bcard-btn{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  padding:8px 14px;border-radius:50px;border:none;cursor:pointer;
+  font-family:'Inter',sans-serif;font-size:11px;font-weight:700;
+  background:rgba(232,184,109,.12);color:#d4a46a;
+  border:1px solid rgba(232,184,109,.25);transition:.2s;text-decoration:none;
+  letter-spacing:.3px
+}
+.bcard-btn:hover{background:rgba(232,184,109,.22);color:#e8c87a}
+.bcard-btn svg{width:11px;height:11px}
+.bcard-done{display:flex;align-items:center;gap:7px;margin-top:2px}
+.bcard-done input[type=checkbox]{width:15px;height:15px;accent-color:var(--pine);cursor:pointer}
+.bcard-done label{font-size:11px;color:var(--faint);cursor:pointer}
+
+/* PRINT */
+@media print{.nav-strip,.controls,.trail-btns,.tabs,.tab-btn{display:none!important}.tile-detail{display:block!important}.tile{transform:none!important}}
+
+/* RESPONSIVE */
+@media(max-width:640px){
+  .hero{padding:50px 16px 90px}
+  .hero h1{letter-spacing:-1px}
+  .grid{grid-template-columns:1fr;padding:0 12px}
+  .tile.open{grid-column:auto}
+  .info-row{grid-template-columns:1fr 1fr}
+  .cl-grid{grid-template-columns:1fr}
+  .hero-stats{gap:8px}
+  .hstat{padding:12px 16px}
+  .hstat-n{font-size:24px}
+}
+@media(max-width:400px){
+  .info-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- PASSWORD GATE -->
+<div id="gate" style="
+  position:fixed;inset:0;z-index:9999;
+  background:linear-gradient(160deg,#0b160b 0%,#1a2f1a 50%,#0d1a2a 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-family:'Inter',sans-serif;padding:20px;
+">
+  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#7aaa82" stroke-width="1.5" style="margin-bottom:16px">
+    <path d="M8 16l4-8 4 8M6 20h12"/>
+    <path d="M12 3C9.24 3 7 5.24 7 8v1H5v12h14V9h-2V8c0-2.76-2.24-5-5-5z" stroke="#5a8fa8" stroke-width="1.2"/>
+  </svg>
+  <div style="color:#d8d4cc;font-size:22px;font-weight:700;margin-bottom:6px;font-family:'Playfair Display',serif">Meher &amp; Ritu Road Trip 2026</div>
+  <div style="color:#5e6a64;font-size:13px;margin-bottom:32px">Enter password to continue</div>
+  <div style="position:relative;width:100%;max-width:280px">
+    <input id="pwInput" type="password" placeholder="Password"
+      style="
+        width:100%;padding:13px 16px;border-radius:12px;
+        background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+        color:#d8d4cc;font-family:'Inter',sans-serif;font-size:15px;
+        outline:none;letter-spacing:2px;text-align:center
+      "
+      onkeydown="if(event.key==='Enter')checkPw()"
+    >
+  </div>
+  <div id="pwErr" style="color:#c47a72;font-size:12px;margin-top:10px;height:16px"></div>
+  <button onclick="checkPw()" style="
+    margin-top:16px;padding:11px 36px;border-radius:50px;border:none;cursor:pointer;
+    background:#5d9068;color:#fff;font-family:'Inter',sans-serif;font-weight:700;font-size:13px;
+    transition:.2s;letter-spacing:.5px
+  " onmouseover="this.style.background='#7aaa82'" onmouseout="this.style.background='#5d9068'">
+    Unlock Trip
+  </button>
+</div>
+<script>
+(function(){
+  if(sessionStorage.getItem('mrtrip2026')==='ok'){
+    document.getElementById('gate').style.display='none';
+  }
+})();
+function checkPw(){
+  const v=document.getElementById('pwInput').value;
+  if(v==='1852324'){
+    sessionStorage.setItem('mrtrip2026','ok');
+    const g=document.getElementById('gate');
+    g.style.transition='opacity .4s';g.style.opacity='0';
+    setTimeout(()=>g.style.display='none',400);
+  } else {
+    const err=document.getElementById('pwErr');
+    err.textContent='Incorrect password. Try again.';
+    document.getElementById('pwInput').value='';
+    document.getElementById('pwInput').focus();
+    setTimeout(()=>err.textContent='',3000);
+  }
+}
+</script>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">Meher &amp; Ritu &bull; Road Trip 2026</div>
+  <h1>Acadia<br><em>National Park</em></h1>
+  <p class="hero-sub">Cincinnati &rarr; Bar Harbor, Maine &rarr; Cincinnati</p>
+  <div class="hero-stats">
+    <div class="hstat"><span class="hstat-n">8</span><div class="hstat-l">Days</div></div>
+    <div class="hstat"><span class="hstat-n">2,040</span><div class="hstat-l">Miles</div></div>
+    <div class="hstat"><span class="hstat-n" id="herobudget">—</span><div class="hstat-l">Budget</div></div>
+    <div class="hstat"><span class="hstat-n">3</span><div class="hstat-l">Acadia Days</div></div>
+    <div class="hstat"><span class="hstat-n">9h</span><div class="hstat-l">Max Drive</div></div>
+  </div>
+  <!-- Mountain silhouette SVG -->
+  <svg class="mountains" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,80 L0,50 L80,20 L160,45 L240,15 L320,40 L400,10 L480,35 L560,5 L640,30 L720,0 L800,28 L880,8 L960,32 L1040,12 L1120,38 L1200,18 L1280,42 L1360,22 L1440,48 L1440,80 Z" fill="#0b160b"/>
+    <path d="M0,80 L0,60 L120,35 L200,55 L280,30 L400,52 L520,28 L600,50 L700,35 L800,55 L900,40 L1000,60 L1100,45 L1200,62 L1300,48 L1440,65 L1440,80 Z" fill="#0d1a0d" opacity="0.8"/>
+  </svg>
+</div>
+
+<!-- NAV DOTS -->
+<div class="nav-strip">
+  <div class="nav-inner" id="navInner"></div>
+</div>
+
+<!-- CONTROLS -->
+<div class="controls">
+  <button class="btn btn-p" onclick="expandAll()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+    Expand All
+  </button>
+  <button class="btn btn-o" onclick="goToDay(3)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 16l4-8 4 8M6 20h12"/></svg>
+    Acadia Days
+  </button>
+  <button class="btn btn-g" onclick="window.print()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm1-4h4"/></svg>
+    Print
+  </button>
+  <button class="btn btn-g" onclick="downloadJSON()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+    Download
+  </button>
+</div>
+
+<!-- BOOK EARLY SECTION -->
+<div class="bookearly-wrap">
+  <div class="be-header">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    Book These Early — Don't Lose Your Spot
+  </div>
+  <div class="be-sub">Some of these sell out within <strong>minutes</strong> of going live. Set a reminder and act fast.</div>
+  <div class="be-grid" id="bookingCards"></div>
+</div>
+
+<!-- TILE GRID -->
+<div class="grid" id="grid"></div>
+
+<div class="footer">
+  <p>Click any tile to expand &bull; Mobile-friendly &bull; Best season: Late August &bull; Pet-friendly &bull; EV-ready</p>
+</div>
+
+<!-- HEROICONS SVG DEFS (inline symbols) -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="ico-map" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></symbol>
+  <symbol id="ico-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="ico-cash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></symbol>
+  <symbol id="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></symbol>
+  <symbol id="ico-lightning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
+  <symbol id="ico-fork" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></symbol>
+  <symbol id="ico-mountain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 16l4-8 4 8M6 20h12"/></symbol>
+  <symbol id="ico-car" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v6h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></symbol>
+  <symbol id="ico-checklist" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></symbol>
+  <symbol id="ico-note" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></symbol>
+  <symbol id="ico-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></symbol>
+  <symbol id="ico-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></symbol>
+  <symbol id="ico-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></symbol>
+  <symbol id="ico-pet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M4 7l2 1M4 7l2-1M4 7v2.5M12 21l-2-2.5-3.5.5L5 17l-.5-3.5 2-2L12 9l5.5 2.5 2 2L19 17l-1.5 2-3.5-.5L12 21z"/></symbol>
+  <symbol id="ico-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></symbol>
+</svg>
+
+<script>
+// ── ADVANCE BOOKINGS ──
+const bookings = [
+  {
+    title: "Cadillac Mountain Sunrise Vehicle Reservation",
+    urgency: "urgent",
+    urgencyLabel: "Sells Out In Minutes",
+    desc: "Required to drive up Cadillac Mountain for sunrise (late May–Oct). Releases in batches on recreation.gov — literally gone in 2–3 minutes. Set a phone alarm for the release date.",
+    when: "Releases ~2–3 months before your date (check recreation.gov)",
+    who: "Required per vehicle, not per person",
+    cost: "~$6 reservation fee + park entry",
+    url: "https://www.recreation.gov/timed-entry/10086910",
+    day: "Day 3, 4, or 5"
+  },
+  {
+    title: "Acadia Park Loop Road Timed Entry",
+    urgency: "urgent",
+    urgencyLabel: "Sells Out Fast",
+    desc: "Timed entry required for the Park Loop Road (Ocean Path, Thunder Hole, Sand Beach corridor) during peak season. Check if required for your dates — policy can change year to year.",
+    when: "Check recreation.gov in spring 2026 for your August dates",
+    who: "Per vehicle",
+    cost: "Included with park pass ($35/vehicle) + small reservation fee",
+    url: "https://www.recreation.gov/timed-entry/10086910",
+    day: "Day 3"
+  },
+  {
+    title: "Jordan Pond House — Dining Reservation",
+    urgency: "high",
+    urgencyLabel: "Book 2–3 Months Out",
+    desc: "The most iconic restaurant in Acadia. Famous for popovers on the lawn overlooking Jordan Pond. Tables go fast for summer — book the moment reservations open.",
+    when: "Book 2–3 months before your trip",
+    who: "All diners",
+    cost: "No reservation fee; lunch ~$20–35/person",
+    url: "https://www.jordanpondhouse.com/reservations",
+    day: "Day 3 or 4"
+  },
+  {
+    title: "Bar Harbor Hotel / Lodging (3 nights)",
+    urgency: "high",
+    urgencyLabel: "Book 6+ Months Out",
+    desc: "Late August is peak season in Bar Harbor. Pet-friendly rooms sell out far in advance. Book as soon as possible — prices also spike the closer you wait.",
+    when: "Book now or as soon as possible",
+    who: "Your booking",
+    cost: "~$130–160/night budgeted",
+    url: "https://www.booking.com/searchresults.html?ss=Bar+Harbor+Maine&checkin=2026-08-16&checkout=2026-08-19",
+    day: "Days 3, 4, 5"
+  },
+  {
+    title: "Acadia National Park Pass",
+    urgency: "medium",
+    urgencyLabel: "Buy Before You Go",
+    desc: "Buy the America the Beautiful Annual Pass ($80) if you plan to visit multiple national parks — it covers Acadia and every other park for a year. Otherwise a 7-day Acadia vehicle pass is $35.",
+    when: "Buy online before the trip or at the gate",
+    who: "Per vehicle",
+    cost: "$35 (7-day) or $80 (annual America the Beautiful)",
+    url: "https://www.nps.gov/acad/planyourvisit/fees.htm",
+    day: "Before Day 3"
+  },
+  {
+    title: "Hickory Run State Park Campsite / Lodge",
+    urgency: "medium",
+    urgencyLabel: "Book 3–4 Months Out",
+    desc: "Day 1 overnight. If camping, reserve early — campsites at Hickory Run go fast on summer weekends. If using a hotel in the Jim Thorpe area, a few months ahead is usually fine.",
+    when: "Book 3–4 months before",
+    who: "Your booking",
+    cost: "$100–120/night budgeted",
+    url: "https://pennsylvaniastateparks.reserveamerica.com/",
+    day: "Day 1"
+  }
+];
+
+function renderBookings(){
+  document.getElementById('bookingCards').innerHTML = bookings.map((b,i) => `
+    <div class="bcard ${b.urgency}">
+      <div class="bcard-top">
+        <div class="bcard-title">${b.title}</div>
+        <span class="urgency-badge ub-${b.urgency}">${b.urgencyLabel}</span>
+      </div>
+      <div class="bcard-desc">${b.desc}</div>
+      <div class="bcard-meta">
+        <div class="bcard-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <strong>When:</strong> ${b.when}
+        </div>
+        <div class="bcard-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+          <strong>Who:</strong> ${b.who}
+        </div>
+        <div class="bcard-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          <strong>Cost:</strong> ${b.cost}
+        </div>
+        <div class="bcard-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <strong>For:</strong> ${b.day}
+        </div>
+      </div>
+      <a class="bcard-btn" href="${b.url}" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        Book / Check Availability
+      </a>
+      <div class="bcard-done">
+        <input type="checkbox" id="bk${i}">
+        <label for="bk${i}">Booked ✓</label>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ── DATA ──
+const data = [
+  {
+    day:1, title:"Cincinnati → Hickory Run, PA", type:"DRIVE",
+    distance:530, hours:9, arrival:"5 PM",
+    lodging:110, food:55, evCost:8,
+    sunrise:"7:15 AM", sunset:"6:45 PM",
+    mapRoute:"https://www.google.com/maps/dir/Cincinnati,+OH/Electrify+America+Akron+OH/Hickory+Run+Boulder+Field+PA",
+    timeline:[
+      {time:"7:30 AM",act:"Depart Cincinnati"},
+      {time:"10:30 AM",act:"Charge stop – Akron, OH (30 min)"},
+      {time:"12:00 PM",act:"Lunch near Jim Thorpe, PA"},
+      {time:"5:00 PM",act:"Arrive Hickory Run"},
+      {time:"5:30 PM",act:"Explore Boulder Field"}
+    ],
+    stops:[
+      {name:"Hickory Run Boulder Field",desc:"Unique 7.5-acre geological wonder with massive quartzite boulders left by glaciers at the end of the Ice Age.",difficulty:"Easy",distance:"1.2 mi",time:"45 min",elevation:"Minimal",maps:"Hickory Run Boulder Field Pennsylvania",guide:"Hickory Run Boulder Field hiking"}
+    ],
+    restaurants:[
+      {name:"Jim Thorpe Historic Area",info:"Charming Victorian town with pet-friendly dining options along the riverfront"}
+    ],
+    chargers:[
+      {name:"Electrify America – Akron, OH",info:"I-76 corridor, 30–40 min charge"}
+    ]
+  },
+  {
+    day:2, title:"Hickory Run → Bar Harbor, ME", type:"DRIVE",
+    distance:450, hours:8.5, arrival:"4 PM",
+    lodging:140, food:55, evCost:12,
+    sunrise:"7:10 AM", sunset:"6:50 PM",
+    mapRoute:"https://www.google.com/maps/dir/Hickory+Run+State+Park+PA/Woodstock+VT/Bar+Harbor+ME",
+    timeline:[
+      {time:"8:00 AM",act:"Depart Hickory Run"},
+      {time:"12:00 PM",act:"Lunch – Route 100 Vermont"},
+      {time:"4:00 PM",act:"Arrive Bar Harbor"}
+    ],
+    stops:[
+      {name:"Route 100 Vermont",desc:"Beautiful scenic mountain drive through the Green Mountains. Covered bridges, farmland, and fall foliage corridors.",difficulty:"None",distance:"100 mi",time:"2-3 hrs",elevation:"2000 ft",maps:"Route 100 Vermont scenic byway",guide:"Green Mountains Vermont Route 100"},
+      {name:"Bar Harbor Waterfront",desc:"Gateway to Acadia. Stroll the harbor walk, grab lobster rolls, and watch the boats come in.",difficulty:"Easy",distance:"1 mi",time:"1-2 hrs",elevation:"Flat",maps:"Bar Harbor Maine waterfront",guide:"Bar Harbor Maine attractions"}
+    ],
+    restaurants:[
+      {name:"Bluebird Farm Table",info:"Fresh local food, great outdoor seating"},
+      {name:"Geddy's Restaurant",info:"Harbor views, pet-friendly patio"}
+    ],
+    chargers:[
+      {name:"ChargePoint – Bar Harbor",info:"Multiple locations in town center"}
+    ]
+  },
+  {
+    day:3, title:"Acadia – Full Coastal Route", type:"EXPLORE",
+    distance:50, hours:0.5, arrival:"N/A",
+    lodging:140, food:55, evCost:6,
+    sunrise:"7:08 AM", sunset:"6:52 PM",
+    mapRoute:"https://www.google.com/maps/dir/Bar+Harbor+ME/Ocean+Path+Acadia+National+Park/Thunder+Hole+Acadia+ME/Jordan+Pond+House+Acadia/Otter+Cliffs+Acadia+ME/Bar+Harbor+ME",
+    timeline:[
+      {time:"8:00 AM",act:"Park Loop Road – early entry"},
+      {time:"8:30 AM",act:"Ocean Path Trail"},
+      {time:"1:00 PM",act:"Lunch at Sand Beach area"},
+      {time:"5:30 PM",act:"Otter Cliffs for sunset"}
+    ],
+    stops:[
+      {name:"Ocean Path Trail",desc:"ICONIC trail along the most dramatic granite coastline in the Northeast. Sea stacks, lighthouses, and crashing waves. Arrive early to beat crowds.",difficulty:"Easy-Moderate",distance:"3.3 mi",time:"2.5 hrs",elevation:"300 ft",maps:"Ocean Path Acadia Maine",guide:"Ocean Path trail Acadia"},
+      {name:"Thunder Hole",desc:"A wave-carved sea cave that produces a booming thunder sound at mid-to-high tide. Check tide charts in advance.",difficulty:"Easy",distance:"0.5 mi",time:"45 min",elevation:"Minimal",maps:"Thunder Hole Acadia",guide:"Thunder Hole tide times"},
+      {name:"Otter Cliffs",desc:"Dramatic 110-foot granite sea cliffs. Harbor seals rest on rocks below. The undisputed BEST SUNSET SPOT in Acadia.",difficulty:"Easy",distance:"Short",time:"30 min",elevation:"Minimal",maps:"Otter Cliffs Acadia",guide:"Otter Cliffs sunset Acadia"}
+    ],
+    restaurants:[
+      {name:"Jordan Pond House",info:"Iconic park restaurant – reservations strongly recommended"}
+    ],
+    chargers:[
+      {name:"Bar Harbor",info:"Charge overnight at hotel"}
+    ]
+  },
+  {
+    day:4, title:"Acadia – Forest & Quiet Side", type:"EXPLORE",
+    distance:50, hours:0.5, arrival:"N/A",
+    lodging:140, food:55, evCost:5,
+    sunrise:"7:06 AM", sunset:"6:54 PM",
+    mapRoute:"https://www.google.com/maps/dir/Bar+Harbor+ME/Jordan+Pond+Acadia+National+Park/Eagle+Lake+Carriage+Road+Acadia/Wonderland+Trail+Acadia+ME/Bar+Harbor+ME",
+    timeline:[
+      {time:"6:45 AM",act:"Wake early for sunrise"},
+      {time:"7:00 AM",act:"Jordan Pond sunrise walk"},
+      {time:"10:30 AM",act:"Carriage Roads bike/walk"},
+      {time:"2:00 PM",act:"Wonderland Trail"}
+    ],
+    stops:[
+      {name:"Jordan Pond Loop",desc:"MOST PHOTOGRAPHED spot in the park. Crystal-clear water perfectly reflecting The Bubbles twin mountains. Magical at sunrise.",difficulty:"Easy-Moderate",distance:"3.3 mi",time:"2.5-3 hrs",elevation:"500 ft",maps:"Jordan Pond Loop Acadia",guide:"Jordan Pond Trail Acadia"},
+      {name:"Carriage Roads Network",desc:"45+ miles of historic roads with 17 unique stone bridges. Hand-built by Rockefeller starting in 1913. Stunning at any season.",difficulty:"Easy",distance:"2-5 mi",time:"1-2.5 hrs",elevation:"Varied",maps:"Acadia Carriage Roads",guide:"Carriage Roads Acadia guide"},
+      {name:"Wonderland Trail",desc:"Peaceful forest trail leading to a wild salt marsh and rocky shoreline. Rarely crowded – a locals' favorite.",difficulty:"Easy",distance:"1.4 mi",time:"1 hr",elevation:"Minimal",maps:"Wonderland Trail Acadia",guide:"Wonderland Trail hiking"}
+    ],
+    restaurants:[
+      {name:"Bar Harbor Coffee Co",info:"Excellent local pastries & specialty coffee"}
+    ],
+    chargers:[
+      {name:"Bar Harbor",info:"Multiple ChargePoint locations"}
+    ]
+  },
+  {
+    day:5, title:"Acadia – Deep Exploration Day", type:"EXPLORE",
+    distance:50, hours:0.5, arrival:"N/A",
+    lodging:140, food:55, evCost:5,
+    sunrise:"7:04 AM", sunset:"6:56 PM",
+    mapRoute:"https://www.google.com/maps/dir/Bar+Harbor+ME/Penobscot+Mountain+Acadia+ME/Ship+Harbor+Trail+Acadia+ME/Bass+Harbor+Head+Lighthouse+ME/Bar+Harbor+ME",
+    timeline:[
+      {time:"10:00 AM",act:"Penobscot Mountain summit"},
+      {time:"1:00 PM",act:"Lunch break"},
+      {time:"2:00 PM",act:"Ship Harbor Trail tide pools"},
+      {time:"3:30 PM",act:"Bass Harbor Head Lighthouse"},
+      {time:"5:30 PM",act:"Sunset from the cliffs"}
+    ],
+    stops:[
+      {name:"Penobscot Mountain",desc:"Rocky summit with true 360° PANORAMIC VIEWS of MDI, surrounding islands, and the Atlantic Ocean. Worth every step.",difficulty:"Moderate",distance:"1.6 mi up",time:"1.5-2 hrs",elevation:"800 ft",maps:"Penobscot Mountain Acadia",guide:"Penobscot Mountain Acadia summit"},
+      {name:"Bass Harbor Head Lighthouse",desc:"The MOST PHOTOGRAPHED lighthouse in Maine. Historic 1858 structure perched dramatically on the rocks at the island's southern tip.",difficulty:"Easy",distance:"10 min",time:"45 min",elevation:"Minimal",maps:"Bass Harbor Head Lighthouse",guide:"Bass Harbor Lighthouse sunset"},
+      {name:"Ship Harbor Trail",desc:"Rocky coast with incredible TIDE POOLS teeming with starfish, sea urchins, anemones, and periwinkles.",difficulty:"Easy",distance:"1.3 mi",time:"1-1.5 hrs",elevation:"Minimal",maps:"Ship Harbor Trail Acadia",guide:"Ship Harbor tide pools"}
+    ],
+    restaurants:[
+      {name:"Rosalie's Pizzeria",info:"Casual local favorite in Bar Harbor"}
+    ],
+    chargers:[
+      {name:"Bar Harbor",info:"Hotel overnight charge"}
+    ]
+  },
+  {
+    day:6, title:"Bar Harbor → Boston Area", type:"TRANSITION",
+    distance:220, hours:5, arrival:"1 PM",
+    lodging:130, food:55, evCost:10,
+    sunrise:"7:02 AM", sunset:"6:58 PM",
+    mapRoute:"https://www.google.com/maps/dir/Bar+Harbor+ME/Portland+Head+Light+ME/Eastern+Promenade+Portland+ME/Boston+Seaport+Boston+MA",
+    timeline:[
+      {time:"9:00 AM",act:"Depart Bar Harbor"},
+      {time:"11:00 AM",act:"Portland Head Light"},
+      {time:"1:00 PM",act:"Lunch in Portland"},
+      {time:"2:00 PM",act:"Eastern Promenade walk"},
+      {time:"4:30 PM",act:"Arrive Boston area"}
+    ],
+    stops:[
+      {name:"Portland Head Light",desc:"Maine's oldest lighthouse (1791) inside Fort Williams Park. Stunning views of Casco Bay – a must-stop on the coast.",difficulty:"Easy",distance:"1 mi",time:"1-1.5 hrs",elevation:"Minimal",maps:"Portland Head Light Maine",guide:"Portland Head Light Fort Williams"},
+      {name:"Portland Eastern Promenade",desc:"2-mile waterfront path with gorgeous harbor views. Dog-friendly, flat, and scenic.",difficulty:"Easy",distance:"2 mi",time:"1-2 hrs",elevation:"Flat",maps:"Eastern Promenade Portland",guide:"Portland Eastern Promenade"},
+      {name:"Boston Seaport",desc:"Modern waterfront district with excellent restaurants, shops, and sweeping harbor views.",difficulty:"Easy",distance:"Walk",time:"1-3 hrs",elevation:"Flat",maps:"Boston Seaport",guide:"Boston Seaport attractions"}
+    ],
+    restaurants:[
+      {name:"Holy Donut",info:"Portland institution – try the potato doughnuts"},
+      {name:"Eventide Oyster Co",info:"Best fresh seafood in New England"}
+    ],
+    chargers:[
+      {name:"Boston area",info:"Multiple Electrify America & ChargePoint stations"}
+    ]
+  },
+  {
+    day:7, title:"Boston → Pittsburgh, PA", type:"DRIVE",
+    distance:600, hours:9, arrival:"6 PM",
+    lodging:130, food:55, evCost:40,
+    sunrise:"7:00 AM", sunset:"7:00 PM",
+    mapRoute:"https://www.google.com/maps/dir/Boston+MA/Cuyahoga+Valley+National+Park+OH/Pittsburgh+PA",
+    timeline:[
+      {time:"7:30 AM",act:"Depart Boston"},
+      {time:"12:00 PM",act:"Lunch – I-90 rest area"},
+      {time:"3:30 PM",act:"Cuyahoga Valley NP stretch stop"},
+      {time:"6:00 PM",act:"Arrive Pittsburgh, PA"},
+      {time:"7:30 PM",act:"Mount Washington overlook & dinner"}
+    ],
+    stops:[
+      {name:"Cuyahoga Valley NP",desc:"Scenic Ohio valley with waterfalls. Easy leg-stretcher right off I-80 — Brandywine Falls is a quick 1.5 mi walk.",difficulty:"Easy",distance:"1-2 mi",time:"45 min",elevation:"Minimal",maps:"Cuyahoga Valley National Park Ohio",guide:"Brandywine Falls Cuyahoga Valley"},
+      {name:"Pittsburgh – Mount Washington",desc:"Ride the Duquesne Incline up to the most stunning city overlook in America. Three rivers meet right below you.",difficulty:"Easy",distance:"Walk",time:"1 hr",elevation:"Flat (incline does the work)",maps:"Duquesne Incline Pittsburgh PA",guide:"Mount Washington Pittsburgh overlook"}
+    ],
+    restaurants:[
+      {name:"Primanti Brothers – Pittsburgh",info:"Pittsburgh institution — massive sandwiches with fries inside"},
+      {name:"Pennsylvania I-76 Rest Stops",info:"Full-service stops with hot food and coffee"}
+    ],
+    chargers:[
+      {name:"Electrify America – PA I-76",info:"Multiple fast-charger stations along corridor"},
+      {name:"ChargePoint – Pittsburgh",info:"Multiple downtown locations"}
+    ]
+  },
+  {
+    day:8, title:"Pittsburgh → Cincinnati — Home!", type:"DRIVE",
+    distance:300, hours:4.5, arrival:"11 AM",
+    lodging:0, food:40, evCost:8,
+    sunrise:"6:58 AM", sunset:"7:02 PM",
+    mapRoute:"https://www.google.com/maps/dir/Pittsburgh+PA/Cincinnati+OH",
+    timeline:[
+      {time:"8:00 AM",act:"Depart Pittsburgh"},
+      {time:"10:00 AM",act:"Easy I-70/I-71 cruise"},
+      {time:"12:30 PM",act:"HOME! Cincinnati!"}
+    ],
+    stops:[],
+    restaurants:[
+      {name:"Celebrate at home!",info:"You just did 2,040 miles — order your favorite Cincinnati food and relax"}
+    ],
+    chargers:[]
+  }
+];
+
+// ── HELPERS ──
+function typeClass(t){return t==='DRIVE'?'drive':t==='EXPLORE'?'explore':'transition'}
+function icon(id,extra=''){return `<svg ${extra}><use href="#ico-${id}"/></svg>`}
+
+// ── BUILD NAV ──
+function buildNav(){
+  const el=document.getElementById('navInner');
+  data.forEach((d,i)=>{
+    const tc=typeClass(d.type);
+    const dot=document.createElement('div');
+    dot.className='nav-dot';
+    dot.innerHTML=`<div class="nd-circle nd-${tc}" onclick="goToDay(${d.day})">${d.day}</div><div class="nd-label">${d.title.split('→')[d.title.split('→').length-1].trim().split(',')[0].split('–')[0].trim()}</div>`;
+    el.appendChild(dot);
+    if(i<data.length-1){const c=document.createElement('div');c.className='nd-connector';el.appendChild(c);}
+  });
+}
+
+// ── RENDER TILE ──
+function renderTile(d){
+  const tc=typeClass(d.type);
+  const total=d.lodging+d.food+d.evCost;
+  const budgetPct=Math.min(100,Math.round((total/350)*100));
+  const acadia=d.day>=3&&d.day<=5;
+
+  const bandGrad=tc==='drive'?'linear-gradient(135deg,rgba(146,64,14,.5),rgba(217,119,6,.4))':
+                  tc==='explore'?'linear-gradient(135deg,rgba(20,83,45,.6),rgba(22,163,74,.4))':
+                  'linear-gradient(135deg,rgba(30,58,95,.6),rgba(37,99,235,.4))';
+
+  const trailsHTML=d.stops.map(s=>`
+    <div class="trail">
+      <h4>${icon('map','width="14" height="14"')} ${s.name}</h4>
+      <p class="trail-desc">${s.desc}</p>
+      <div class="trail-chips">
+        <div class="trail-chip"><span>Difficulty</span><span>${s.difficulty}</span></div>
+        <div class="trail-chip"><span>Distance</span><span>${s.distance}</span></div>
+        <div class="trail-chip"><span>Time</span><span>${s.time}</span></div>
+        <div class="trail-chip"><span>Elevation</span><span>${s.elevation}</span></div>
+      </div>
+      <div class="trail-btns">
+        <button class="trail-btn tbm" onclick="openMap('${s.maps}')">
+          ${icon('map','width="11" height="11"')} Maps
+        </button>
+        <button class="trail-btn tbg" onclick="openSearch('${s.guide}')">
+          ${icon('search','width="11" height="11"')} Guide
+        </button>
+      </div>
+    </div>`).join('');
+
+  const restsHTML=d.restaurants.map(r=>`
+    <div class="dining">
+      <div class="dining-name">${icon('fork','width="13" height="13"')} ${r.name}</div>
+      <div class="dining-info">${r.info}</div>
+    </div>`).join('');
+
+  const chargeHTML=d.chargers.map(c=>`
+    <div class="ev">
+      <div class="ev-name">${icon('lightning','width="13" height="13"')} ${c.name}</div>
+      <div class="ev-info">${c.info}</div>
+    </div>`).join('');
+
+  const tlHTML=d.timeline.map((t,i)=>`
+    <div class="tl-row">
+      <div class="tl-time">${t.time}</div>
+      <div class="tl-line">
+        <div class="tl-dot"></div>
+        ${i<d.timeline.length-1?'<div class="tl-bar"></div>':''}
+      </div>
+      <div class="tl-text">${t.act}</div>
+    </div>`).join('');
+
+  return `
+  <div class="tile" data-day="${d.day}" id="day${d.day}" onclick="toggleTile(this)">
+    <div class="tile-band" style="background:${bandGrad}">
+      <div class="tile-num" style="background:var(--${tc}-g,conic-gradient(#888,#aaa))">${d.day}</div>
+      <div class="tile-band-text">
+        <h3>${d.title}</h3>
+        <span class="tile-type-badge badge-${tc}">${icon(tc==='drive'?'car':tc==='explore'?'mountain':'lightning','width="10" height="10"')} ${d.type}</span>
+      </div>
+      <div class="tile-chevron">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg>
+      </div>
+    </div>
+    <div class="tile-stats">
+      <div class="tile-stat">
+        <div class="ts-label">${icon('car','width="10" height="10"')} Drive</div>
+        <div class="ts-val">${d.distance}<small style="font-size:11px;font-weight:500"> mi</small></div>
+        <div class="ts-sub">${d.hours}h &bull; ${d.arrival}</div>
+      </div>
+      <div class="tile-stat">
+        <div class="ts-label">${icon('cash','width="10" height="10"')} Budget</div>
+        <div class="ts-val">$${total}</div>
+        <div class="ts-sub">Lodge+Food+EV</div>
+      </div>
+      <div class="tile-stat">
+        <div class="ts-label">${icon('sun','width="10" height="10"')} Sunrise</div>
+        <div class="ts-val" style="font-size:12px;padding-top:4px">${d.sunrise}</div>
+        <div class="ts-sub">Set ${d.sunset}</div>
+      </div>
+    </div>
+
+    <div class="tile-detail" onclick="event.stopPropagation()">
+      <!-- MASTER MAP BUTTON -->
+      <a class="map-route-btn" href="${d.mapRoute}" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6-10l6-3m6 3l-6 3m6-3v13l-5.447 2.724A1 1 0 0115 19.382V8.618"/></svg>
+        Open Full Day Route in Google Maps
+      </a>
+
+      <div class="detail-scroll">
+        <!-- TODAY'S PLAN -->
+        <div class="sh">${icon('clock','width="11" height="11"')} Today's Plan</div>
+        <div class="info-row">
+          <div class="info-box">
+            <div class="info-box-lbl">${icon('car','width="12" height="12"')} Drive</div>
+            <div class="info-box-val">${d.distance} mi</div>
+            <div class="info-box-sub">${d.hours} hrs &bull; Arrive ${d.arrival}</div>
+          </div>
+          <div class="info-box">
+            <div class="info-box-lbl">${icon('cash','width="12" height="12"')} Daily Budget</div>
+            <div class="info-box-val">$${total}</div>
+            <div class="info-box-sub">Lodge $${d.lodging} &bull; Food $${d.food} &bull; EV $${d.evCost}</div>
+            <div class="bbar"><div class="bfill" style="width:${budgetPct}%"></div></div>
+          </div>
+          <div class="info-box">
+            <div class="info-box-lbl">${icon('sun','width="12" height="12"')} Daylight</div>
+            <div class="info-box-val" style="font-size:14px;padding-top:4px">&#9728; ${d.sunrise}</div>
+            <div class="info-box-sub">&#127752; ${d.sunset}</div>
+          </div>
+        </div>
+        <div class="tl">
+          <h4>${icon('clock','width="13" height="13"')} Timeline</h4>
+          ${tlHTML}
+        </div>
+
+        <!-- STOPS & TRAILS -->
+        ${d.stops.length?`
+        <div class="sh">${icon('mountain','width="11" height="11"')} Stops &amp; Trails</div>
+        ${trailsHTML}`:''}
+
+        <!-- DINING -->
+        ${restsHTML?`
+        <div class="sh">${icon('fork','width="11" height="11"')} Where to Eat</div>
+        ${restsHTML}`:''}
+
+
+        <!-- PARK / LOGISTICS -->
+        ${acadia?`
+        <div class="sh">${icon('shield','width="11" height="11"')} Park Info</div>
+        <div class="info-row">
+          <div class="log-box">
+            <h4>${icon('shield','width="12" height="12"')} Hours &amp; Pass</h4>
+            <p>Acadia: Sunrise to Sunset<br>Day pass: $30/vehicle</p>
+          </div>
+          <div class="log-box">
+            <h4>${icon('pet','width="12" height="12"')} Pets</h4>
+            <p>Leash required on all trails.</p>
+          </div>
+          <div class="log-box">
+            <h4>${icon('camera','width="12" height="12"')} Photography</h4>
+            <p>Otter Cliffs = best sunset spot.</p>
+          </div>
+        </div>`:''}
+
+        <!-- CHECKLIST & NOTES -->
+        <div class="sh">${icon('checklist','width="11" height="11"')} Before You Go</div>
+        <div class="cl-grid">
+          <label class="cl-item"><input type="checkbox"><span>Pack bags</span></label>
+          <label class="cl-item"><input type="checkbox"><span>Check weather</span></label>
+          <label class="cl-item"><input type="checkbox"><span>Full charge</span></label>
+          <label class="cl-item"><input type="checkbox"><span>Snacks &amp; water</span></label>
+          <label class="cl-item"><input type="checkbox"><span>Maps offline</span></label>
+          <label class="cl-item"><input type="checkbox"><span>Enjoy!</span></label>
+        </div>
+        <div style="margin-top:14px">
+          <div class="sh">${icon('note','width="11" height="11"')} Notes</div>
+          <div class="notes">
+            <textarea class="notes-input" placeholder="Personal notes for Day ${d.day}..."></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+// ── INIT ──
+document.getElementById('grid').innerHTML=data.map(renderTile).join('');
+buildNav();
+renderBookings();
+// Calculate budget dynamically from data
+const totalBudget=data.reduce((s,d)=>s+d.lodging+d.food+d.evCost,0);
+document.getElementById('herobudget').textContent='$'+totalBudget.toLocaleString();
+
+// ── INTERACTIONS ──
+function toggleTile(el){
+  // Stop if clicking interactive elements inside detail
+  el.classList.toggle('open');
+  if(el.classList.contains('open')){
+    setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'nearest'}),100);
+  }
+}
+function expandAll(){
+  document.querySelectorAll('.tile').forEach(t=>t.classList.add('open'));
+}
+function goToDay(n){
+  const el=document.getElementById('day'+n);
+  el.classList.add('open');
+  setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'start'}),50);
+}
+function openMap(q){window.open('https://www.google.com/maps/search/'+encodeURIComponent(q),'_blank');}
+function openSearch(q){window.open('https://www.google.com/search?q='+encodeURIComponent(q),'_blank');}
+function downloadJSON(){
+  const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='acadia-trip.json';a.click();
+}
+</script>
+</body>
+</html>
