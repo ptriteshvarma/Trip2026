@@ -285,6 +285,15 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 .rpc-item{font-size:11px;color:var(--text);margin-bottom:4px;line-height:1.4}
 .route-map-btn{display:inline-block;font-size:11px;color:var(--sky);text-decoration:none;font-weight:600}
 .route-map-btn:hover{text-decoration:underline}
+/* ── TRIP STATS ── */
+.tripstats-wrap{max-width:900px;margin:32px auto;padding:0 16px}
+.ts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-top:16px}
+.ts-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center;transition:.2s}
+.ts-card:hover{border-color:rgba(200,149,74,.3);background:var(--card2)}
+.ts-card-icon{font-size:22px;margin-bottom:6px}
+.ts-card-val{font-size:22px;font-weight:800;color:var(--amber);font-family:'Playfair Display',serif;line-height:1}
+.ts-card-lbl{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-top:4px}
+.ts-card-sub{font-size:10px;color:var(--faint);margin-top:2px}
 
 /* Notes */
 .notes{background:rgba(251,191,36,.05);border:1px solid rgba(251,191,36,.15);border-radius:14px;padding:16px;margin-bottom:14px}
@@ -530,8 +539,17 @@ function checkPw(){
 <!-- TILE GRID -->
 <div class="grid" id="grid"></div>
 
+<!-- TRIP STATS SECTION -->
+<div class="tripstats-wrap">
+  <div class="be-header">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+    Trip Stats &amp; Facts
+  </div>
+  <div class="ts-grid" id="tripStatsGrid"></div>
+</div>
+
 <div class="footer">
-  <p>Click any tile to expand &bull; Mobile-friendly &bull; Best season: Late August &bull; Pet-friendly &bull; EV-ready</p>
+  <p>Click any tile to expand &bull; Mobile-friendly &bull; Best season: May &bull; Pet-friendly &bull; EV-ready</p>
 </div>
 
 <!-- HEROICONS SVG DEFS (inline symbols) -->
@@ -1095,6 +1113,53 @@ function renderTile(d){
 document.getElementById('grid').innerHTML=data.map(renderTile).join('');
 buildNav();
 renderBookings();
+
+// ── TRIP STATS ──
+function renderTripStats(){
+  const totalMiles = data.reduce((s,d)=>s+d.distance,0);
+  const totalDriveMiles = data.filter(d=>d.type==='DRIVE').reduce((s,d)=>s+d.distance,0);
+  const totalDays = data.length;
+  const driveDays = data.filter(d=>d.type==='DRIVE').length;
+  const exploreDays = data.filter(d=>d.type==='EXPLORE').length;
+  const totalStops = data.reduce((s,d)=>s+(d.stops||[]).length,0);
+  const totalRestaurants = data.reduce((s,d)=>s+(d.restaurants||[]).length,0);
+  const totalChargeStops = data.reduce((s,d)=>s+(d.chargers||[]).length,0);
+  const totalBudget = data.reduce((s,d)=>s+d.lodging+d.food+d.evCost,0);
+  const totalEV = data.reduce((s,d)=>s+d.evCost,0);
+  const totalLodging = data.reduce((s,d)=>s+d.lodging,0);
+  const states = ['Ohio','New York','Pennsylvania','Connecticut','Massachusetts','New Hampshire','Maine','Vermont'];
+  const nationalParks = ['Acadia National Park'];
+  const stateparks = ['Watkins Glen SP','Franconia Notch SP'];
+
+  const cards = [
+    {icon:'🗺️', val:'1,970', lbl:'Total Miles', sub:'Round trip'},
+    {icon:'📅', val:totalDays, lbl:'Days', sub:`${driveDays} drive · ${exploreDays} explore`},
+    {icon:'🏔️', val:totalStops, lbl:'Stops & Trails', sub:'Hikes, sights, landmarks'},
+    {icon:'🌲', val:nationalParks.length, lbl:'National Parks', sub:'Acadia NP'},
+    {icon:'🌳', val:stateparks.length, lbl:'State Parks', sub:'Watkins Glen · Franconia Notch'},
+    {icon:'🗽', val:states.length, lbl:'States Visited', sub:'OH · NY · PA · NH · ME · VT · MA · CT'},
+    {icon:'🍽️', val:totalRestaurants, lbl:'Restaurants Curated', sub:'All pet-friendly picks'},
+    {icon:'⚡', val:totalChargeStops, lbl:'EV Charge Stops', sub:'Full corridor coverage'},
+    {icon:'💰', val:'$'+totalBudget.toLocaleString(), lbl:'Est. Total Budget', sub:'Lodge + Food + EV'},
+    {icon:'🏨', val:'$'+totalLodging.toLocaleString(), lbl:'Lodging Total', sub:'7 nights'},
+    {icon:'⚡', val:'$'+totalEV.toLocaleString(), lbl:'EV Charging Total', sub:'All charge stops'},
+    {icon:'🐾', val:'100%', lbl:'Pet Friendly', sub:'All stops verified'},
+    {icon:'🌅', val:'3', lbl:'Acadia Days', sub:'Maine coast & mountains'},
+    {icon:'🏔️', val:'2', lbl:'Gorge Trails', sub:'Watkins Glen · Flume Gorge'},
+    {icon:'🌊', val:'21', lbl:'Waterfalls', sub:'19 at Watkins Glen + 2 in Acadia'},
+    {icon:'🦞', val:'3+', lbl:'Lobster Roll Days', sub:'Maine coast dining'},
+  ];
+
+  document.getElementById('tripStatsGrid').innerHTML = cards.map(c=>`
+    <div class="ts-card">
+      <div class="ts-card-icon">${c.icon}</div>
+      <div class="ts-card-val">${c.val}</div>
+      <div class="ts-card-lbl">${c.lbl}</div>
+      <div class="ts-card-sub">${c.sub}</div>
+    </div>
+  `).join('');
+}
+renderTripStats();
 // Calculate budget dynamically from data
 const totalBudget=data.reduce((s,d)=>s+d.lodging+d.food+d.evCost,0);
 document.getElementById('herobudget').textContent='$'+totalBudget.toLocaleString();
