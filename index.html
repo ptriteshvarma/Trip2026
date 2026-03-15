@@ -271,6 +271,20 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 .ev-name{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:#fff;margin-bottom:3px}
 .ev-name svg{width:13px;height:13px;color:var(--amber)}
 .ev-info{font-size:11px;color:var(--muted)}
+.route-opts{display:flex;flex-direction:column;gap:12px;margin-bottom:8px}
+.route-opt{background:var(--card2);border-radius:10px;padding:14px;border:1px solid var(--border)}
+.route-opt-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.route-opt-label{font-size:12px;font-weight:700;color:var(--amber)}
+.route-opt-tag{font-size:10px;font-weight:700;background:rgba(255,255,255,.07);color:var(--muted);padding:2px 8px;border-radius:50px;letter-spacing:.4px}
+.route-pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.route-pros{background:rgba(122,170,130,.08);border-radius:8px;padding:10px}
+.route-cons{background:rgba(196,122,114,.08);border-radius:8px;padding:10px}
+.rpc-title{font-size:10px;font-weight:800;letter-spacing:.5px;margin-bottom:6px;color:var(--muted)}
+.route-pros .rpc-title{color:var(--sage)}
+.route-cons .rpc-title{color:var(--red)}
+.rpc-item{font-size:11px;color:var(--text);margin-bottom:4px;line-height:1.4}
+.route-map-btn{display:inline-block;font-size:11px;color:var(--sky);text-decoration:none;font-weight:600}
+.route-map-btn:hover{text-decoration:underline}
 
 /* Notes */
 .notes{background:rgba(251,191,36,.05);border:1px solid rgba(251,191,36,.15);border-radius:14px;padding:16px;margin-bottom:14px}
@@ -466,7 +480,7 @@ function checkPw(){
   <p class="hero-sub">Cincinnati &rarr; Bar Harbor, Maine &rarr; Cincinnati</p>
   <div class="hero-stats">
     <div class="hstat"><span class="hstat-n">8</span><div class="hstat-l">Days</div></div>
-    <div class="hstat"><span class="hstat-n">1,980</span><div class="hstat-l">Miles</div></div>
+    <div class="hstat"><span class="hstat-n">1,970</span><div class="hstat-l">Miles</div></div>
     <div class="hstat"><span class="hstat-n" id="herobudget">—</span><div class="hstat-l">Budget</div></div>
     <div class="hstat"><span class="hstat-n">3</span><div class="hstat-l">Acadia Days</div></div>
     <div class="hstat"><span class="hstat-n">9h</span><div class="hstat-l">Max Drive</div></div>
@@ -764,54 +778,74 @@ const data = [
     ]
   },
   {
-    day:6, title:"Bar Harbor → Boston Area", type:"TRANSITION",
-    distance:220, hours:5, arrival:"1 PM",
-    lodging:180, food:80, evCost:25,
+    day:6, title:"Bar Harbor → Stowe, VT", type:"TRANSITION",
+    distance:280, hours:5, arrival:"2:30 PM",
+    lodging:130, food:70, evCost:30,
     sunrise:"5:19 AM", sunset:"8:01 PM",
-    mapRoute:"https://www.google.com/maps/dir/Bar+Harbor+ME/Portland+Head+Light+ME/Eastern+Promenade+Portland+ME/Boston+Seaport+Boston+MA",
+    mapRoute:"https://www.google.com/maps/dir/Bar+Harbor,+ME/North+Conway,+NH/Franconia+Notch+State+Park,+NH/Stowe,+VT",
+    routeOptions:[
+      {
+        label:"Route B — White Mountains (Selected)",
+        tag:"SCENIC · NO CITY TRAFFIC",
+        pros:["Stunning mountain scenery through Crawford Notch & Franconia Notch","Shorter drive (280 mi vs 320 mi)","Avoid Boston traffic entirely","Flume Gorge stop is a highlight on its own"],
+        cons:["No city amenities or urban food options","Fewer EV chargers — plan ahead in NH"],
+        maps:"https://www.google.com/maps/dir/Bar+Harbor,+ME/North+Conway,+NH/Franconia+Notch+State+Park,+NH/Stowe,+VT"
+      },
+      {
+        label:"Route A — Through Boston",
+        tag:"OPTIONAL ALTERNATE",
+        pros:["Pass through Boston — lunch on the harbor, quick walk around Seaport","More EV chargers along I-95 corridor","Easier highway driving, no mountain roads"],
+        cons:["Longer (320 mi, +1 hr) with Boston traffic","Expensive city parking if stopping","Completely different vibe — urban not scenic"],
+        maps:"https://www.google.com/maps/dir/Bar+Harbor,+ME/Portland+Head+Light,+ME/Boston+Seaport,+MA/Stowe,+VT"
+      }
+    ],
     timeline:[
-      {time:"9:00 AM",act:"Depart Bar Harbor"},
-      {time:"11:00 AM",act:"Portland Head Light"},
-      {time:"1:00 PM",act:"Lunch in Portland"},
-      {time:"2:00 PM",act:"Eastern Promenade walk"},
-      {time:"4:30 PM",act:"Arrive Boston area"}
+      {time:"8:30 AM",act:"Depart Bar Harbor"},
+      {time:"10:30 AM",act:"Portland Head Light — Maine's oldest lighthouse (30 min stop)"},
+      {time:"12:00 PM",act:"Lunch – North Conway, NH (great mountain town)"},
+      {time:"1:30 PM",act:"Franconia Notch — Flume Gorge walk (1.5 hrs)"},
+      {time:"4:00 PM",act:"Arrive Stowe, VT"},
+      {time:"5:00 PM",act:"Stowe Recreation Path stroll + dinner"}
     ],
     stops:[
-      {name:"Portland Head Light",desc:"Maine's oldest lighthouse (1791) inside Fort Williams Park. Stunning views of Casco Bay – a must-stop on the coast.",difficulty:"Easy",distance:"1 mi",time:"1-1.5 hrs",elevation:"Minimal",maps:"Portland Head Light Maine",guide:"Portland Head Light Fort Williams"},
-      {name:"Portland Eastern Promenade",desc:"2-mile waterfront path with gorgeous harbor views. Dog-friendly, flat, and scenic.",difficulty:"Easy",distance:"2 mi",time:"1-2 hrs",elevation:"Flat",maps:"Eastern Promenade Portland",guide:"Portland Eastern Promenade"},
-      {name:"Boston Seaport",desc:"Modern waterfront district with excellent restaurants, shops, and sweeping harbor views.",difficulty:"Easy",distance:"Walk",time:"1-3 hrs",elevation:"Flat",maps:"Boston Seaport",guide:"Boston Seaport attractions"}
+      {name:"Portland Head Light",desc:"Maine's oldest lighthouse (1791) inside Fort Williams Park. Stunning views of Casco Bay — a perfect last look at coastal Maine.",difficulty:"Easy",distance:"1 mi",time:"30–45 min",elevation:"Minimal",maps:"Portland Head Light Maine",guide:"Portland Head Light Fort Williams"},
+      {name:"Franconia Notch – Flume Gorge",desc:"An 800-foot natural granite gorge with waterfalls, covered bridges, and boardwalks carved through the mountain. One of NH's crown jewels. Different from Watkins Glen — more dramatic and forested.",difficulty:"Easy–Moderate",distance:"2 mi loop",time:"1.5 hrs",elevation:"200 ft",maps:"Flume+Gorge+Franconia+Notch+NH",guide:"Flume Gorge Franconia Notch hiking"},
+      {name:"Stowe Recreation Path",desc:"5.5-mile paved path through meadows and covered bridges with views of Mount Mansfield. Perfect evening walk with your dog.",difficulty:"Easy",distance:"Up to 5.5 mi",time:"1–2 hrs",elevation:"Flat",maps:"Stowe+Recreation+Path+VT",guide:"Stowe Recreation Path Vermont"}
     ],
     restaurants:[
-      {name:"Holy Donut",info:"Portland institution – try the potato doughnuts"},
-      {name:"Eventide Oyster Co",info:"Best fresh seafood in New England"}
+      {name:"Delaney's Hole in the Wall – North Conway",info:"Best lunch stop in the White Mountains — laid-back, great burgers, pet-friendly patio"},
+      {name:"Hen of the Wood – Stowe",info:"Vermont's best farm-to-table restaurant. Book ahead — popular even in May"},
+      {name:"Ben & Jerry's Factory – Waterbury",info:"15 min from Stowe. Factory tour + free samples. Closes at 6 PM — go right after arriving."}
     ],
     chargers:[
-      {name:"Boston area",info:"Multiple Electrify America & ChargePoint stations"}
+      {name:"Tesla – North Conway, NH",info:"Stop here during lunch, ~20 min top-up"},
+      {name:"ChargePoint – Stowe, VT",info:"Multiple spots in town center"}
     ]
   },
   {
-    day:7, title:"Boston → Pittsburgh, PA", type:"DRIVE",
-    distance:600, hours:9, arrival:"6 PM",
-    lodging:150, food:65, evCost:65,
+    day:7, title:"Stowe, VT → Pittsburgh, PA", type:"DRIVE",
+    distance:530, hours:8.5, arrival:"5:30 PM",
+    lodging:150, food:65, evCost:58,
     sunrise:"5:45 AM", sunset:"8:10 PM",
-    mapRoute:"https://www.google.com/maps/dir/Boston+MA/Pittsburgh+PA",
+    mapRoute:"https://www.google.com/maps/dir/Stowe,+VT/Albany,+NY/Pittsburgh,+PA",
     timeline:[
-      {time:"7:30 AM",act:"Depart Boston"},
-      {time:"10:00 AM",act:"Charge stop – I-90 corridor (~30 min)"},
-      {time:"12:30 PM",act:"Lunch – I-76 Pennsylvania rest stop"},
-      {time:"6:00 PM",act:"Arrive Pittsburgh, PA"},
-      {time:"7:00 PM",act:"Mount Washington overlook & dinner"}
+      {time:"7:30 AM",act:"Depart Stowe"},
+      {time:"9:30 AM",act:"Charge stop – Albany, NY (30 min)"},
+      {time:"12:30 PM",act:"Lunch – Binghamton, NY area"},
+      {time:"5:30 PM",act:"Arrive Pittsburgh, PA"},
+      {time:"7:00 PM",act:"Duquesne Incline → Mount Washington overlook & dinner"}
     ],
     stops:[
-      {name:"Pittsburgh – Mount Washington",desc:"Ride the Duquesne Incline up to the most stunning city overlook in America. Three rivers meet right below you. Perfect end to the long drive day.",difficulty:"Easy",distance:"Walk",time:"1 hr",elevation:"Flat (incline does the work)",maps:"Duquesne Incline Pittsburgh PA",guide:"Mount Washington Pittsburgh overlook"}
+      {name:"Pittsburgh – Mount Washington",desc:"Ride the Duquesne Incline up to the most stunning city overlook in America. Three rivers meet right below you. Perfect reward after the long drive.",difficulty:"Easy",distance:"Walk",time:"1 hr",elevation:"Flat (incline does the work)",maps:"Duquesne Incline Pittsburgh PA",guide:"Mount Washington Pittsburgh overlook"},
+      {name:"Point State Park",desc:"Where the Allegheny, Monongahela, and Ohio rivers meet. Walk out to the fountain at the tip of the point — surprisingly moving.",difficulty:"Easy",distance:"1 mi",time:"30 min",elevation:"Flat",maps:"Point+State+Park+Pittsburgh",guide:"Point State Park Pittsburgh"}
     ],
     restaurants:[
-      {name:"Primanti Brothers – Pittsburgh",info:"Pittsburgh institution — massive sandwiches with fries inside"},
-      {name:"Pennsylvania I-76 Rest Stops",info:"Full-service stops with hot food and coffee"}
+      {name:"Primanti Brothers – Pittsburgh",info:"Pittsburgh institution — massive sandwiches with fries AND coleslaw inside. Original Strip District location."},
+      {name:"Gaucho Parrilla Argentina",info:"Excellent Argentine steakhouse in the Strip District — great for a proper dinner after the long day"}
     ],
     chargers:[
-      {name:"Electrify America – PA I-76",info:"Multiple fast-charger stations along corridor"},
-      {name:"ChargePoint – Pittsburgh",info:"Multiple downtown locations"}
+      {name:"Electrify America – Albany, NY",info:"I-90 corridor, 30 min charge"},
+      {name:"ChargePoint – Pittsburgh Downtown",info:"Multiple locations near hotel"}
     ]
   },
   {
@@ -827,7 +861,7 @@ const data = [
     ],
     stops:[],
     restaurants:[
-      {name:"Celebrate at home!",info:"You just did 1,980 miles — order your favorite Cincinnati food and relax"}
+      {name:"Celebrate at home!",info:"You just did 1,970 miles — order your favorite Cincinnati food and relax"}
     ],
     chargers:[]
   }
@@ -941,6 +975,30 @@ function renderTile(d){
       </a>
 
       <div class="detail-scroll">
+        <!-- ROUTE OPTIONS -->
+        ${d.routeOptions?`
+        <div class="sh">${icon('car','width="11" height="11"')} Route Options</div>
+        <div class="route-opts">
+          ${d.routeOptions.map(r=>`
+          <div class="route-opt">
+            <div class="route-opt-head">
+              <span class="route-opt-label">${r.label}</span>
+              <span class="route-opt-tag">${r.tag}</span>
+            </div>
+            <div class="route-pros-cons">
+              <div class="route-pros">
+                <div class="rpc-title">✓ Pros</div>
+                ${r.pros.map(p=>`<div class="rpc-item">${p}</div>`).join('')}
+              </div>
+              <div class="route-cons">
+                <div class="rpc-title">✗ Cons</div>
+                ${r.cons.map(c=>`<div class="rpc-item">${c}</div>`).join('')}
+              </div>
+            </div>
+            <a class="route-map-btn" href="${r.maps}" target="_blank" rel="noopener">Open this route in Maps →</a>
+          </div>`).join('')}
+        </div>`:''}
+
         <!-- TODAY'S PLAN -->
         <div class="sh">${icon('clock','width="11" height="11"')} Today's Plan</div>
         <div class="info-row">
