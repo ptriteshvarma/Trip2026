@@ -360,18 +360,44 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 
 /* RESPONSIVE */
 @media(max-width:640px){
-  .hero{padding:50px 16px 90px}
-  .hero h1{letter-spacing:-1px}
+  .hero{padding:44px 16px 80px}
+  .hero h1{letter-spacing:-1px;font-size:clamp(32px,10vw,52px)}
+  .hero-sub{font-size:12px}
+  .hero-stats{gap:8px}
+  .hstat{padding:10px 14px;min-width:80px}
+  .hstat-n{font-size:22px}
+  .hstat-l{font-size:9px}
+  .nav-strip{padding:10px 12px}
+  .nd-label{font-size:8px;max-width:52px}
+  .controls{padding:0 12px;gap:6px}
+  .btn{padding:8px 14px;font-size:11px}
   .grid{grid-template-columns:1fr;padding:0 12px}
   .tile.open{grid-column:auto}
+  .tile-band{padding:14px}
+  .tile-band-text h3{font-size:13px}
+  .tile-stats{flex-wrap:nowrap}
+  .tile-stat{padding:10px 10px;min-width:0}
+  .ts-val{font-size:13px}
+  .ts-sub{font-size:9px}
+  .ts-label{font-size:8px}
+  .map-route-btn{font-size:11px;padding:10px 12px;margin:12px 14px 4px;width:calc(100% - 28px)}
+  .detail-scroll{padding:4px 14px 18px}
   .info-row{grid-template-columns:1fr 1fr}
   .cl-grid{grid-template-columns:1fr}
-  .hero-stats{gap:8px}
-  .hstat{padding:12px 16px}
-  .hstat-n{font-size:24px}
+  .be-grid{grid-template-columns:1fr}
+  .bookearly-wrap{padding:0 12px}
+  .trail-chips{gap:4px}
+  .trail-chip{padding:3px 8px}
+  .tl-time{min-width:52px;font-size:10px}
+  .tl-text{font-size:11px}
+  .sh{font-size:8px}
+  .info-box-val{font-size:17px}
 }
 @media(max-width:400px){
   .info-row{grid-template-columns:1fr}
+  .tile-stats{flex-wrap:wrap}
+  .tile-stat{min-width:33%}
+  .hero h1{font-size:32px}
 }
 </style>
 </head>
@@ -517,70 +543,59 @@ function checkPw(){
 // ── ADVANCE BOOKINGS ──
 const bookings = [
   {
-    title: "Cadillac Mountain Sunrise Vehicle Reservation",
-    urgency: "urgent",
-    urgencyLabel: "Sells Out In Minutes",
-    desc: "Required to drive up Cadillac Mountain for sunrise (late May–Oct). Releases in batches on recreation.gov — literally gone in 2–3 minutes. Set a phone alarm for the release date.",
-    when: "Releases ~2–3 months before your date (check recreation.gov)",
-    who: "Required per vehicle, not per person",
-    cost: "~$6 reservation fee + park entry",
-    url: "https://www.recreation.gov/timed-entry/10086910",
-    day: "Day 3, 4, or 5"
+    title: "Cadillac Mountain Sunrise — Drive Up",
+    urgency: "medium",
+    urgencyLabel: "No Reservation Needed in May",
+    desc: "Great news — the Cadillac Mountain timed entry reservation is only required July–October. In May you can drive up any time without booking. Sunrise is ~5:20 AM — leave Bar Harbor by 4:45 AM to catch it.",
+    when: "No booking needed — just show up!",
+    who: "Per vehicle (park pass required)",
+    cost: "Included with park pass",
+    url: "https://www.nps.gov/acad/planyourvisit/cadillacmountain.htm",
+    day: "Day 3, 4, or 5 — pick one morning"
   },
   {
-    title: "Acadia Park Loop Road Timed Entry",
-    urgency: "urgent",
-    urgencyLabel: "Sells Out Fast",
-    desc: "Timed entry required for the Park Loop Road (Ocean Path, Thunder Hole, Sand Beach corridor) during peak season. Check if required for your dates — policy can change year to year.",
-    when: "Check recreation.gov in spring 2026 for your August dates",
+    title: "Acadia Park Loop Road — No Timed Entry in May",
+    urgency: "medium",
+    urgencyLabel: "No Reservation Needed in May",
+    desc: "Timed entry for the Park Loop Road is only enforced mid-June through mid-October. In May parking is much easier and you can arrive whenever. Still go early — mornings are quieter and light is beautiful.",
+    when: "No booking needed",
     who: "Per vehicle",
-    cost: "Included with park pass ($35/vehicle) + small reservation fee",
-    url: "https://www.recreation.gov/timed-entry/10086910",
-    day: "Day 3"
-  },
-  {
-    title: "Jordan Pond House — Dining Reservation",
-    urgency: "high",
-    urgencyLabel: "Book 2–3 Months Out",
-    desc: "The most iconic restaurant in Acadia. Famous for popovers on the lawn overlooking Jordan Pond. Tables go fast for summer — book the moment reservations open.",
-    when: "Book 2–3 months before your trip",
-    who: "All diners",
-    cost: "No reservation fee; lunch ~$20–35/person",
-    url: "https://www.jordanpondhouse.com/reservations",
-    day: "Day 3 or 4"
+    cost: "Park pass required ($35/vehicle or $80 America the Beautiful annual)",
+    url: "https://www.nps.gov/acad/planyourvisit/fees.htm",
+    day: "Days 3, 4, 5"
   },
   {
     title: "Bar Harbor Hotel / Lodging (3 nights)",
     urgency: "high",
-    urgencyLabel: "Book 6+ Months Out",
-    desc: "Late August is peak season in Bar Harbor. Pet-friendly rooms sell out far in advance. Book as soon as possible — prices also spike the closer you wait.",
-    when: "Book now or as soon as possible",
+    urgencyLabel: "Book 2–3 Months Out",
+    desc: "May is shoulder season — much easier and cheaper than August. Pet-friendly rooms are more available but still worth booking in advance. Confirm pet policy and any pet fees ($25–50/night extra) before booking.",
+    when: "Book 2–3 months before your trip",
     who: "Your booking",
-    cost: "~$130–160/night budgeted",
-    url: "https://www.booking.com/searchresults.html?ss=Bar+Harbor+Maine&checkin=2026-08-16&checkout=2026-08-19",
-    day: "Days 3, 4, 5"
+    cost: "$160–200/night realistic for May",
+    url: "https://www.booking.com/searchresults.html?ss=Bar+Harbor+Maine",
+    day: "Days 2, 3, 4"
   },
   {
     title: "Acadia National Park Pass",
     urgency: "medium",
     urgencyLabel: "Buy Before You Go",
-    desc: "Buy the America the Beautiful Annual Pass ($80) if you plan to visit multiple national parks — it covers Acadia and every other park for a year. Otherwise a 7-day Acadia vehicle pass is $35.",
-    when: "Buy online before the trip or at the gate",
+    desc: "America the Beautiful Annual Pass ($80) covers Acadia + every other national park for a full year — best value if you visit 3+ parks/year. Otherwise a 7-day Acadia vehicle pass is $35.",
+    when: "Buy online before the trip",
     who: "Per vehicle",
-    cost: "$35 (7-day) or $80 (annual America the Beautiful)",
+    cost: "$35 (7-day) or $80 (annual)",
     url: "https://www.nps.gov/acad/planyourvisit/fees.htm",
     day: "Before Day 3"
   },
   {
-    title: "Hickory Run State Park Campsite / Lodge",
-    urgency: "medium",
-    urgencyLabel: "Book 3–4 Months Out",
-    desc: "Day 1 overnight. If camping, reserve early — campsites at Hickory Run go fast on summer weekends. If using a hotel in the Jim Thorpe area, a few months ahead is usually fine.",
-    when: "Book 3–4 months before",
-    who: "Your booking",
-    cost: "$100–120/night budgeted",
-    url: "https://pennsylvaniastateparks.reserveamerica.com/",
-    day: "Day 1"
+    title: "⚠️ Black Flies — Pack Bug Spray",
+    urgency: "urgent",
+    urgencyLabel: "May = Peak Black Fly Season",
+    desc: "May is the worst month for black flies in Maine. They are relentless, especially in wooded areas and near water. DEET-based bug spray is essential. Long sleeves and a hat help too. This is the #1 thing May visitors underestimate.",
+    when: "Pack before you leave — hard to find in stores once there",
+    who: "Everyone",
+    cost: "$10–15 for DEET spray",
+    url: "https://www.google.com/search?q=black+flies+acadia+may+tips",
+    day: "All Acadia days"
   }
 ];
 
@@ -627,8 +642,8 @@ const data = [
   {
     day:1, title:"Cincinnati → Hickory Run, PA", type:"DRIVE",
     distance:530, hours:9, arrival:"5 PM",
-    lodging:110, food:55, evCost:8,
-    sunrise:"7:15 AM", sunset:"6:45 PM",
+    lodging:120, food:60, evCost:55,
+    sunrise:"6:20 AM", sunset:"8:20 PM",
     mapRoute:"https://www.google.com/maps/dir/Cincinnati,+OH/Electrify+America+Akron+OH/Hickory+Run+Boulder+Field+PA",
     timeline:[
       {time:"7:30 AM",act:"Depart Cincinnati"},
@@ -649,14 +664,15 @@ const data = [
   },
   {
     day:2, title:"Hickory Run → Bar Harbor, ME", type:"DRIVE",
-    distance:450, hours:8.5, arrival:"4 PM",
-    lodging:140, food:55, evCost:12,
-    sunrise:"7:10 AM", sunset:"6:50 PM",
+    distance:450, hours:10, arrival:"6:30 PM",
+    lodging:175, food:65, evCost:50,
+    sunrise:"5:30 AM", sunset:"7:50 PM",
     mapRoute:"https://www.google.com/maps/dir/Hickory+Run+State+Park+PA/Woodstock+VT/Bar+Harbor+ME",
     timeline:[
       {time:"8:00 AM",act:"Depart Hickory Run"},
-      {time:"12:00 PM",act:"Lunch – Route 100 Vermont"},
-      {time:"4:00 PM",act:"Arrive Bar Harbor"}
+      {time:"11:00 AM",act:"Enter Vermont – Route 100 scenic drive begins"},
+      {time:"12:30 PM",act:"Lunch in Woodstock or Stowe, VT"},
+      {time:"6:30 PM",act:"Arrive Bar Harbor (Route 100 is slow & scenic — budget 10 hrs total)"}
     ],
     stops:[
       {name:"Route 100 Vermont",desc:"Beautiful scenic mountain drive through the Green Mountains. Covered bridges, farmland, and fall foliage corridors.",difficulty:"None",distance:"100 mi",time:"2-3 hrs",elevation:"2000 ft",maps:"Route 100 Vermont scenic byway",guide:"Green Mountains Vermont Route 100"},
@@ -673,14 +689,15 @@ const data = [
   {
     day:3, title:"Acadia – Full Coastal Route", type:"EXPLORE",
     distance:50, hours:0.5, arrival:"N/A",
-    lodging:140, food:55, evCost:6,
-    sunrise:"7:08 AM", sunset:"6:52 PM",
+    lodging:175, food:75, evCost:6,
+    sunrise:"5:25 AM", sunset:"7:55 PM",
     mapRoute:"https://www.google.com/maps/dir/Bar+Harbor+ME/Ocean+Path+Acadia+National+Park/Thunder+Hole+Acadia+ME/Jordan+Pond+House+Acadia/Otter+Cliffs+Acadia+ME/Bar+Harbor+ME",
     timeline:[
-      {time:"8:00 AM",act:"Park Loop Road – early entry"},
-      {time:"8:30 AM",act:"Ocean Path Trail"},
-      {time:"1:00 PM",act:"Lunch at Sand Beach area"},
-      {time:"5:30 PM",act:"Otter Cliffs for sunset"}
+      {time:"7:30 AM",act:"Depart Bar Harbor — no timed entry needed in May, parking easy"},
+      {time:"7:50 AM",act:"Arrive Sand Beach — Ocean Path Trail (wear layers, ~50°F in May)"},
+      {time:"11:00 AM",act:"Thunder Hole (check tide chart — best at 3/4 high tide)"},
+      {time:"1:00 PM",act:"Lunch – Café This Way or Mache Bistro in Bar Harbor (Jordan Pond House closed in May)"},
+      {time:"6:30 PM",act:"Otter Cliffs — long May daylight, sunset ~7:55 PM"}
     ],
     stops:[
       {name:"Ocean Path Trail",desc:"ICONIC trail along the most dramatic granite coastline in the Northeast. Sea stacks, lighthouses, and crashing waves. Arrive early to beat crowds.",difficulty:"Easy-Moderate",distance:"3.3 mi",time:"2.5 hrs",elevation:"300 ft",maps:"Ocean Path Acadia Maine",guide:"Ocean Path trail Acadia"},
@@ -688,7 +705,8 @@ const data = [
       {name:"Otter Cliffs",desc:"Dramatic 110-foot granite sea cliffs. Harbor seals rest on rocks below. The undisputed BEST SUNSET SPOT in Acadia.",difficulty:"Easy",distance:"Short",time:"30 min",elevation:"Minimal",maps:"Otter Cliffs Acadia",guide:"Otter Cliffs sunset Acadia"}
     ],
     restaurants:[
-      {name:"Jordan Pond House",info:"Iconic park restaurant – reservations strongly recommended"}
+      {name:"Café This Way",info:"Bar Harbor favorite — great breakfast & lunch, relaxed vibe"},
+      {name:"Mache Bistro",info:"Cozy local bistro in Bar Harbor, good for a proper sit-down lunch"}
     ],
     chargers:[
       {name:"Bar Harbor",info:"Charge overnight at hotel"}
@@ -697,8 +715,8 @@ const data = [
   {
     day:4, title:"Acadia – Forest & Quiet Side", type:"EXPLORE",
     distance:50, hours:0.5, arrival:"N/A",
-    lodging:140, food:55, evCost:5,
-    sunrise:"7:06 AM", sunset:"6:54 PM",
+    lodging:175, food:75, evCost:5,
+    sunrise:"5:23 AM", sunset:"7:57 PM",
     mapRoute:"https://www.google.com/maps/dir/Bar+Harbor+ME/Jordan+Pond+Acadia+National+Park/Eagle+Lake+Carriage+Road+Acadia/Wonderland+Trail+Acadia+ME/Bar+Harbor+ME",
     timeline:[
       {time:"6:45 AM",act:"Wake early for sunrise"},
@@ -721,8 +739,8 @@ const data = [
   {
     day:5, title:"Acadia – Deep Exploration Day", type:"EXPLORE",
     distance:50, hours:0.5, arrival:"N/A",
-    lodging:140, food:55, evCost:5,
-    sunrise:"7:04 AM", sunset:"6:56 PM",
+    lodging:175, food:75, evCost:5,
+    sunrise:"5:21 AM", sunset:"7:59 PM",
     mapRoute:"https://www.google.com/maps/dir/Bar+Harbor+ME/Penobscot+Mountain+Acadia+ME/Ship+Harbor+Trail+Acadia+ME/Bass+Harbor+Head+Lighthouse+ME/Bar+Harbor+ME",
     timeline:[
       {time:"10:00 AM",act:"Penobscot Mountain summit"},
@@ -746,8 +764,8 @@ const data = [
   {
     day:6, title:"Bar Harbor → Boston Area", type:"TRANSITION",
     distance:220, hours:5, arrival:"1 PM",
-    lodging:130, food:55, evCost:10,
-    sunrise:"7:02 AM", sunset:"6:58 PM",
+    lodging:180, food:80, evCost:25,
+    sunrise:"5:19 AM", sunset:"8:01 PM",
     mapRoute:"https://www.google.com/maps/dir/Bar+Harbor+ME/Portland+Head+Light+ME/Eastern+Promenade+Portland+ME/Boston+Seaport+Boston+MA",
     timeline:[
       {time:"9:00 AM",act:"Depart Bar Harbor"},
@@ -772,19 +790,18 @@ const data = [
   {
     day:7, title:"Boston → Pittsburgh, PA", type:"DRIVE",
     distance:600, hours:9, arrival:"6 PM",
-    lodging:130, food:55, evCost:40,
-    sunrise:"7:00 AM", sunset:"7:00 PM",
-    mapRoute:"https://www.google.com/maps/dir/Boston+MA/Cuyahoga+Valley+National+Park+OH/Pittsburgh+PA",
+    lodging:150, food:65, evCost:65,
+    sunrise:"5:45 AM", sunset:"8:10 PM",
+    mapRoute:"https://www.google.com/maps/dir/Boston+MA/Pittsburgh+PA",
     timeline:[
       {time:"7:30 AM",act:"Depart Boston"},
-      {time:"12:00 PM",act:"Lunch – I-90 rest area"},
-      {time:"3:30 PM",act:"Cuyahoga Valley NP stretch stop"},
+      {time:"10:00 AM",act:"Charge stop – I-90 corridor (~30 min)"},
+      {time:"12:30 PM",act:"Lunch – I-76 Pennsylvania rest stop"},
       {time:"6:00 PM",act:"Arrive Pittsburgh, PA"},
-      {time:"7:30 PM",act:"Mount Washington overlook & dinner"}
+      {time:"7:00 PM",act:"Mount Washington overlook & dinner"}
     ],
     stops:[
-      {name:"Cuyahoga Valley NP",desc:"Scenic Ohio valley with waterfalls. Easy leg-stretcher right off I-80 — Brandywine Falls is a quick 1.5 mi walk.",difficulty:"Easy",distance:"1-2 mi",time:"45 min",elevation:"Minimal",maps:"Cuyahoga Valley National Park Ohio",guide:"Brandywine Falls Cuyahoga Valley"},
-      {name:"Pittsburgh – Mount Washington",desc:"Ride the Duquesne Incline up to the most stunning city overlook in America. Three rivers meet right below you.",difficulty:"Easy",distance:"Walk",time:"1 hr",elevation:"Flat (incline does the work)",maps:"Duquesne Incline Pittsburgh PA",guide:"Mount Washington Pittsburgh overlook"}
+      {name:"Pittsburgh – Mount Washington",desc:"Ride the Duquesne Incline up to the most stunning city overlook in America. Three rivers meet right below you. Perfect end to the long drive day.",difficulty:"Easy",distance:"Walk",time:"1 hr",elevation:"Flat (incline does the work)",maps:"Duquesne Incline Pittsburgh PA",guide:"Mount Washington Pittsburgh overlook"}
     ],
     restaurants:[
       {name:"Primanti Brothers – Pittsburgh",info:"Pittsburgh institution — massive sandwiches with fries inside"},
@@ -798,8 +815,8 @@ const data = [
   {
     day:8, title:"Pittsburgh → Cincinnati — Home!", type:"DRIVE",
     distance:300, hours:4.5, arrival:"11 AM",
-    lodging:0, food:40, evCost:8,
-    sunrise:"6:58 AM", sunset:"7:02 PM",
+    lodging:0, food:50, evCost:33,
+    sunrise:"6:10 AM", sunset:"8:25 PM",
     mapRoute:"https://www.google.com/maps/dir/Pittsburgh+PA/Cincinnati+OH",
     timeline:[
       {time:"8:00 AM",act:"Depart Pittsburgh"},
