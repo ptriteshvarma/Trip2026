@@ -466,7 +466,7 @@ function checkPw(){
   <p class="hero-sub">Cincinnati &rarr; Bar Harbor, Maine &rarr; Cincinnati</p>
   <div class="hero-stats">
     <div class="hstat"><span class="hstat-n">8</span><div class="hstat-l">Days</div></div>
-    <div class="hstat"><span class="hstat-n">2,040</span><div class="hstat-l">Miles</div></div>
+    <div class="hstat"><span class="hstat-n">1,980</span><div class="hstat-l">Miles</div></div>
     <div class="hstat"><span class="hstat-n" id="herobudget">—</span><div class="hstat-l">Budget</div></div>
     <div class="hstat"><span class="hstat-n">3</span><div class="hstat-l">Acadia Days</div></div>
     <div class="hstat"><span class="hstat-n">9h</span><div class="hstat-l">Max Drive</div></div>
@@ -640,42 +640,44 @@ function renderBookings(){
 // ── DATA ──
 const data = [
   {
-    day:1, title:"Cincinnati → Hickory Run, PA", type:"DRIVE",
-    distance:530, hours:9, arrival:"5 PM",
-    lodging:120, food:60, evCost:55,
+    day:1, title:"Cincinnati → Watkins Glen, NY", type:"DRIVE",
+    distance:420, hours:6.5, arrival:"2:00 PM",
+    lodging:115, food:60, evCost:45,
     sunrise:"6:20 AM", sunset:"8:20 PM",
-    mapRoute:"https://www.google.com/maps/dir/Cincinnati,+OH/Electrify+America+Akron+OH/Hickory+Run+Boulder+Field+PA",
+    mapRoute:"https://www.google.com/maps/dir/Cincinnati,+OH/Cleveland,+OH/Watkins+Glen+State+Park,+Watkins+Glen,+NY",
     timeline:[
       {time:"7:30 AM",act:"Depart Cincinnati"},
-      {time:"10:30 AM",act:"Charge stop – Akron, OH (30 min)"},
-      {time:"12:00 PM",act:"Lunch near Jim Thorpe, PA"},
-      {time:"5:00 PM",act:"Arrive Hickory Run"},
-      {time:"5:30 PM",act:"Explore Boulder Field"}
+      {time:"10:00 AM",act:"Charge stop – Cleveland, OH (30 min)"},
+      {time:"12:30 PM",act:"Lunch near Seneca Lake"},
+      {time:"2:00 PM",act:"Arrive Watkins Glen"},
+      {time:"2:30 PM",act:"Gorge Trail hike (19 waterfalls!)"},
+      {time:"6:30 PM",act:"Dinner at Seneca Lake waterfront"}
     ],
     stops:[
-      {name:"Hickory Run Boulder Field",desc:"Unique 7.5-acre geological wonder with massive quartzite boulders left by glaciers at the end of the Ice Age.",difficulty:"Easy",distance:"1.2 mi",time:"45 min",elevation:"Minimal",maps:"Hickory Run Boulder Field Pennsylvania",guide:"Hickory Run Boulder Field hiking"}
+      {name:"Watkins Glen Gorge Trail",desc:"1.5-mile trail through a dramatic gorge with 19 waterfalls, stone tunnels, and bridges carved by glacial meltwater. One of the most spectacular short hikes in the Northeast.",difficulty:"Easy–Moderate",distance:"1.5 mi",time:"1.5–2 hrs",elevation:"400 ft",maps:"Watkins+Glen+State+Park+NY",guide:"Watkins Glen Gorge Trail hiking"},
+      {name:"Seneca Lake Waterfront",desc:"Stroll the lakefront after the hike — vineyards, craft breweries, and great sunset views over the water.",difficulty:"Easy",distance:"0.5 mi",time:"45 min",elevation:"Flat",maps:"Seneca+Lake+Watkins+Glen+NY",guide:"Seneca Lake waterfront Watkins Glen"}
     ],
     restaurants:[
-      {name:"Jim Thorpe Historic Area",info:"Charming Victorian town with pet-friendly dining options along the riverfront"}
+      {name:"Seneca Harbor Station",info:"Waterfront dining right on Seneca Lake — seafood, burgers, great views. Pet-friendly patio."},
+      {name:"Atwater Estate Vineyards",info:"Award-winning Finger Lakes winery with lake views, open in May — ideal for an evening glass after the hike."}
     ],
     chargers:[
-      {name:"Electrify America – Akron, OH",info:"I-76 corridor, 30–40 min charge"}
+      {name:"Tesla / EA – Cleveland, OH",info:"I-90 corridor, 30 min charge tops off for the rest of the drive"}
     ]
   },
   {
-    day:2, title:"Hickory Run → Bar Harbor, ME", type:"DRIVE",
-    distance:450, hours:10, arrival:"6:30 PM",
-    lodging:175, food:65, evCost:50,
+    day:2, title:"Watkins Glen → Bar Harbor, ME", type:"DRIVE",
+    distance:500, hours:8.5, arrival:"6:30 PM",
+    lodging:175, food:65, evCost:55,
     sunrise:"5:30 AM", sunset:"7:50 PM",
-    mapRoute:"https://www.google.com/maps/dir/Hickory+Run+State+Park+PA/Woodstock+VT/Bar+Harbor+ME",
+    mapRoute:"https://www.google.com/maps/dir/Watkins+Glen,+NY/Albany,+NY/Bar+Harbor,+ME",
     timeline:[
-      {time:"8:00 AM",act:"Depart Hickory Run"},
-      {time:"11:00 AM",act:"Enter Vermont – Route 100 scenic drive begins"},
-      {time:"12:30 PM",act:"Lunch in Woodstock or Stowe, VT"},
-      {time:"6:30 PM",act:"Arrive Bar Harbor (Route 100 is slow & scenic — budget 10 hrs total)"}
+      {time:"8:00 AM",act:"Depart Watkins Glen"},
+      {time:"9:30 AM",act:"Charge stop – Albany, NY (30 min)"},
+      {time:"12:30 PM",act:"Lunch – Portland, ME area"},
+      {time:"6:30 PM",act:"Arrive Bar Harbor — stroll the harbor waterfront"}
     ],
     stops:[
-      {name:"Route 100 Vermont",desc:"Beautiful scenic mountain drive through the Green Mountains. Covered bridges, farmland, and fall foliage corridors.",difficulty:"None",distance:"100 mi",time:"2-3 hrs",elevation:"2000 ft",maps:"Route 100 Vermont scenic byway",guide:"Green Mountains Vermont Route 100"},
       {name:"Bar Harbor Waterfront",desc:"Gateway to Acadia. Stroll the harbor walk, grab lobster rolls, and watch the boats come in.",difficulty:"Easy",distance:"1 mi",time:"1-2 hrs",elevation:"Flat",maps:"Bar Harbor Maine waterfront",guide:"Bar Harbor Maine attractions"}
     ],
     restaurants:[
@@ -825,7 +827,7 @@ const data = [
     ],
     stops:[],
     restaurants:[
-      {name:"Celebrate at home!",info:"You just did 2,040 miles — order your favorite Cincinnati food and relax"}
+      {name:"Celebrate at home!",info:"You just did 1,980 miles — order your favorite Cincinnati food and relax"}
     ],
     chargers:[]
   }
