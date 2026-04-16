@@ -489,10 +489,10 @@ function checkPw(){
   <p class="hero-sub">Cincinnati &rarr; Bar Harbor, Maine &rarr; Cincinnati</p>
   <div class="hero-stats">
     <div class="hstat"><span class="hstat-n">8</span><div class="hstat-l">Days</div></div>
-    <div class="hstat"><span class="hstat-n">2,020</span><div class="hstat-l">Miles</div></div>
+    <div class="hstat"><span class="hstat-n">2,150</span><div class="hstat-l">Miles</div></div>
     <div class="hstat"><span class="hstat-n" id="herobudget">—</span><div class="hstat-l">Budget</div></div>
     <div class="hstat"><span class="hstat-n">3</span><div class="hstat-l">Acadia Days</div></div>
-    <div class="hstat"><span class="hstat-n">9h</span><div class="hstat-l">Max Drive</div></div>
+    <div class="hstat"><span class="hstat-n">8.5h</span><div class="hstat-l">Max Drive</div></div>
   </div>
   <!-- Mountain silhouette SVG -->
   <svg class="mountains" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
@@ -526,7 +526,7 @@ function checkPw(){
   </button>
   <button class="btn btn-o" id="relaxedBtn" onclick="toggleRelaxed()">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
-    ≤400 mi/day Plan
+    Alternate: NH White Mtns + 3 Acadia Days
   </button>
 </div>
 
@@ -537,10 +537,10 @@ function checkPw(){
     <div style="padding:24px 24px 16px;border-bottom:1px solid var(--border)">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
-        <span style="font-size:15px;font-weight:700;color:var(--text)">Relaxed Drive Plan — Max 400 mi/day</span>
+        <span style="font-size:15px;font-weight:700;color:var(--text)">Alternate Plan — Direct to Acadia + NH White Mountains</span>
         <span style="font-size:10px;font-weight:700;background:rgba(122,170,130,.15);color:var(--sage);border:1px solid rgba(122,170,130,.3);border-radius:20px;padding:3px 10px;letter-spacing:.8px">8 DAYS · MAY 10–17</span>
       </div>
-      <p style="font-size:12px;color:var(--muted)">Same destinations, gentler pace. Same 8 days. Trade-off: swap Vermont/Pittsburgh for Ohiopyle, PA. No drive exceeds 400 mi.. Best for first-timers or if you prefer arriving relaxed.</p>
+      <p style="font-size:12px;color:var(--muted)">Trade-off: two long drive days (480 mi Day 2, 490 mi Day 7) in exchange for <strong>3 full Acadia days</strong> and an overnight inside the White Mountain National Forest. Pick this if you want maximum Acadia time and don't mind one hard drive on each side.</p>
     </div>
     <div style="padding:16px 24px" id="relaxedRows"></div>
     <div style="padding:16px 24px;border-top:1px solid var(--border);display:flex;gap:24px">
@@ -598,16 +598,16 @@ function checkPw(){
 
 <script>
 
-// ── RELAXED PLAN (≤400 mi/day) ──
+// ── ALTERNATE PLAN (Direct via NH White Mountains — 3 full Acadia days) ──
 const relaxedData = [
-  {day:1,date:"May 10",route:"Cincinnati → Letchworth SP, NY",miles:400,type:"DRIVE",stop:"Grand Canyon of the East — 600-ft gorge, 3 waterfalls, open year-round, dogs welcome",note:""},
-  {day:2,date:"May 11",route:"Letchworth → Portland, ME",miles:380,type:"DRIVE",stop:"Charge stop Albany, NY — arrive Portland evening, Old Port waterfront dinner",note:""},
-  {day:3,date:"May 12",route:"Portland → Bar Harbor + Acadia",miles:55,type:"EXPLORE",stop:"Arrive 10 AM — Ocean Path, Thunder Hole, Otter Cliffs sunset (full day)",note:""},
-  {day:4,date:"May 13",route:"Acadia — Summit & Forest",miles:0,type:"EXPLORE",stop:"Cadillac Mountain (no reservation needed!), Jordan Pond Loop, Carriage Roads",note:""},
-  {day:5,date:"May 14",route:"Acadia — Southwest Loop",miles:0,type:"EXPLORE",stop:"Penobscot Mountain, Bass Harbor Lighthouse, Ship Harbor tide pools",note:""},
-  {day:6,date:"May 15",route:"Bar Harbor → Albany, NY",miles:350,type:"DRIVE",stop:"Portland Head Light on the way — last look at coastal Maine",note:""},
-  {day:7,date:"May 16",route:"Albany → Ohiopyle, PA",miles:330,type:"DRIVE",stop:"Ohiopyle State Park gorge + Fallingwater (Frank Lloyd Wright) — stunning Appalachian scenery",note:""},
-  {day:8,date:"May 17",route:"Ohiopyle → Cincinnati",miles:310,type:"DRIVE",stop:"Home by early afternoon — easy scenic final drive through Ohio",note:""},
+  {day:1,date:"May 10",route:"Cincinnati → Letchworth SP, NY",miles:380,type:"DRIVE",stop:"Grand Canyon of the East — 600-ft gorge, 3 waterfalls, open year-round, dogs welcome",note:""},
+  {day:2,date:"May 11",route:"Letchworth → Bar Harbor, ME",miles:480,type:"DRIVE",stop:"Long push: through Albany + Bangor — arrive Bar Harbor ~6 PM",note:""},
+  {day:3,date:"May 12",route:"Acadia — Coastal Route",miles:50,type:"EXPLORE",stop:"Full day: Ocean Path, Thunder Hole, Otter Cliffs sunset",note:""},
+  {day:4,date:"May 13",route:"Acadia — Summit & Forest",miles:50,type:"EXPLORE",stop:"Cadillac Mountain sunrise, Jordan Pond Loop, Carriage Roads, Wonderland Trail",note:""},
+  {day:5,date:"May 14",route:"Acadia — Southwest Loop",miles:50,type:"EXPLORE",stop:"Penobscot Mountain, Bass Harbor Lighthouse, Ship Harbor tide pools",note:""},
+  {day:6,date:"May 15",route:"Bar Harbor → White Mountains, NH",miles:200,type:"TRANSITION",stop:"Kancamagus Highway + Flume Gorge + Echo Lake — easiest drive day of the trip",note:""},
+  {day:7,date:"May 16",route:"White Mountains → Ohiopyle, PA",miles:490,type:"DRIVE",stop:"Long day through Albany + Scranton — arrive Ohiopyle evening for dinner",note:""},
+  {day:8,date:"May 17",route:"Ohiopyle → Cincinnati",miles:320,type:"DRIVE",stop:"Ferncliff Peninsula morning walk, then easy drive home",note:""},
 ];
 
 function renderRelaxed(){
@@ -765,56 +765,61 @@ const data = [
     ]
   },
   {
-    day:2, title:"May 11 — Letchworth → Bar Harbor, ME", type:"DRIVE",
-    distance:480, hours:9.5, arrival:"6:00 PM",
-    lodging:175, food:65, evCost:53,
+    day:2, title:"May 11 — Letchworth → Portland, ME", type:"DRIVE",
+    distance:450, hours:8.5, arrival:"5:30 PM",
+    lodging:145, food:65, evCost:50,
     sunrise:"5:43 AM", sunset:"8:11 PM",
-    mapRoute:"https://www.google.com/maps/dir/Letchworth+State+Park,+NY/Albany,+NY/Bangor,+ME/Bar+Harbor,+ME",
+    mapRoute:"https://www.google.com/maps/dir/Letchworth+State+Park,+NY/Albany,+NY/Lebanon,+NH/Portland,+ME",
     timeline:[
       {time:"8:00 AM",act:"Depart Letchworth"},
-      {time:"11:00 AM",act:"Charge stop – Albany, NY (30 min)"},
-      {time:"2:30 PM",act:"Lunch & charge stop – Bangor, ME"},
-      {time:"6:00 PM",act:"Arrive Bar Harbor — stroll the harbor waterfront"}
+      {time:"11:30 AM",act:"Charge stop – Albany, NY (30 min)"},
+      {time:"2:30 PM",act:"Lunch + charge – Lebanon, NH area (45 min)"},
+      {time:"5:30 PM",act:"Arrive Portland, ME — check in"},
+      {time:"6:30 PM",act:"Old Port stroll — waterfront, cobblestone streets, dinner"}
     ],
     stops:[
-      {name:"Bar Harbor Waterfront",desc:"Gateway to Acadia. Stroll the harbor walk, grab lobster rolls, and watch the boats come in.",difficulty:"Easy",distance:"1 mi",time:"1-2 hrs",elevation:"Flat",maps:"Bar Harbor Maine waterfront",guide:"Bar Harbor Maine attractions"}
+      {name:"Portland Old Port",desc:"Historic cobblestone waterfront district with working wharves, boutiques, and the best seafood restaurants in Maine. Easy evening walk after the long drive. Dog-friendly streets, lots of outdoor patios.",difficulty:"Easy",distance:"1 mi",time:"1–2 hrs",elevation:"Flat",maps:"Portland+Old+Port+Maine",guide:"Portland Maine Old Port guide"}
     ],
     restaurants:[
-      {name:"Bluebird Farm Table",info:"Fresh local food, great outdoor seating"},
-      {name:"Geddy's Restaurant",info:"Harbor views, pet-friendly patio"}
+      {name:"Eventide Oyster Co – Portland",info:"Legendary Maine oyster bar — reserve ahead, small plates, casual"},
+      {name:"Duckfat – Portland",info:"Belgian fries cooked in duck fat plus panini — quick, casual, famous"},
+      {name:"Fore Street – Portland",info:"Portland's iconic wood-fired farm-to-table — reserve for special dinner"}
     ],
     chargers:[
       {name:"Electrify America – Albany, NY",info:"I-90 corridor, 30 min charge"},
-      {name:"ChargePoint – Bangor, ME",info:"Multiple locations — good lunch stop, tops off for final 50 mi to Bar Harbor"},
-      {name:"ChargePoint – Bar Harbor",info:"Multiple locations in town center"}
+      {name:"ChargePoint – Lebanon, NH",info:"Mid-route charge before Portland"},
+      {name:"ChargePoint – Portland Old Port",info:"Multiple downtown locations for overnight charging"}
     ]
   },
   {
-    day:3, title:"May 12 — Acadia: Coastal Route", type:"EXPLORE",
-    distance:50, hours:0.5, arrival:"N/A",
-    lodging:175, food:75, evCost:6,
+    day:3, title:"May 12 — Portland → Bar Harbor + Acadia Coast", type:"TRANSITION",
+    distance:180, hours:3.5, arrival:"11:00 AM",
+    lodging:175, food:75, evCost:20,
     sunrise:"5:21 AM", sunset:"7:57 PM",
-    mapRoute:"https://www.google.com/maps/dir/Bar+Harbor+ME/Sand+Beach+Acadia+ME/Thunder+Hole+Acadia+ME/Otter+Cliffs+Acadia+ME/Bar+Harbor+ME",
+    mapRoute:"https://www.google.com/maps/dir/Portland,+ME/Portland+Head+Light+ME/Bar+Harbor+ME/Sand+Beach+Acadia+ME/Thunder+Hole+Acadia+ME/Otter+Cliffs+Acadia+ME",
     timeline:[
-      {time:"7:30 AM",act:"Depart Bar Harbor — no timed entry needed in May, parking easy"},
-      {time:"7:50 AM",act:"Arrive Sand Beach — Ocean Path Trail (wear layers, ~50°F in May — bug spray essential for black flies)"},
-      {time:"11:00 AM",act:"Thunder Hole (check tide chart — best at 3/4 high tide)"},
-      {time:"1:00 PM",act:"Lunch – Café This Way or Mache Bistro in Bar Harbor"},
-      {time:"2:30 PM",act:"Bar Harbor Village walk — shops, waterfront, Village Green"},
-      {time:"4:30 PM",act:"Drive to Otter Cliffs — arrive early for best cliff views"},
-      {time:"7:30 PM",act:"Sunset at Otter Cliffs (sunset 7:55 PM — stay for the full show)"}
+      {time:"7:00 AM",act:"Breakfast in Portland, then Portland Head Light (dogs welcome on leash in Fort Williams Park)"},
+      {time:"7:45 AM",act:"Depart for Bar Harbor via US-1/I-95"},
+      {time:"11:00 AM",act:"Arrive Bar Harbor — hotel early check-in attempt, lunch in town"},
+      {time:"12:30 PM",act:"Enter Acadia — no timed entry needed in May, parking easy"},
+      {time:"1:00 PM",act:"Sand Beach + Ocean Path Trail (bring bug spray for black flies, dogs on 6-ft leash required in park)"},
+      {time:"3:30 PM",act:"Thunder Hole — best at 3/4 incoming tide (check NOAA chart)"},
+      {time:"5:00 PM",act:"Otter Cliffs — look for harbor seals on the rocks below"},
+      {time:"7:30 PM",act:"Sunset at Otter Cliffs (sunset 7:57 PM — bring a jacket, 50°F)"}
     ],
     stops:[
-      {name:"Ocean Path Trail",desc:"ICONIC trail along the most dramatic granite coastline in the Northeast. Sea stacks, lighthouses, and crashing waves. Trail is essentially flat — runs at sea level along the coast. Bring bug spray — black flies are active in May, especially in the morning.",difficulty:"Easy",distance:"3.3 mi",time:"2.5 hrs",elevation:"~50 ft (coastal, nearly flat)",maps:"Ocean Path Acadia Maine",guide:"Ocean Path trail Acadia"},
-      {name:"Thunder Hole",desc:"A wave-carved sea cave that produces a booming thunder sound at mid-to-high tide. Check tide charts in advance.",difficulty:"Easy",distance:"0.5 mi",time:"45 min",elevation:"Minimal",maps:"Thunder Hole Acadia",guide:"Thunder Hole tide times"},
-      {name:"Otter Cliffs",desc:"Dramatic 110-foot granite sea cliffs. Harbor seals rest on rocks below. The undisputed BEST SUNSET SPOT in Acadia.",difficulty:"Easy",distance:"Short",time:"30 min",elevation:"Minimal",maps:"Otter Cliffs Acadia",guide:"Otter Cliffs sunset Acadia"}
+      {name:"Portland Head Light",desc:"Maine's oldest lighthouse (1791) inside 90-acre Fort Williams Park. Stunning views of Casco Bay. Dogs welcome throughout the park on leash — large grassy areas to roam. Perfect romantic morning photo spot.",difficulty:"Easy",distance:"1 mi",time:"30–45 min",elevation:"Minimal",maps:"Portland Head Light Maine",guide:"Portland Head Light Fort Williams"},
+      {name:"Ocean Path Trail",desc:"ICONIC flat trail along the most dramatic granite coastline in the Northeast. Sea stacks, lighthouses, and crashing waves at sea level. Dogs allowed on 6-ft leash (Acadia standard). Bring bug spray — black flies are relentless in May.",difficulty:"Easy",distance:"3.3 mi (out-and-back)",time:"2–2.5 hrs",elevation:"~50 ft",maps:"Ocean Path Acadia Maine",guide:"Ocean Path trail Acadia"},
+      {name:"Thunder Hole",desc:"A wave-carved inlet that booms like thunder when waves hit at the right angle. Best 1–2 hours before high tide. Quick 5-min walk from parking. Dog-friendly.",difficulty:"Easy",distance:"0.5 mi",time:"45 min",elevation:"Minimal",maps:"Thunder Hole Acadia",guide:"Thunder Hole tide times"},
+      {name:"Otter Cliffs",desc:"110-foot granite sea cliffs — one of the tallest coastal headlands on the Atlantic seaboard. Harbor seals rest on rocks below. Widely considered THE best sunset spot in Acadia. Dog-friendly overlook. Romantic.",difficulty:"Easy",distance:"Short walk from pullout",time:"30 min+",elevation:"Minimal",maps:"Otter Cliffs Acadia",guide:"Otter Cliffs sunset Acadia"}
     ],
     restaurants:[
-      {name:"Café This Way",info:"Bar Harbor favorite — great breakfast & lunch, relaxed vibe"},
-      {name:"Mache Bistro",info:"Cozy local bistro in Bar Harbor, good for a proper sit-down lunch"}
+      {name:"Side Street Café – Bar Harbor",info:"Famous for lobster mac & cheese and house-baked popovers. Dog-friendly outdoor patio. Perfect casual lunch."},
+      {name:"Jeannie's Great Maine Breakfast – Bar Harbor",info:"Top-rated Bar Harbor breakfast — blueberry pancakes, Maine staples. Quick and reliable."},
+      {name:"Thurston's Lobster Pound – Bernard (optional sunset)",info:"30 min from Bar Harbor — real working lobster pound on a wharf. Dog-friendly outdoor deck over water."}
     ],
     chargers:[
-      {name:"Bar Harbor",info:"Charge overnight at hotel"}
+      {name:"ChargePoint – Bar Harbor",info:"Multiple locations in town center, charge while exploring"}
     ]
   },
   {
@@ -874,66 +879,46 @@ const data = [
     ]
   },
   {
-    day:6, title:"May 15 — Bar Harbor → White Mountains, NH", type:"TRANSITION",
-    distance:200, hours:5, arrival:"3:30 PM",
-    lodging:130, food:70, evCost:22,
+    day:6, title:"May 15 — Bar Harbor → Albany, NY", type:"TRANSITION",
+    distance:350, hours:7.5, arrival:"5:30 PM",
+    lodging:130, food:70, evCost:38,
     sunrise:"5:19 AM", sunset:"8:01 PM",
-    mapRoute:"https://www.google.com/maps/dir/Bar+Harbor,+ME/Portland+Head+Light+ME/North+Conway,+NH/Franconia+Notch+State+Park,+NH/Lincoln,+NH",
-    routeOptions:[
-      {
-        label:"Route B — White Mountains (Selected)",
-        tag:"SCENIC · SHORTEST DAY OF THE RETURN",
-        pros:["Only ~200 miles — your easiest drive day on the whole trip","Spend the afternoon deep in the White Mountains","Flume Gorge + Echo Lake right at your doorstep","Avoid Boston traffic entirely","Dogs welcome everywhere here"],
-        cons:["Fewer EV chargers — top up in North Conway at lunch","Mountain roads (not highways) after North Conway"],
-        maps:"https://www.google.com/maps/dir/Bar+Harbor,+ME/North+Conway,+NH/Franconia+Notch+State+Park,+NH/Lincoln,+NH"
-      },
-      {
-        label:"Route A — Through Boston",
-        tag:"OPTIONAL ALTERNATE",
-        pros:["Pass through Boston — lunch on the harbor, quick walk around Seaport","More EV chargers along I-95 corridor"],
-        cons:["Longer (290 mi, +2 hr) with Boston traffic","Expensive city parking if stopping","Miss the White Mountains entirely"],
-        maps:"https://www.google.com/maps/dir/Bar+Harbor,+ME/Portland+Head+Light,+ME/Boston+Seaport,+MA/Lincoln,+NH"
-      }
-    ],
+    mapRoute:"https://www.google.com/maps/dir/Bar+Harbor,+ME/Portsmouth+NH/Manchester+NH/Thacher+State+Park+NY/Albany,+NY",
     timeline:[
-      {time:"8:30 AM",act:"Depart Bar Harbor"},
-      {time:"10:15 AM",act:"Portland Head Light — Maine's oldest lighthouse (30 min stop)"},
-      {time:"12:00 PM",act:"Lunch + charge stop – North Conway, NH (Tesla Supercharger here)"},
-      {time:"1:30 PM",act:"Kancamagus Highway — scenic 34-mile mountain drive through White Mountains"},
-      {time:"2:30 PM",act:"Franconia Notch — Flume Gorge walk (1.5 hrs, ~$20/adult entry)"},
-      {time:"3:30 PM",act:"Arrive Lincoln, NH — check in"},
-      {time:"4:30 PM",act:"Echo Lake at Franconia Notch — swim, paddle, relax with the dog"},
-      {time:"6:30 PM",act:"Dinner in Lincoln or North Woodstock"}
+      {time:"8:00 AM",act:"Depart Bar Harbor"},
+      {time:"11:00 AM",act:"Charge stop – Portsmouth, NH (30 min)"},
+      {time:"12:30 PM",act:"Lunch – Portsmouth waterfront or Manchester, NH (45 min)"},
+      {time:"4:00 PM",act:"Thacher State Park, NY — Overlook Trail along the Helderberg Escarpment (1 hr)"},
+      {time:"5:30 PM",act:"Arrive Albany, NY area — check in"},
+      {time:"7:00 PM",act:"Dinner in downtown Albany or Saratoga Springs (40 min north if you want a nicer evening)"}
     ],
     stops:[
-      {name:"Portland Head Light",desc:"Maine's oldest lighthouse (1791) inside Fort Williams Park. Stunning views of Casco Bay — a perfect last look at coastal Maine.",difficulty:"Easy",distance:"1 mi",time:"30–45 min",elevation:"Minimal",maps:"Portland Head Light Maine",guide:"Portland Head Light Fort Williams"},
-      {name:"Kancamagus Highway",desc:"One of New England's most scenic drives — 34 miles through the White Mountain National Forest. No traffic lights, no commercial development. Fall foliage capital, but stunning in May too with waterfalls and fresh greenery. Pull over at Sabbaday Falls (~20 min hike, free).",difficulty:"Drive",distance:"34 mi scenic",time:"1–1.5 hrs",elevation:"N/A",maps:"Kancamagus+Highway+NH+scenic+drive",guide:"Kancamagus Highway driving guide"},
-      {name:"Franconia Notch – Flume Gorge",desc:"An 800-foot natural granite gorge with waterfalls, covered bridges, and boardwalks carved through the mountain. One of NH's crown jewels. A completely different experience from Letchworth — more intimate and forested.",difficulty:"Easy–Moderate",distance:"2 mi loop",time:"1.5 hrs",elevation:"200 ft",maps:"Flume+Gorge+Franconia+Notch+NH",guide:"Flume Gorge Franconia Notch hiking"},
-      {name:"Echo Lake – Franconia Notch",desc:"A stunning glacially-carved mountain lake right inside Franconia Notch State Park. Cannon Mountain towers above. Perfect for a late-afternoon swim or just sitting by the water. Dogs allowed on leash.",difficulty:"Easy",distance:"Short walk",time:"1–2 hrs",elevation:"Flat",maps:"Echo+Lake+Franconia+Notch+NH",guide:"Echo Lake Franconia Notch swimming"}
+      {name:"Thacher State Park (John Boyd Thacher SP)",desc:"Just west of Albany on the 1,000-ft Helderberg Escarpment. Dramatic cliff views over the Hudson Valley and Adirondacks. Overlook Trail is the easy cliff-edge walk (dog-friendly on 6-ft leash). The Indian Ladder Trail along the cliff face may be closed early May for spring thaw — check at the park office.",difficulty:"Easy",distance:"1–2 mi",time:"1–1.5 hrs",elevation:"Minimal (Overlook) or 150 ft (Indian Ladder)",maps:"Thacher+State+Park+NY",guide:"Thacher State Park Indian Ladder Trail"}
     ],
     restaurants:[
-      {name:"Delaney's Hole in the Wall – North Conway",info:"Best lunch stop in the White Mountains — laid-back, great burgers, pet-friendly patio"},
-      {name:"Woodstock Inn Station & Brewery – North Woodstock",info:"Beloved local brewpub right next to your hotel. Great food, cozy mountain vibe, dog-friendly patio"},
-      {name:"Peg's Restaurant – North Woodstock",info:"Classic diner breakfast/dinner spot, local favorite for 30+ years"}
+      {name:"Row 34 – Portsmouth, NH",info:"Excellent oyster bar right on the Piscataqua River — good lunch stop. Dog-friendly patio in warm weather."},
+      {name:"The City Beer Hall – Albany",info:"Casual craft beer and good food in a historic Albany building — easy dinner after the drive"},
+      {name:"Druthers Brewing – Saratoga Springs",info:"If you have energy, 40 min north. Beautiful Saratoga town, dog-friendly patio, excellent beer + wood-fired pizza."}
     ],
     chargers:[
-      {name:"Tesla Supercharger – North Conway, NH",info:"Top up here during lunch — only charger before Pittsburgh route"},
-      {name:"ChargePoint – Lincoln/Woodstock, NH",info:"In town near lodging"}
+      {name:"Electrify America – Portsmouth, NH",info:"I-95 corridor, 30 min charge"},
+      {name:"ChargePoint – Manchester, NH",info:"Backup if Portsmouth is busy"},
+      {name:"ChargePoint – Albany Downtown",info:"Multiple locations near lodging"}
     ]
   },
   {
-    day:7, title:"May 16 — White Mountains → Ohiopyle, PA", type:"DRIVE",
-    distance:490, hours:9, arrival:"6:30 PM",
-    lodging:120, food:65, evCost:54,
+    day:7, title:"May 16 — Albany → Ohiopyle, PA", type:"DRIVE",
+    distance:370, hours:7, arrival:"4:30 PM",
+    lodging:120, food:65, evCost:40,
     sunrise:"5:16 AM", sunset:"8:02 PM",
-    mapRoute:"https://www.google.com/maps/dir/Lincoln,+NH/Albany,+NY/Binghamton,+NY/Scranton,+PA/Ohiopyle,+PA",
+    mapRoute:"https://www.google.com/maps/dir/Albany,+NY/Binghamton,+NY/Scranton,+PA/Ohiopyle,+PA",
     timeline:[
-      {time:"7:30 AM",act:"Depart Lincoln, NH"},
-      {time:"9:45 AM",act:"Charge stop – Albany, NY (30 min)"},
-      {time:"12:30 PM",act:"Lunch – Scranton or Wilkes-Barre, PA area"},
-      {time:"2:00 PM",act:"Charge stop – Wilkes-Barre, PA (25 min)"},
-      {time:"6:30 PM",act:"Arrive Ohiopyle, PA — check in"},
-      {time:"7:00 PM",act:"Quick walk to Ohiopyle Falls right in town, then dinner"}
+      {time:"8:30 AM",act:"Depart Albany — scenic drive south through Catskills edge on I-88"},
+      {time:"11:00 AM",act:"Charge stop – Binghamton, NY (25 min)"},
+      {time:"12:30 PM",act:"Lunch – Scranton, PA area (45 min)"},
+      {time:"4:30 PM",act:"Arrive Ohiopyle, PA — check in"},
+      {time:"5:00 PM",act:"Ohiopyle Falls walk in town center (dog welcome on leash)"},
+      {time:"7:00 PM",act:"Dinner in Ohiopyle"}
     ],
     stops:[
       {name:"Ohiopyle Falls",desc:"A dramatic 20-foot natural waterfall on the Youghiogheny River right in the center of town — steps from the road. One of the most powerful waterfalls in PA. Free to view, stunning at dusk.",difficulty:"Easy",distance:"0.2 mi",time:"20–30 min",elevation:"Minimal",maps:"Ohiopyle+Falls+PA",guide:"Ohiopyle Falls Pennsylvania"},
@@ -944,8 +929,8 @@ const data = [
       {name:"Falls Market Restaurant – Ohiopyle",info:"Classic family restaurant in town, open for dinner, reliable and easy after a long drive day"}
     ],
     chargers:[
-      {name:"Electrify America – Albany, NY",info:"I-90 corridor, 30 min charge"},
-      {name:"Electrify America – Wilkes-Barre, PA",info:"I-81 corridor, 25 min — bridge charge before PA turnpike"}
+      {name:"Electrify America – Binghamton, NY",info:"I-88 corridor, 25 min charge"},
+      {name:"ChargePoint – Scranton, PA",info:"Top off near lunch stop before PA Turnpike leg"}
     ]
   },
   {
@@ -965,7 +950,7 @@ const data = [
     ],
     restaurants:[
       {name:"Ohiopyle Trading Post & Café",info:"Grab coffee and breakfast sandwiches to go before you hit the road"},
-      {name:"Celebrate at home!",info:"You just did 2,020 miles — order your favorite Cincinnati food and relax"}
+      {name:"Celebrate at home!",info:"You just did 2,150 miles — order your favorite Cincinnati food and relax"}
     ],
     chargers:[
       {name:"Electrify America – Columbus, OH",info:"I-70 corridor, 25 min charge — don't skip this stop before the final push to Cincinnati"}
@@ -1198,12 +1183,12 @@ function renderTripStats(){
   const totalBudget = data.reduce((s,d)=>s+d.lodging+d.food+d.evCost,0);
   const totalEV = data.reduce((s,d)=>s+d.evCost,0);
   const totalLodging = data.reduce((s,d)=>s+d.lodging,0);
-  const states = ['Ohio','New York','Pennsylvania','Connecticut','Massachusetts','New Hampshire','Maine','Vermont'];
+  const states = ['Ohio','Pennsylvania','New York','Massachusetts','New Hampshire','Maine'];
   const nationalParks = ['Acadia National Park'];
-  const stateparks = ['Letchworth SP','Franconia Notch SP'];
+  const stateparks = ['Letchworth SP','Thacher SP','Ohiopyle SP'];
 
   const cards = [
-    {icon:'🗺️', val:'2,020', lbl:'Total Miles', sub:'Round trip'},
+    {icon:'🗺️', val:'2,150', lbl:'Total Miles', sub:'Round trip'},
     {icon:'📅', val:totalDays, lbl:'Days', sub:`${driveDays} drive · ${exploreDays} explore`},
     {icon:'🏔️', val:totalStops, lbl:'Stops & Trails', sub:'Hikes, sights, landmarks'},
     {icon:'🌲', val:nationalParks.length, lbl:'National Parks', sub:'Acadia NP'},
