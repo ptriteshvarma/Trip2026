@@ -643,17 +643,6 @@ function toggleRelaxed(){
 // ── ADVANCE BOOKINGS ──
 const bookings = [
   {
-    title: "⚠️ Watkins Glen Gorge Trail — Verify Open on May 10",
-    urgency: "urgent",
-    urgencyLabel: "CHECK BEFORE YOU GO",
-    desc: "The Watkins Glen gorge trail opens mid-May seasonally — May 10 is right on the edge and it may still be closed. The main tunnel entrance also has construction in 2026 (closed since July 2025). Call ahead. Backup plan: Seneca Lake waterfront is always accessible.",
-    when: "Call before departure: (607) 535-4511",
-    who: "Check NYS Parks website for 2026 opening date",
-    cost: "$8/vehicle parking",
-    url: "https://parks.ny.gov/visit/state-parks/watkins-glen-state-park",
-    day: "Day 1 (May 10)"
-  },
-    {
     title: "Cadillac Mountain Sunrise — Drive Up",
     urgency: "medium",
     urgencyLabel: "No Reservation Needed in May",
@@ -751,39 +740,39 @@ function renderBookings(){
 // ── DATA ──
 const data = [
   {
-    day:1, title:"May 10 — Cincinnati → Watkins Glen, NY", type:"DRIVE",
-    distance:420, hours:7, arrival:"3:30 PM",
+    day:1, title:"May 10 — Cincinnati → Letchworth State Park, NY", type:"DRIVE",
+    distance:400, hours:6.5, arrival:"3:00 PM",
     lodging:115, food:60, evCost:45,
     sunrise:"6:23 AM", sunset:"8:18 PM",
-    mapRoute:"https://www.google.com/maps/dir/Cincinnati,+OH/Cleveland,+OH/Watkins+Glen+State+Park,+Watkins+Glen,+NY",
+    mapRoute:"https://www.google.com/maps/dir/Cincinnati,+OH/Cleveland,+OH/Letchworth+State+Park,+Castile,+NY",
     timeline:[
       {time:"7:30 AM",act:"Depart Cincinnati"},
       {time:"11:00 AM",act:"Charge stop – Cleveland, OH (30 min)"},
-      {time:"1:30 PM",act:"Lunch – Buffalo/Rochester, NY area"},
-      {time:"3:30 PM",act:"Arrive Watkins Glen"},
-      {time:"4:00 PM",act:"Gorge Trail hike (19 waterfalls!)"},
-      {time:"7:00 PM",act:"Dinner at Seneca Lake waterfront"}
+      {time:"1:15 PM",act:"Lunch – Rochester, NY area (45 min)"},
+      {time:"3:00 PM",act:"Arrive Letchworth State Park"},
+      {time:"3:30 PM",act:"Gorge Trail — 3 waterfalls, 600-ft canyon walls (dogs welcome on leash!)"},
+      {time:"6:30 PM",act:"Dinner in Geneseo or Mount Morris, NY"}
     ],
     stops:[
-      {name:"Watkins Glen Gorge Trail",desc:"1.5-mile trail through a dramatic gorge with 19 waterfalls, stone tunnels, and bridges carved by glacial meltwater. One of the most spectacular short hikes in the Northeast.",difficulty:"Easy–Moderate",distance:"1.5 mi",time:"1.5–2 hrs",elevation:"400 ft",maps:"Watkins+Glen+State+Park+NY",guide:"Watkins Glen Gorge Trail hiking"},
-      {name:"Seneca Lake Waterfront",desc:"Stroll the lakefront after the hike — vineyards, craft breweries, and great sunset views over the water.",difficulty:"Easy",distance:"0.5 mi",time:"45 min",elevation:"Flat",maps:"Seneca+Lake+Watkins+Glen+NY",guide:"Seneca Lake waterfront Watkins Glen"}
+      {name:"Letchworth Gorge Trail",desc:"The 'Grand Canyon of the East' — a 600-foot deep gorge carved by the Genesee River with three major waterfalls. Open year-round, never seasonally closed. Dogs welcome on leash (6 ft max, rabies proof). More dramatic than Watkins Glen and open on May 10.",difficulty:"Easy–Moderate",distance:"2–4 mi",time:"1.5–2.5 hrs",elevation:"400 ft",maps:"Letchworth+State+Park+NY+Gorge+Trail",guide:"Letchworth State Park gorge trail hiking"},
+      {name:"Inspiration Point Overlook",desc:"Most photographed viewpoint in Letchworth — sweeping canyon view and Lower Falls from a dramatic high overlook. Short easy walk, dog-friendly.",difficulty:"Easy",distance:"0.5 mi",time:"30 min",elevation:"Minimal",maps:"Inspiration+Point+Letchworth+State+Park",guide:"Letchworth Inspiration Point overlook"}
     ],
     restaurants:[
-      {name:"Seneca Harbor Station",info:"Waterfront dining right on Seneca Lake — seafood, burgers, great views. Pet-friendly patio."},
-      {name:"Atwater Estate Vineyards",info:"Award-winning Finger Lakes winery with lake views, open in May — ideal for an evening glass after the hike."}
+      {name:"Big Tree Inn – Geneseo, NY",info:"Classic American dining in a charming historic inn, 15 min from the park. Pet-friendly patio."},
+      {name:"Aunt Cookie's – Mount Morris, NY",info:"Casual local diner right next to the park entrance — great for a post-hike meal."}
     ],
     chargers:[
       {name:"Tesla / EA – Cleveland, OH",info:"I-90 corridor, 30 min charge tops off for the rest of the drive"}
     ]
   },
   {
-    day:2, title:"May 11 — Watkins Glen → Bar Harbor, ME", type:"DRIVE",
+    day:2, title:"May 11 — Letchworth → Bar Harbor, ME", type:"DRIVE",
     distance:500, hours:9.5, arrival:"6:00 PM",
     lodging:175, food:65, evCost:55,
     sunrise:"5:43 AM", sunset:"8:11 PM",
-    mapRoute:"https://www.google.com/maps/dir/Watkins+Glen,+NY/Albany,+NY/Bangor,+ME/Bar+Harbor,+ME",
+    mapRoute:"https://www.google.com/maps/dir/Letchworth+State+Park,+NY/Albany,+NY/Bangor,+ME/Bar+Harbor,+ME",
     timeline:[
-      {time:"8:00 AM",act:"Depart Watkins Glen"},
+      {time:"8:00 AM",act:"Depart Letchworth"},
       {time:"11:00 AM",act:"Charge stop – Albany, NY (30 min)"},
       {time:"2:30 PM",act:"Lunch & charge stop – Bangor, ME"},
       {time:"6:00 PM",act:"Arrive Bar Harbor — stroll the harbor waterfront"}
@@ -919,7 +908,7 @@ const data = [
     ],
     stops:[
       {name:"Portland Head Light",desc:"Maine's oldest lighthouse (1791) inside Fort Williams Park. Stunning views of Casco Bay — a perfect last look at coastal Maine.",difficulty:"Easy",distance:"1 mi",time:"30–45 min",elevation:"Minimal",maps:"Portland Head Light Maine",guide:"Portland Head Light Fort Williams"},
-      {name:"Franconia Notch – Flume Gorge",desc:"An 800-foot natural granite gorge with waterfalls, covered bridges, and boardwalks carved through the mountain. One of NH's crown jewels. Different from Watkins Glen — more dramatic and forested.",difficulty:"Easy–Moderate",distance:"2 mi loop",time:"1.5 hrs",elevation:"200 ft",maps:"Flume+Gorge+Franconia+Notch+NH",guide:"Flume Gorge Franconia Notch hiking"},
+      {name:"Franconia Notch – Flume Gorge",desc:"An 800-foot natural granite gorge with waterfalls, covered bridges, and boardwalks carved through the mountain. One of NH's crown jewels. A completely different experience from Letchworth — more intimate and forested.",difficulty:"Easy–Moderate",distance:"2 mi loop",time:"1.5 hrs",elevation:"200 ft",maps:"Flume+Gorge+Franconia+Notch+NH",guide:"Flume Gorge Franconia Notch hiking"},
       {name:"Stowe Recreation Path",desc:"5.5-mile paved path through meadows and covered bridges with views of Mount Mansfield. Perfect evening walk with your dog.",difficulty:"Easy",distance:"Up to 5.5 mi",time:"1–2 hrs",elevation:"Flat",maps:"Stowe+Recreation+Path+VT",guide:"Stowe Recreation Path Vermont"}
     ],
     restaurants:[
@@ -1208,14 +1197,14 @@ function renderTripStats(){
   const totalLodging = data.reduce((s,d)=>s+d.lodging,0);
   const states = ['Ohio','New York','Pennsylvania','Connecticut','Massachusetts','New Hampshire','Maine','Vermont'];
   const nationalParks = ['Acadia National Park'];
-  const stateparks = ['Watkins Glen SP','Franconia Notch SP'];
+  const stateparks = ['Letchworth SP','Franconia Notch SP'];
 
   const cards = [
     {icon:'🗺️', val:'1,970', lbl:'Total Miles', sub:'Round trip'},
     {icon:'📅', val:totalDays, lbl:'Days', sub:`${driveDays} drive · ${exploreDays} explore`},
     {icon:'🏔️', val:totalStops, lbl:'Stops & Trails', sub:'Hikes, sights, landmarks'},
     {icon:'🌲', val:nationalParks.length, lbl:'National Parks', sub:'Acadia NP'},
-    {icon:'🌳', val:stateparks.length, lbl:'State Parks', sub:'Watkins Glen · Franconia Notch'},
+    {icon:'🌳', val:stateparks.length, lbl:'State Parks', sub:'Letchworth · Franconia Notch'},
     {icon:'🗽', val:states.length, lbl:'States Visited', sub:'OH · NY · PA · NH · ME · VT · MA · CT'},
     {icon:'🍽️', val:totalRestaurants, lbl:'Restaurants Curated', sub:'All pet-friendly picks'},
     {icon:'⚡', val:totalChargeStops, lbl:'EV Charge Stops', sub:'Full corridor coverage'},
@@ -1224,8 +1213,8 @@ function renderTripStats(){
     {icon:'⚡', val:'$'+totalEV.toLocaleString(), lbl:'EV Charging Total', sub:'All charge stops'},
     {icon:'🐾', val:'100%', lbl:'Pet Friendly', sub:'All stops verified'},
     {icon:'🌅', val:'3', lbl:'Acadia Days', sub:'Maine coast & mountains'},
-    {icon:'🏔️', val:'2', lbl:'Gorge Trails', sub:'Watkins Glen · Flume Gorge'},
-    {icon:'🌊', val:'21', lbl:'Waterfalls', sub:'19 at Watkins Glen + 2 in Acadia'},
+    {icon:'🏔️', val:'2', lbl:'Gorge Trails', sub:'Letchworth · Flume Gorge'},
+    {icon:'🌊', val:'21', lbl:'Waterfalls', sub:'3 at Letchworth + Flume Gorge + Acadia'},
     {icon:'🦞', val:'3+', lbl:'Lobster Roll Days', sub:'Maine coast dining'},
   ];
 
