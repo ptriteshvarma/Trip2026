@@ -538,9 +538,9 @@ function checkPw(){
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
         <span style="font-size:15px;font-weight:700;color:var(--text)">Relaxed Drive Plan — Max 400 mi/day</span>
-        <span style="font-size:10px;font-weight:700;background:rgba(122,170,130,.15);color:var(--sage);border:1px solid rgba(122,170,130,.3);border-radius:20px;padding:3px 10px;letter-spacing:.8px">9 DAYS · MAY 10–18</span>
+        <span style="font-size:10px;font-weight:700;background:rgba(122,170,130,.15);color:var(--sage);border:1px solid rgba(122,170,130,.3);border-radius:20px;padding:3px 10px;letter-spacing:.8px">8 DAYS · MAY 10–17</span>
       </div>
-      <p style="font-size:12px;color:var(--muted)">Same destinations, gentler pace. Adds 1 day — no drive exceeds 400 mi. Best for first-timers or if you prefer arriving relaxed.</p>
+      <p style="font-size:12px;color:var(--muted)">Same destinations, gentler pace. Same 8 days. Trade-off: swap Vermont/Pittsburgh for Ohiopyle, PA. No drive exceeds 400 mi.. Best for first-timers or if you prefer arriving relaxed.</p>
     </div>
     <div style="padding:16px 24px" id="relaxedRows"></div>
     <div style="padding:16px 24px;border-top:1px solid var(--border);display:flex;gap:24px">
@@ -600,15 +600,14 @@ function checkPw(){
 
 // ── RELAXED PLAN (≤400 mi/day) ──
 const relaxedData = [
-  {day:1,date:"May 10",route:"Cincinnati → Cleveland, OH",miles:245,type:"DRIVE",stop:"Quick stop at Rock & Roll Hall of Fame or Lake Erie waterfront — easy 4hr drive",note:""},
-  {day:2,date:"May 11",route:"Cleveland → Albany, NY",miles:390,type:"DRIVE",stop:"Charge stop in Buffalo, NY — scenic I-90 along Lake Erie most of the way",note:""},
-  {day:3,date:"May 12",route:"Albany → Bar Harbor, ME",miles:380,type:"DRIVE",stop:"Drive through NH & coastal Maine — arrive Bar Harbor evening with energy",note:""},
-  {day:4,date:"May 13",route:"Acadia — Full Coastal Day",miles:0,type:"EXPLORE",stop:"Ocean Path, Thunder Hole, Otter Cliffs sunset — all day, no rush",note:""},
-  {day:5,date:"May 14",route:"Acadia — Summit & Forest",miles:0,type:"EXPLORE",stop:"Cadillac Mountain (no reservation!), Jordan Pond, Carriage Roads",note:""},
-  {day:6,date:"May 15",route:"Acadia — Southwest Loop",miles:0,type:"EXPLORE",stop:"Penobscot Mountain, Bass Harbor Lighthouse, Ship Harbor tide pools",note:""},
-  {day:7,date:"May 16",route:"Bar Harbor → Concord, NH",miles:290,type:"DRIVE",stop:"Franconia Notch Flume Gorge on the way — easy afternoon arrival",note:""},
-  {day:8,date:"May 17",route:"Concord → Pittsburgh, PA",miles:390,type:"DRIVE",stop:"Drive across NY via I-90 — charge stop in Albany or Syracuse",note:""},
-  {day:9,date:"May 18",route:"Pittsburgh → Cincinnati",miles:300,type:"DRIVE",stop:"Mount Washington overlook morning, Primanti Bros, home by evening",note:""},
+  {day:1,date:"May 10",route:"Cincinnati → Letchworth SP, NY",miles:400,type:"DRIVE",stop:"Grand Canyon of the East — 600-ft gorge, 3 waterfalls, open year-round, dogs welcome",note:""},
+  {day:2,date:"May 11",route:"Letchworth → Portland, ME",miles:380,type:"DRIVE",stop:"Charge stop Albany, NY — arrive Portland evening, Old Port waterfront dinner",note:""},
+  {day:3,date:"May 12",route:"Portland → Bar Harbor + Acadia",miles:55,type:"EXPLORE",stop:"Arrive 10 AM — Ocean Path, Thunder Hole, Otter Cliffs sunset (full day)",note:""},
+  {day:4,date:"May 13",route:"Acadia — Summit & Forest",miles:0,type:"EXPLORE",stop:"Cadillac Mountain (no reservation needed!), Jordan Pond Loop, Carriage Roads",note:""},
+  {day:5,date:"May 14",route:"Acadia — Southwest Loop",miles:0,type:"EXPLORE",stop:"Penobscot Mountain, Bass Harbor Lighthouse, Ship Harbor tide pools",note:""},
+  {day:6,date:"May 15",route:"Bar Harbor → Albany, NY",miles:350,type:"DRIVE",stop:"Portland Head Light on the way — last look at coastal Maine",note:""},
+  {day:7,date:"May 16",route:"Albany → Ohiopyle, PA",miles:330,type:"DRIVE",stop:"Ohiopyle State Park gorge + Fallingwater (Frank Lloyd Wright) — stunning Appalachian scenery",note:""},
+  {day:8,date:"May 17",route:"Ohiopyle → Cincinnati",miles:310,type:"DRIVE",stop:"Home by early afternoon — easy scenic final drive through Ohio",note:""},
 ];
 
 function renderRelaxed(){
