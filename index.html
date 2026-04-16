@@ -524,6 +524,31 @@ function checkPw(){
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
     Download
   </button>
+  <button class="btn btn-o" id="relaxedBtn" onclick="toggleRelaxed()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+    ≤400 mi/day Plan
+  </button>
+</div>
+
+
+<!-- RELAXED PLAN -->
+<div id="relaxedPlan" style="display:none;max-width:960px;margin:24px auto 0;padding:0 16px">
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden">
+    <div style="padding:24px 24px 16px;border-bottom:1px solid var(--border)">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        <span style="font-size:15px;font-weight:700;color:var(--text)">Relaxed Drive Plan — Max 400 mi/day</span>
+        <span style="font-size:10px;font-weight:700;background:rgba(122,170,130,.15);color:var(--sage);border:1px solid rgba(122,170,130,.3);border-radius:20px;padding:3px 10px;letter-spacing:.8px">9 DAYS · MAY 10–18</span>
+      </div>
+      <p style="font-size:12px;color:var(--muted)">Same destinations, gentler pace. Adds 1 day — no drive exceeds 400 mi. Best for first-timers or if you prefer arriving relaxed.</p>
+    </div>
+    <div style="padding:16px 24px" id="relaxedRows"></div>
+    <div style="padding:16px 24px;border-top:1px solid var(--border);display:flex;gap:24px">
+      <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted)"><span style="width:10px;height:10px;border-radius:50%;background:#5d9068;display:inline-block"></span>Easy ≤300 mi</div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted)"><span style="width:10px;height:10px;border-radius:50%;background:#c8954a;display:inline-block"></span>Moderate 300–400 mi</div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted)"><span style="width:10px;height:10px;border-radius:50%;background:var(--red);display:inline-block"></span>Long >400 mi</div>
+    </div>
+  </div>
 </div>
 
 <!-- BOOK EARLY SECTION -->
@@ -572,9 +597,63 @@ function checkPw(){
 </svg>
 
 <script>
+
+// ── RELAXED PLAN (≤400 mi/day) ──
+const relaxedData = [
+  {day:1,date:"May 10",route:"Cincinnati → Cleveland, OH",miles:245,type:"DRIVE",stop:"Quick stop at Rock & Roll Hall of Fame or Lake Erie waterfront — easy 4hr drive",note:""},
+  {day:2,date:"May 11",route:"Cleveland → Albany, NY",miles:390,type:"DRIVE",stop:"Charge stop in Buffalo, NY — scenic I-90 along Lake Erie most of the way",note:""},
+  {day:3,date:"May 12",route:"Albany → Bar Harbor, ME",miles:380,type:"DRIVE",stop:"Drive through NH & coastal Maine — arrive Bar Harbor evening with energy",note:""},
+  {day:4,date:"May 13",route:"Acadia — Full Coastal Day",miles:0,type:"EXPLORE",stop:"Ocean Path, Thunder Hole, Otter Cliffs sunset — all day, no rush",note:""},
+  {day:5,date:"May 14",route:"Acadia — Summit & Forest",miles:0,type:"EXPLORE",stop:"Cadillac Mountain (no reservation!), Jordan Pond, Carriage Roads",note:""},
+  {day:6,date:"May 15",route:"Acadia — Southwest Loop",miles:0,type:"EXPLORE",stop:"Penobscot Mountain, Bass Harbor Lighthouse, Ship Harbor tide pools",note:""},
+  {day:7,date:"May 16",route:"Bar Harbor → Concord, NH",miles:290,type:"DRIVE",stop:"Franconia Notch Flume Gorge on the way — easy afternoon arrival",note:""},
+  {day:8,date:"May 17",route:"Concord → Pittsburgh, PA",miles:390,type:"DRIVE",stop:"Drive across NY via I-90 — charge stop in Albany or Syracuse",note:""},
+  {day:9,date:"May 18",route:"Pittsburgh → Cincinnati",miles:300,type:"DRIVE",stop:"Mount Washington overlook morning, Primanti Bros, home by evening",note:""},
+];
+
+function renderRelaxed(){
+  const el = document.getElementById('relaxedRows');
+  el.innerHTML = relaxedData.map(d=>{
+    const col = d.miles === 0 ? '#3a6648' : d.miles <= 300 ? '#5d9068' : d.miles <= 400 ? '#c8954a' : '#c47a72';
+    const badge = d.type === 'EXPLORE' ? 'var(--sage)' : 'var(--amber2)';
+    return `<div style="display:flex;align-items:flex-start;gap:14px;padding:12px 0;border-bottom:1px solid var(--border)">
+      <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:${col};display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff">${d.day}</div>
+      <div style="flex:1;min-width:0">
+        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:3px">
+          <span style="font-size:13px;font-weight:700;color:var(--text)">${d.route}</span>
+          <span style="font-size:9px;font-weight:700;color:${badge};background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:20px;padding:2px 8px;letter-spacing:.6px">${d.date}</span>
+          ${d.miles > 0 ? `<span style="font-size:10px;font-weight:700;color:${col}">${d.miles} mi</span>` : '<span style="font-size:10px;color:var(--muted)">In-park day</span>'}
+        </div>
+        <div style="font-size:11px;color:var(--muted);line-height:1.5">${d.stop}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function toggleRelaxed(){
+  const el = document.getElementById('relaxedPlan');
+  const btn = document.getElementById('relaxedBtn');
+  const shown = el.style.display !== 'none';
+  el.style.display = shown ? 'none' : 'block';
+  btn.style.background = shown ? '' : 'rgba(122,170,130,.15)';
+  btn.style.color = shown ? '' : 'var(--sage)';
+  if(!shown) { renderRelaxed(); el.scrollIntoView({behavior:'smooth',block:'start'}); }
+}
+
 // ── ADVANCE BOOKINGS ──
 const bookings = [
   {
+    title: "⚠️ Watkins Glen Gorge Trail — Verify Open on May 10",
+    urgency: "urgent",
+    urgencyLabel: "CHECK BEFORE YOU GO",
+    desc: "The Watkins Glen gorge trail opens mid-May seasonally — May 10 is right on the edge and it may still be closed. The main tunnel entrance also has construction in 2026 (closed since July 2025). Call ahead. Backup plan: Seneca Lake waterfront is always accessible.",
+    when: "Call before departure: (607) 535-4511",
+    who: "Check NYS Parks website for 2026 opening date",
+    cost: "$8/vehicle parking",
+    url: "https://parks.ny.gov/visit/state-parks/watkins-glen-state-park",
+    day: "Day 1 (May 10)"
+  },
+    {
     title: "Cadillac Mountain Sunrise — Drive Up",
     urgency: "medium",
     urgencyLabel: "No Reservation Needed in May",
@@ -913,7 +992,7 @@ function buildNav(){
     const tc=typeClass(d.type);
     const dot=document.createElement('div');
     dot.className='nav-dot';
-    dot.innerHTML=`<div class="nd-circle nd-${tc}" onclick="goToDay(${d.day})">${d.day}</div><div class="nd-label">${d.title.split('→')[d.title.split('→').length-1].trim().split(',')[0].split('–')[0].trim()}</div>`;
+    const _dateM=d.title.match(/May d+/);const _dateStr=_dateM?_dateM[0]:'';const _dest=d.title.split('→').pop().trim().split(',')[0].replace(/^May d+ — /,'').split('–')[0].trim();dot.innerHTML=`<div class="nd-circle nd-${tc}" onclick="goToDay(${d.day})">${d.day}</div><div class="nd-label">${_dateStr?_dateStr+'<br>':''}<span style="font-size:9px">${_dest}</span></div>`;
     el.appendChild(dot);
     if(i<data.length-1){const c=document.createElement('div');c.className='nd-connector';el.appendChild(c);}
   });
