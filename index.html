@@ -489,10 +489,10 @@ function checkPw(){
   <p class="hero-sub">Cincinnati &rarr; Bar Harbor, Maine &rarr; Cincinnati</p>
   <div class="hero-stats">
     <div class="hstat"><span class="hstat-n">8</span><div class="hstat-l">Days</div></div>
-    <div class="hstat"><span class="hstat-n">2,195</span><div class="hstat-l">Miles</div></div>
+    <div class="hstat"><span class="hstat-n">2,020</span><div class="hstat-l">Miles</div></div>
     <div class="hstat"><span class="hstat-n" id="herobudget">—</span><div class="hstat-l">Budget</div></div>
     <div class="hstat"><span class="hstat-n">3</span><div class="hstat-l">Acadia Days</div></div>
-    <div class="hstat"><span class="hstat-n">11h</span><div class="hstat-l">Max Drive</div></div>
+    <div class="hstat"><span class="hstat-n">9h</span><div class="hstat-l">Max Drive</div></div>
   </div>
   <!-- Mountain silhouette SVG -->
   <svg class="mountains" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
@@ -874,97 +874,101 @@ const data = [
     ]
   },
   {
-    day:6, title:"May 15 — Bar Harbor → Stowe, VT", type:"TRANSITION",
-    distance:280, hours:7, arrival:"5:30 PM",
-    lodging:130, food:70, evCost:30,
+    day:6, title:"May 15 — Bar Harbor → White Mountains, NH", type:"TRANSITION",
+    distance:200, hours:5, arrival:"3:30 PM",
+    lodging:130, food:70, evCost:22,
     sunrise:"5:19 AM", sunset:"8:01 PM",
-    mapRoute:"https://www.google.com/maps/dir/Bar+Harbor,+ME/North+Conway,+NH/Franconia+Notch+State+Park,+NH/Stowe,+VT",
+    mapRoute:"https://www.google.com/maps/dir/Bar+Harbor,+ME/Portland+Head+Light+ME/North+Conway,+NH/Franconia+Notch+State+Park,+NH/Lincoln,+NH",
     routeOptions:[
       {
         label:"Route B — White Mountains (Selected)",
-        tag:"SCENIC · NO CITY TRAFFIC",
-        pros:["Stunning mountain scenery through Crawford Notch & Franconia Notch","Shorter drive (280 mi vs 320 mi)","Avoid Boston traffic entirely","Flume Gorge stop is a highlight on its own"],
-        cons:["No city amenities or urban food options","Fewer EV chargers — plan ahead in NH"],
-        maps:"https://www.google.com/maps/dir/Bar+Harbor,+ME/North+Conway,+NH/Franconia+Notch+State+Park,+NH/Stowe,+VT"
+        tag:"SCENIC · SHORTEST DAY OF THE RETURN",
+        pros:["Only ~200 miles — your easiest drive day on the whole trip","Spend the afternoon deep in the White Mountains","Flume Gorge + Echo Lake right at your doorstep","Avoid Boston traffic entirely","Dogs welcome everywhere here"],
+        cons:["Fewer EV chargers — top up in North Conway at lunch","Mountain roads (not highways) after North Conway"],
+        maps:"https://www.google.com/maps/dir/Bar+Harbor,+ME/North+Conway,+NH/Franconia+Notch+State+Park,+NH/Lincoln,+NH"
       },
       {
         label:"Route A — Through Boston",
         tag:"OPTIONAL ALTERNATE",
-        pros:["Pass through Boston — lunch on the harbor, quick walk around Seaport","More EV chargers along I-95 corridor","Easier highway driving, no mountain roads"],
-        cons:["Longer (320 mi, +1 hr) with Boston traffic","Expensive city parking if stopping","Completely different vibe — urban not scenic"],
-        maps:"https://www.google.com/maps/dir/Bar+Harbor,+ME/Portland+Head+Light,+ME/Boston+Seaport,+MA/Stowe,+VT"
+        pros:["Pass through Boston — lunch on the harbor, quick walk around Seaport","More EV chargers along I-95 corridor"],
+        cons:["Longer (290 mi, +2 hr) with Boston traffic","Expensive city parking if stopping","Miss the White Mountains entirely"],
+        maps:"https://www.google.com/maps/dir/Bar+Harbor,+ME/Portland+Head+Light,+ME/Boston+Seaport,+MA/Lincoln,+NH"
       }
     ],
     timeline:[
       {time:"8:30 AM",act:"Depart Bar Harbor"},
-      {time:"10:30 AM",act:"Portland Head Light — Maine's oldest lighthouse (30 min stop)"},
-      {time:"12:00 PM",act:"Lunch – North Conway, NH (great mountain town)"},
-      {time:"1:30 PM",act:"Franconia Notch — Flume Gorge walk (1.5 hrs, ~$20/adult entry)"},
-      {time:"3:30 PM",act:"Depart Franconia — head to Vermont via I-93 → I-91"},
-      {time:"4:45 PM",act:"Ben & Jerry's Factory – Waterbury, VT (right on the route — stop here before Stowe!)"},
-      {time:"5:30 PM",act:"Arrive Stowe, VT — check in, freshen up"},
-      {time:"6:30 PM",act:"Stowe Recreation Path stroll + dinner"}
+      {time:"10:15 AM",act:"Portland Head Light — Maine's oldest lighthouse (30 min stop)"},
+      {time:"12:00 PM",act:"Lunch + charge stop – North Conway, NH (Tesla Supercharger here)"},
+      {time:"1:30 PM",act:"Kancamagus Highway — scenic 34-mile mountain drive through White Mountains"},
+      {time:"2:30 PM",act:"Franconia Notch — Flume Gorge walk (1.5 hrs, ~$20/adult entry)"},
+      {time:"3:30 PM",act:"Arrive Lincoln, NH — check in"},
+      {time:"4:30 PM",act:"Echo Lake at Franconia Notch — swim, paddle, relax with the dog"},
+      {time:"6:30 PM",act:"Dinner in Lincoln or North Woodstock"}
     ],
     stops:[
       {name:"Portland Head Light",desc:"Maine's oldest lighthouse (1791) inside Fort Williams Park. Stunning views of Casco Bay — a perfect last look at coastal Maine.",difficulty:"Easy",distance:"1 mi",time:"30–45 min",elevation:"Minimal",maps:"Portland Head Light Maine",guide:"Portland Head Light Fort Williams"},
+      {name:"Kancamagus Highway",desc:"One of New England's most scenic drives — 34 miles through the White Mountain National Forest. No traffic lights, no commercial development. Fall foliage capital, but stunning in May too with waterfalls and fresh greenery. Pull over at Sabbaday Falls (~20 min hike, free).",difficulty:"Drive",distance:"34 mi scenic",time:"1–1.5 hrs",elevation:"N/A",maps:"Kancamagus+Highway+NH+scenic+drive",guide:"Kancamagus Highway driving guide"},
       {name:"Franconia Notch – Flume Gorge",desc:"An 800-foot natural granite gorge with waterfalls, covered bridges, and boardwalks carved through the mountain. One of NH's crown jewels. A completely different experience from Letchworth — more intimate and forested.",difficulty:"Easy–Moderate",distance:"2 mi loop",time:"1.5 hrs",elevation:"200 ft",maps:"Flume+Gorge+Franconia+Notch+NH",guide:"Flume Gorge Franconia Notch hiking"},
-      {name:"Stowe Recreation Path",desc:"5.5-mile paved path through meadows and covered bridges with views of Mount Mansfield. Perfect evening walk with your dog.",difficulty:"Easy",distance:"Up to 5.5 mi",time:"1–2 hrs",elevation:"Flat",maps:"Stowe+Recreation+Path+VT",guide:"Stowe Recreation Path Vermont"}
+      {name:"Echo Lake – Franconia Notch",desc:"A stunning glacially-carved mountain lake right inside Franconia Notch State Park. Cannon Mountain towers above. Perfect for a late-afternoon swim or just sitting by the water. Dogs allowed on leash.",difficulty:"Easy",distance:"Short walk",time:"1–2 hrs",elevation:"Flat",maps:"Echo+Lake+Franconia+Notch+NH",guide:"Echo Lake Franconia Notch swimming"}
     ],
     restaurants:[
       {name:"Delaney's Hole in the Wall – North Conway",info:"Best lunch stop in the White Mountains — laid-back, great burgers, pet-friendly patio"},
-      {name:"Hen of the Wood – Stowe",info:"Vermont's best farm-to-table restaurant. Book ahead — popular even in May"},
-      {name:"Ben & Jerry's Factory – Waterbury",info:"15 min from Stowe. Factory tour + free samples. Closes at 6 PM — go right after arriving."}
+      {name:"Woodstock Inn Station & Brewery – North Woodstock",info:"Beloved local brewpub right next to your hotel. Great food, cozy mountain vibe, dog-friendly patio"},
+      {name:"Peg's Restaurant – North Woodstock",info:"Classic diner breakfast/dinner spot, local favorite for 30+ years"}
     ],
     chargers:[
-      {name:"Tesla – North Conway, NH",info:"Stop here during lunch, ~20 min top-up"},
-      {name:"ChargePoint – Stowe, VT",info:"Multiple spots in town center"}
+      {name:"Tesla Supercharger – North Conway, NH",info:"Top up here during lunch — only charger before Pittsburgh route"},
+      {name:"ChargePoint – Lincoln/Woodstock, NH",info:"In town near lodging"}
     ]
   },
   {
-    day:7, title:"May 16 — Stowe → Pittsburgh, PA", type:"DRIVE",
-    distance:605, hours:11, arrival:"7:30 PM",
-    lodging:150, food:65, evCost:67,
+    day:7, title:"May 16 — White Mountains → Ohiopyle, PA", type:"DRIVE",
+    distance:490, hours:9, arrival:"6:30 PM",
+    lodging:120, food:65, evCost:54,
     sunrise:"5:16 AM", sunset:"8:02 PM",
-    mapRoute:"https://www.google.com/maps/dir/Stowe,+VT/Albany,+NY/Binghamton,+NY/Scranton,+PA/Pittsburgh,+PA",
+    mapRoute:"https://www.google.com/maps/dir/Lincoln,+NH/Albany,+NY/Binghamton,+NY/Scranton,+PA/Ohiopyle,+PA",
     timeline:[
-      {time:"7:30 AM",act:"Depart Stowe"},
-      {time:"10:30 AM",act:"Charge stop – Albany, NY (30 min)"},
-      {time:"1:30 PM",act:"Lunch – Binghamton, NY area"},
-      {time:"3:30 PM",act:"Charge stop – Scranton, PA (25 min)"},
-      {time:"7:00 PM",act:"Arrive Pittsburgh, PA"},
-      {time:"7:30 PM",act:"Duquesne Incline → Mount Washington overlook & dinner"}
+      {time:"7:30 AM",act:"Depart Lincoln, NH"},
+      {time:"9:45 AM",act:"Charge stop – Albany, NY (30 min)"},
+      {time:"12:30 PM",act:"Lunch – Scranton or Wilkes-Barre, PA area"},
+      {time:"2:00 PM",act:"Charge stop – Wilkes-Barre, PA (25 min)"},
+      {time:"6:30 PM",act:"Arrive Ohiopyle, PA — check in"},
+      {time:"7:00 PM",act:"Quick walk to Ohiopyle Falls right in town, then dinner"}
     ],
     stops:[
-      {name:"Pittsburgh – Mount Washington",desc:"Ride the Duquesne Incline up to the most stunning city overlook in America. Three rivers meet right below you. Perfect reward after the long drive.",difficulty:"Easy",distance:"Walk",time:"1 hr",elevation:"Flat (incline does the work)",maps:"Duquesne Incline Pittsburgh PA",guide:"Mount Washington Pittsburgh overlook"},
-      {name:"Point State Park",desc:"Where the Allegheny, Monongahela, and Ohio rivers meet. Walk out to the fountain at the tip of the point — surprisingly moving.",difficulty:"Easy",distance:"1 mi",time:"30 min",elevation:"Flat",maps:"Point+State+Park+Pittsburgh",guide:"Point State Park Pittsburgh"}
+      {name:"Ohiopyle Falls",desc:"A dramatic 20-foot natural waterfall on the Youghiogheny River right in the center of town — steps from the road. One of the most powerful waterfalls in PA. Free to view, stunning at dusk.",difficulty:"Easy",distance:"0.2 mi",time:"20–30 min",elevation:"Minimal",maps:"Ohiopyle+Falls+PA",guide:"Ohiopyle Falls Pennsylvania"},
+      {name:"Fallingwater – Frank Lloyd Wright",desc:"One of the greatest buildings ever constructed — a private house cantilevered directly over a waterfall. A UNESCO World Heritage Site. Timed tours fill up fast. Book online in advance ($30–45/person). Dogs not allowed inside, but can be left in the car during the ~1.5 hr tour.",difficulty:"Easy (tour)",distance:"0.5 mi walk",time:"1.5 hrs",elevation:"Minimal",maps:"Fallingwater+Mill+Run+PA",guide:"Fallingwater tour tickets Frank Lloyd Wright"}
     ],
     restaurants:[
-      {name:"Primanti Brothers – Pittsburgh",info:"Pittsburgh institution — massive sandwiches with fries AND coleslaw inside. Original Strip District location."},
-      {name:"Gaucho Parrilla Argentina",info:"Excellent Argentine steakhouse in the Strip District — great for a proper dinner after the long day"}
+      {name:"Ohiopyle Trading Post & Café",info:"Right in town at the falls — casual, good burgers and sandwiches, local spot"},
+      {name:"Falls Market Restaurant – Ohiopyle",info:"Classic family restaurant in town, open for dinner, reliable and easy after a long drive day"}
     ],
     chargers:[
       {name:"Electrify America – Albany, NY",info:"I-90 corridor, 30 min charge"},
-      {name:"Electrify America – Scranton, PA",info:"I-81 corridor, 25 min charge — necessary gap-filler between Binghamton and Pittsburgh"},
-      {name:"ChargePoint – Pittsburgh Downtown",info:"Multiple locations near hotel"}
+      {name:"Electrify America – Wilkes-Barre, PA",info:"I-81 corridor, 25 min — bridge charge before PA turnpike"}
     ]
   },
   {
-    day:8, title:"May 17 — Pittsburgh → Cincinnati", type:"DRIVE",
-    distance:300, hours:5, arrival:"1:00 PM",
-    lodging:0, food:50, evCost:33,
+    day:8, title:"May 17 — Ohiopyle → Cincinnati", type:"DRIVE",
+    distance:320, hours:5.5, arrival:"2:00 PM",
+    lodging:0, food:50, evCost:35,
     sunrise:"6:01 AM", sunset:"8:20 PM",
-    mapRoute:"https://www.google.com/maps/dir/Pittsburgh+PA/Columbus+OH/Cincinnati+OH",
+    mapRoute:"https://www.google.com/maps/dir/Ohiopyle,+PA/Columbus+OH/Cincinnati+OH",
     timeline:[
-      {time:"8:00 AM",act:"Depart Pittsburgh"},
-      {time:"10:30 AM",act:"Charge stop – Columbus, OH (25 min)"},
-      {time:"1:00 PM",act:"HOME! Cincinnati!"}
+      {time:"8:00 AM",act:"Morning walk – Ohiopyle Falls & Ferncliff Peninsula Trail (30–45 min before leaving)"},
+      {time:"9:00 AM",act:"Depart Ohiopyle"},
+      {time:"11:30 AM",act:"Charge stop – Columbus, OH (25 min)"},
+      {time:"2:00 PM",act:"HOME! Cincinnati!"}
     ],
-    stops:[],
+    stops:[
+      {name:"Ferncliff Peninsula Trail",desc:"A short morning loop around a forested peninsula formed by a horseshoe bend in the Youghiogheny River. Peaceful, flat, and beautiful — perfect 30-min start before the drive home. Dog friendly on leash.",difficulty:"Easy",distance:"1.8 mi loop",time:"30–45 min",elevation:"Minimal",maps:"Ferncliff+Peninsula+Trail+Ohiopyle",guide:"Ferncliff Peninsula hiking Ohiopyle"}
+    ],
     restaurants:[
-      {name:"Celebrate at home!",info:"You just did 1,970 miles — order your favorite Cincinnati food and relax"}
+      {name:"Ohiopyle Trading Post & Café",info:"Grab coffee and breakfast sandwiches to go before you hit the road"},
+      {name:"Celebrate at home!",info:"You just did 2,020 miles — order your favorite Cincinnati food and relax"}
     ],
     chargers:[
-      {name:"Electrify America – Columbus, OH",info:"I-70 corridor, 25 min charge — Pittsburgh to Cincinnati is 300 miles, don't skip this stop"}
+      {name:"Electrify America – Columbus, OH",info:"I-70 corridor, 25 min charge — don't skip this stop before the final push to Cincinnati"}
     ]
   }
 ];
@@ -1199,7 +1203,7 @@ function renderTripStats(){
   const stateparks = ['Letchworth SP','Franconia Notch SP'];
 
   const cards = [
-    {icon:'🗺️', val:'1,970', lbl:'Total Miles', sub:'Round trip'},
+    {icon:'🗺️', val:'2,020', lbl:'Total Miles', sub:'Round trip'},
     {icon:'📅', val:totalDays, lbl:'Days', sub:`${driveDays} drive · ${exploreDays} explore`},
     {icon:'🏔️', val:totalStops, lbl:'Stops & Trails', sub:'Hikes, sights, landmarks'},
     {icon:'🌲', val:nationalParks.length, lbl:'National Parks', sub:'Acadia NP'},
