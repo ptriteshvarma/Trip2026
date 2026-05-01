@@ -508,13 +508,17 @@ function checkPw(){
 
 <!-- CONTROLS -->
 <div class="controls">
-  <button class="btn btn-p" onclick="expandAll()">
+  <button class="btn btn-p" id="expandToggle" onclick="toggleExpandAll()">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
     Expand All
   </button>
-  <button class="btn btn-o" onclick="goToDay(3)">
+  <button class="btn btn-o" onclick="fullTripMap()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m-6 3l6-3"/></svg>
+    Full Trip Map
+  </button>
+  <button class="btn btn-o" onclick="goToDay(5)">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 16l4-8 4 8M6 20h12"/></svg>
-    Acadia Days
+    Acadia Day
   </button>
   <button class="btn btn-g" onclick="window.print()">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm1-4h4"/></svg>
@@ -1308,6 +1312,27 @@ function toggleTile(el){
 }
 function expandAll(){
   document.querySelectorAll('.tile').forEach(t=>t.classList.add('open'));
+}
+function collapseAll(){
+  document.querySelectorAll('.tile').forEach(t=>t.classList.remove('open'));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function toggleExpandAll(){
+  const tiles=document.querySelectorAll('.tile');
+  const anyOpen=Array.from(tiles).some(t=>t.classList.contains('open'));
+  const btn=document.getElementById('expandToggle');
+  if(anyOpen){
+    collapseAll();
+    btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg> Expand All';
+  } else {
+    expandAll();
+    btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 15l7-7 7 7"/></svg> Collapse All';
+  }
+}
+function fullTripMap(){
+  // 8-day end-to-end trip with all overnights
+  const url='https://www.google.com/maps/dir/Cincinnati,+OH/Rushford,+NY/Lincoln,+NH/Freeport,+ME/Tremont,+ME/Schenectady,+NY/Ohiopyle,+PA/Terra+Alta,+WV/Cincinnati,+OH';
+  window.open(url,'_blank');
 }
 function goToDay(n){
   const el=document.getElementById('day'+n);
