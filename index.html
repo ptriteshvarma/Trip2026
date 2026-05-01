@@ -516,6 +516,10 @@ function checkPw(){
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m-6 3l6-3"/></svg>
     Full Trip Map
   </button>
+  <button class="btn btn-o" id="compactBtn" onclick="toggleCompact()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+    Compact View
+  </button>
   <button class="btn btn-o" onclick="goToDay(5)">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 16l4-8 4 8M6 20h12"/></svg>
     Acadia Day
@@ -563,6 +567,65 @@ function checkPw(){
   </div>
   <div class="be-sub">Some of these sell out within <strong>minutes</strong> of going live. Set a reminder and act fast.</div>
   <div class="be-grid" id="bookingCards"></div>
+</div>
+
+<!-- HOST CONTACTS SECTION -->
+<div class="bookearly-wrap" style="margin-top:32px">
+  <div class="be-header" onclick="toggleSection('hostContactsBody')" style="cursor:pointer;display:flex;align-items:center;justify-content:space-between">
+    <span style="display:flex;align-items:center;gap:8px">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+      Host Contacts &amp; Confirmations
+    </span>
+    <svg id="chev-hostContactsBody" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition:transform .2s"><path d="M19 9l-7 7-7-7"/></svg>
+  </div>
+  <div id="hostContactsBody" style="display:none">
+    <div class="be-sub">Tap any row to call. Save these to your phone before leaving.</div>
+    <div class="be-grid" id="hostContactsCards"></div>
+  </div>
+</div>
+
+<!-- PACKING LIST SECTION -->
+<div class="bookearly-wrap" style="margin-top:32px">
+  <div class="be-header" onclick="toggleSection('packingBody')" style="cursor:pointer;display:flex;align-items:center;justify-content:space-between">
+    <span style="display:flex;align-items:center;gap:8px">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg>
+      Packing List — May Trip Essentials
+    </span>
+    <svg id="chev-packingBody" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition:transform .2s"><path d="M19 9l-7 7-7-7"/></svg>
+  </div>
+  <div id="packingBody" style="display:none">
+    <div class="be-sub"><strong>May in Maine</strong> = 40–70°F, black flies, possible rain. Bring layers.</div>
+    <div id="packingCategories"></div>
+  </div>
+</div>
+
+<!-- PRE-TRIP CHECKLIST SECTION -->
+<div class="bookearly-wrap" style="margin-top:32px">
+  <div class="be-header" onclick="toggleSection('pretripBody')" style="cursor:pointer;display:flex;align-items:center;justify-content:space-between">
+    <span style="display:flex;align-items:center;gap:8px">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+      Pre-Trip Checklist — Do Before You Leave
+    </span>
+    <svg id="chev-pretripBody" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition:transform .2s"><path d="M19 9l-7 7-7-7"/></svg>
+  </div>
+  <div id="pretripBody" style="display:none">
+    <div class="be-sub">Run this in the 1–2 days before May 10. Save the headaches.</div>
+    <div id="pretripCategories"></div>
+  </div>
+</div>
+
+<!-- COMPACT VIEW (alternate to tile grid) -->
+<div id="compactView" style="display:none;max-width:960px;margin:24px auto 0;padding:0 16px">
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden">
+    <div style="padding:24px 24px 16px;border-bottom:1px solid var(--border)">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+        <span style="font-size:15px;font-weight:700;color:var(--text)">Compact Itinerary — Quick Reference</span>
+      </div>
+      <p style="font-size:12px;color:var(--muted)">All 8 days at a glance. Tap "Full View" to see details.</p>
+    </div>
+    <div style="padding:16px 24px" id="compactRows"></div>
+  </div>
 </div>
 
 <!-- TILE GRID -->
@@ -756,6 +819,215 @@ const bookings = [
     day: "All Acadia days"
   }
 ];
+
+// ── HOST CONTACTS ──
+const hostContacts = [
+  {host:"Aaron", location:"Rushford, NY (cabin)", dates:"May 10–11", phone:"", confirmation:"", notes:"Day 1 host. Bring thank-you wine.", platform:""},
+  {host:"Pemi Cabins", location:"Lincoln, NH (cabin)", dates:"May 11–12", phone:"", confirmation:"", notes:"On the Pemigewasset River. Check-in details from booking confirmation.", platform:""},
+  {host:"Dustin & Brianna", location:"Freeport, ME (private suite)", dates:"May 12–13", phone:"", confirmation:"", notes:"Private suite. Bring small thank-you gift.", platform:""},
+  {host:"Aaron", location:"Tremont, ME (guesthouse)", dates:"May 13–15 · 2 nights", phone:"", confirmation:"", notes:"Acadia base. Pick up groceries from Hannaford Ellsworth on the way in.", platform:""},
+  {host:"Hotel — Schenectady, NY", location:"Schenectady, NY", dates:"May 15–16", phone:"", confirmation:"", notes:"$110/night. Update with chosen hotel name + confirmation.", platform:""},
+  {host:"Home rental — Terra Alta, WV", location:"Terra Alta, WV", dates:"May 16–17", phone:"", confirmation:"", notes:"Last night before driving home. Self-contained home.", platform:""}
+];
+
+function renderHostContacts(){
+  document.getElementById('hostContactsCards').innerHTML = hostContacts.map(h => `
+    <div class="bcard medium">
+      <div class="bcard-top">
+        <div class="bcard-title">${h.host}</div>
+        <span class="urgency-badge ub-medium">${h.dates}</span>
+      </div>
+      <div class="bcard-desc">${h.location}</div>
+      <div class="bcard-meta">
+        <div class="bcard-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          <strong>Phone:</strong> ${h.phone || '<em style="color:var(--muted)">add from booking confirmation</em>'}
+        </div>
+        <div class="bcard-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          <strong>Confirmation #:</strong> ${h.confirmation || '<em style="color:var(--muted)">add from email</em>'}
+        </div>
+        <div class="bcard-row" style="grid-column:1/-1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <strong>Notes:</strong> ${h.notes}
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+// ── PACKING LIST ──
+const packingList = [
+  {category:"Layers (May = 40–70°F + variable)", items:[
+    "Light fleece or pullover (mornings 45°F)",
+    "Rain jacket / shell (NH + ME often have spring rain)",
+    "Long-sleeve base layers x2",
+    "Hiking pants + 1 pair quick-dry shorts",
+    "Warm hat + light gloves (Cadillac sunrise will be ~38°F)",
+    "Comfortable t-shirts x4–5"
+  ]},
+  {category:"Hiking & Outdoors", items:[
+    "Hiking boots or sturdy trail shoes",
+    "Comfortable walking sneakers (for towns)",
+    "Daypack (water + snacks for trails)",
+    "Reusable water bottles x2",
+    "Sunglasses + sunscreen",
+    "Headlamp or flashlight (Cadillac sunrise pre-dawn)"
+  ]},
+  {category:"⚠️ Bug Defense — May = Black Fly Season", items:[
+    "DEET-based bug spray (40%+ — essential, hard to find in Bar Harbor)",
+    "Long pants + lightweight long-sleeve for buggy hikes",
+    "Bug head net (overkill but helps if hiking wooded Acadia trails AM)"
+  ]},
+  {category:"Dog Supplies", items:[
+    "6-ft leash (required in Acadia + most state parks)",
+    "Collapsible water bowl + extra water",
+    "Dog food (enough for 8 days + buffer)",
+    "Treats + favorite toy for car rides",
+    "Vet records / rabies certificate (some hosts may ask)",
+    "Poop bags (lots — many trails require carrying out)",
+    "Towel for muddy paws / wet dog after Echo Lake"
+  ]},
+  {category:"Car & EV", items:[
+    "Charging cables (J1772 + adapter for Tesla if applicable)",
+    "Trip planner app (PlugShare, A Better Routeplanner)",
+    "Phone car mount + USB cables",
+    "Spare tire / jack confirmed in good shape",
+    "Snacks for the road (long Day 2 + Day 7)",
+    "Ice cooler for Acadia groceries pickup at Hannaford"
+  ]},
+  {category:"Documents & Money", items:[
+    "Driver's license + registration + insurance card",
+    "AAA card (if member)",
+    "America the Beautiful park pass ($80) OR plan to buy at Acadia gate",
+    "Credit cards + small cash for state park parking",
+    "Booking confirmation emails saved offline",
+    "Host contact info (in this app + on phone)"
+  ]},
+  {category:"Personal & Tech", items:[
+    "Toiletries + medications (full 8-day supply)",
+    "First aid kit (band-aids, ibuprofen, antiseptic)",
+    "Phone chargers + portable battery pack",
+    "Camera or extra phone storage for photos",
+    "Reusable shopping bag (for groceries + L.L. Bean stop)"
+  ]}
+];
+
+function renderPacking(){
+  document.getElementById('packingCategories').innerHTML = packingList.map((cat,ci) => `
+    <div style="padding:14px 24px;border-top:1px solid var(--border)">
+      <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:8px">${cat.category}</div>
+      ${cat.items.map((item,ii) => `
+        <div style="display:flex;align-items:center;gap:10px;padding:5px 0;font-size:12px;color:var(--muted)">
+          <input type="checkbox" id="pk${ci}_${ii}" style="width:16px;height:16px;cursor:pointer;accent-color:var(--sage)">
+          <label for="pk${ci}_${ii}" style="cursor:pointer;flex:1">${item}</label>
+        </div>`).join('')}
+    </div>`).join('');
+}
+
+// ── PRE-TRIP CHECKLIST ──
+const pretripList = [
+  {category:"Vehicle (1–2 days before)", items:[
+    "Check tire pressure + tread (long miles ahead)",
+    "Top off washer fluid + check wipers",
+    "Check oil level (or oil change if due)",
+    "Charge EV to 100% the night before",
+    "Download offline maps for NH / ME / VT (cell service spotty)",
+    "Clean out the car / vacuum / fresh interior for the long haul"
+  ]},
+  {category:"Pet Prep", items:[
+    "Vet visit if vaccines/heartworm not current",
+    "Print rabies certificate (some hosts ask, MDI sometimes asks)",
+    "Trim nails (long drives hard on long nails)",
+    "Pack a 'go-bag' for the dog: leash, bowl, food in container, treats",
+    "Brush before trip — less shedding in rentals"
+  ]},
+  {category:"Home (last day before)", items:[
+    "Stop mail (USPS hold or pickup arrangement)",
+    "Set lights on timer or smart plug schedule",
+    "Trash out + dishwasher running before leaving",
+    "Plants watered + watering plan if needed",
+    "Thermostat to away mode",
+    "Lock all doors + check windows"
+  ]},
+  {category:"Reservations Recap", items:[
+    "Rushford, NY — Aaron (May 10) ✓ booked",
+    "Lincoln, NH — Pemi Cabins (May 11) ✓ booked",
+    "Freeport, ME — Dustin & Brianna (May 12) ✓ booked",
+    "Tremont, ME — Aaron / Acadia (May 13–15) ✓ booked",
+    "Schenectady, NY (May 15) ✓ booked",
+    "Terra Alta, WV (May 16) ✓ booked",
+    "Acadia park pass — buy online OR at gate"
+  ]},
+  {category:"Day-of (May 10 morning)", items:[
+    "Coffee + breakfast before 7 AM departure",
+    "Phone fully charged",
+    "Snacks + water in the car",
+    "Confirm GPS to Rushford, NY (Aaron's address)",
+    "Letchworth State Park GPS programmed as Day 1 stop",
+    "Send 'we're on the way' text to Aaron"
+  ]}
+];
+
+function renderPretrip(){
+  document.getElementById('pretripCategories').innerHTML = pretripList.map((cat,ci) => `
+    <div style="padding:14px 24px;border-top:1px solid var(--border)">
+      <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:8px">${cat.category}</div>
+      ${cat.items.map((item,ii) => `
+        <div style="display:flex;align-items:center;gap:10px;padding:5px 0;font-size:12px;color:var(--muted)">
+          <input type="checkbox" id="pt${ci}_${ii}" style="width:16px;height:16px;cursor:pointer;accent-color:var(--amber)">
+          <label for="pt${ci}_${ii}" style="cursor:pointer;flex:1">${item}</label>
+        </div>`).join('')}
+    </div>`).join('');
+}
+
+// ── COMPACT VIEW ──
+function renderCompact(){
+  const el = document.getElementById('compactRows');
+  el.innerHTML = data.map(d => {
+    const col = d.distance === 0 ? '#3a6648' : d.distance <= 200 ? '#5d9068' : d.distance <= 400 ? '#c8954a' : '#c47a72';
+    const date = (d.title.match(/May \d+/)||['—'])[0];
+    const route = d.title.replace(/^May \d+ — /,'');
+    return `<div style="display:flex;align-items:flex-start;gap:14px;padding:12px 0;border-bottom:1px solid var(--border)">
+      <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:${col};display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff">${d.day}</div>
+      <div style="flex:1;min-width:0">
+        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:3px">
+          <span style="font-size:13px;font-weight:700;color:var(--text)">${route}</span>
+          <span style="font-size:9px;font-weight:700;color:var(--sage);background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:20px;padding:2px 8px;letter-spacing:.6px">${date}</span>
+          <span style="font-size:10px;font-weight:700;color:${col}">${d.distance} mi</span>
+        </div>
+        <div style="font-size:11px;color:var(--muted);line-height:1.5">Arrival ${d.arrival} · Lodging $${d.lodging} · Food $${d.food} · EV $${d.evCost}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function toggleCompact(){
+  const compact = document.getElementById('compactView');
+  const grid = document.getElementById('grid');
+  const btn = document.getElementById('compactBtn');
+  const isCompact = compact.style.display !== 'none';
+  if(isCompact){
+    compact.style.display='none';
+    grid.style.display='';
+    btn.style.background='';
+    btn.style.color='';
+  } else {
+    renderCompact();
+    compact.style.display='block';
+    grid.style.display='none';
+    btn.style.background='rgba(122,170,130,.15)';
+    btn.style.color='var(--sage)';
+    compact.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+}
+
+function toggleSection(id){
+  const el = document.getElementById(id);
+  const chev = document.getElementById('chev-'+id);
+  const isOpen = el.style.display !== 'none';
+  el.style.display = isOpen ? 'none' : 'block';
+  if(chev) chev.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+}
 
 function renderBookings(){
   document.getElementById('bookingCards').innerHTML = bookings.map((b,i) => `
@@ -1251,6 +1523,9 @@ function renderTile(d){
 document.getElementById('grid').innerHTML=data.map(renderTile).join('');
 buildNav();
 renderBookings();
+renderHostContacts();
+renderPacking();
+renderPretrip();
 
 // ── TRIP STATS ──
 function renderTripStats(){
