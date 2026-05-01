@@ -708,14 +708,14 @@ const bookings = [
     day: "Nights 4–5 — May 13–14"
   },
   {
-    title: "⏳ NEEDS BOOKING: Albany, NY — May 15–16",
-    urgency: "high",
-    urgencyLabel: "Book ASAP",
-    desc: "Long drive day from Tremont (~440 mi). Book a downtown Albany hotel — pet-friendly preferred. Suggest neighborhood hotels near downtown for easy dinner walking. Hilton Albany or Hampton Inn Albany Downtown both have pet rooms.",
-    when: "Book within 1–2 weeks — May is shoulder season but Albany has business travel",
+    title: "✅ BOOKED: Schenectady, NY — May 15–16",
+    urgency: "medium",
+    urgencyLabel: "Confirmed · $110",
+    desc: "Stay in Schenectady (15 min west of Albany). Cheaper than downtown Albany, on the I-90 route, walkable Stockade District (America's first historic district), good Italian dinner spots. Thacher State Park is 25 min away for an evening or morning stop.",
+    when: "Booked",
     who: "Your booking",
-    cost: "$130–160/night",
-    url: "https://www.booking.com/searchresults.html?ss=Albany+New+York",
+    cost: "$110",
+    url: "https://www.google.com/maps/place/Schenectady,+NY",
     day: "Night 6 — May 15"
   },
   {
@@ -807,7 +807,7 @@ const data = [
   {
     day:1, title:"May 10 — Cincinnati → Rushford, NY (Aaron's cabin)", type:"DRIVE",
     distance:458, hours:9, arrival:"5:30 PM",
-    lodging:0, food:55, evCost:51,
+    lodging:205, food:55, evCost:51,
     sunrise:"6:23 AM", sunset:"8:18 PM",
     mapRoute:"https://www.google.com/maps/dir/Cincinnati,+OH/Cleveland,+OH/Letchworth+State+Park,+NY/Rushford,+NY",
     timeline:[
@@ -834,7 +834,7 @@ const data = [
   {
     day:2, title:"May 11 — Rushford, NY → Lincoln, NH (Pemi Cabins cabin)", type:"DRIVE",
     distance:461, hours:10.5, arrival:"7:00 PM",
-    lodging:140, food:65, evCost:51,
+    lodging:168, food:65, evCost:51,
     sunrise:"5:43 AM", sunset:"8:11 PM",
     mapRoute:"https://www.google.com/maps/dir/Rushford,+NY/Syracuse,+NY/Albany,+NY/Lebanon,+NH/Lincoln,+NH",
     timeline:[
@@ -862,7 +862,7 @@ const data = [
   {
     day:3, title:"May 12 — Lincoln, NH → Freeport, ME (private suite)", type:"TRANSITION",
     distance:104, hours:2.9, arrival:"5:00 PM",
-    lodging:0, food:75, evCost:12,
+    lodging:150, food:75, evCost:12,
     sunrise:"5:21 AM", sunset:"7:57 PM",
     mapRoute:"https://www.google.com/maps/dir/Lincoln,+NH/Franconia+Notch+State+Park,+NH/Echo+Lake+Franconia+Notch+NH/Kancamagus+Highway+NH/Freeport,+ME",
     timeline:[
@@ -894,7 +894,7 @@ const data = [
   {
     day:4, title:"May 13 — Freeport → Tremont, ME (Aaron's guesthouse, Acadia)", type:"TRANSITION",
     distance:155, hours:3.5, arrival:"4:00 PM",
-    lodging:0, food:75, evCost:17,
+    lodging:195, food:75, evCost:17,
     sunrise:"5:19 AM", sunset:"7:58 PM",
     mapRoute:"https://www.google.com/maps/dir/Freeport,+ME/Camden+Hills+State+Park+ME/Bass+Harbor+Head+Lighthouse+ME/Tremont,+ME",
     timeline:[
@@ -925,7 +925,7 @@ const data = [
   {
     day:5, title:"May 14 — Acadia Full Day (from Tremont base)", type:"EXPLORE",
     distance:60, hours:1.5, arrival:"Home base Tremont",
-    lodging:0, food:75, evCost:7,
+    lodging:195, food:75, evCost:7,
     sunrise:"5:20 AM", sunset:"7:58 PM",
     mapRoute:"https://www.google.com/maps/dir/Tremont+ME/Cadillac+Mountain+Acadia+ME/Jordan+Pond+Acadia+National+Park/Sand+Beach+Acadia+ME/Thunder+Hole+Acadia+ME/Otter+Cliffs+Acadia+ME/Ship+Harbor+Trail+Acadia+ME/Tremont+ME",
     timeline:[
@@ -957,44 +957,45 @@ const data = [
     ]
   },
   {
-    day:6, title:"May 15 — Tremont → Albany, NY", type:"DRIVE",
-    distance:440, hours:9, arrival:"6:30 PM",
-    lodging:140, food:70, evCost:48,
+    day:6, title:"May 15 — Tremont → Schenectady, NY", type:"DRIVE",
+    distance:443, hours:9, arrival:"6:30 PM",
+    lodging:110, food:70, evCost:49,
     sunrise:"5:19 AM", sunset:"8:01 PM",
-    mapRoute:"https://www.google.com/maps/dir/Tremont,+ME/Augusta+ME/Lebanon+NH/Quechee+Gorge+VT/Albany,+NY",
+    mapRoute:"https://www.google.com/maps/dir/Tremont,+ME/Augusta+ME/Lebanon+NH/Quechee+Gorge+VT/Schenectady,+NY",
     timeline:[
       {time:"7:00 AM",act:"Lock up the guesthouse, depart Tremont early"},
       {time:"9:30 AM",act:"Charge + coffee – Augusta, ME (30 min)"},
       {time:"12:00 PM",act:"Lunch + charge – Lebanon, NH area (45 min)"},
       {time:"1:30 PM",act:"Quechee Gorge State Park, VT — 'Vermont's Little Grand Canyon', 165-ft gorge (1 hr stop, dog-friendly)"},
-      {time:"4:00 PM",act:"Thacher State Park, NY — Overlook Trail along the Helderberg Escarpment (1 hr stop)"},
-      {time:"5:30 PM",act:"Arrive Albany, NY area — check in"},
-      {time:"5:30 PM",act:"Arrive Albany — check in"},
-      {time:"7:00 PM",act:"Dinner in downtown Albany"}
+      {time:"4:00 PM",act:"Thacher State Park, NY — Overlook Trail along the Helderberg Escarpment (25 min from Schenectady, 1 hr stop)"},
+      {time:"6:00 PM",act:"Arrive Schenectady, NY — check in"},
+      {time:"7:00 PM",act:"Walk the Stockade District (America's first historic district) + dinner downtown"}
     ],
     stops:[
       {name:"Quechee Gorge State Park, VT",desc:"'Vermont's Little Grand Canyon' — a 165-ft deep gorge cut by the Ottauquechee River, right off US-4. Iconic bridge view is free and 30 seconds from the parking lot. For an actual hike, the 1.5-mile rim trail loop is dog-friendly on leash and takes ~45 min. Perfect stretch break mid-drive.",difficulty:"Easy",distance:"1.5 mi loop",time:"45 min–1 hr",elevation:"Minimal",maps:"Quechee+Gorge+State+Park+Vermont",guide:"Quechee Gorge State Park Vermont"},
-      {name:"Thacher State Park (John Boyd Thacher SP)",desc:"Just 15 min west of Albany on the 1,000-ft Helderberg Escarpment. Dramatic cliff views over the Hudson Valley and Adirondacks. Overlook Trail is the easy cliff-edge walk (dog-friendly on 6-ft leash). Sunset here is stunning. Indian Ladder Trail may be closed early May — Overlook Trail is open year-round.",difficulty:"Easy",distance:"1–2 mi",time:"1 hr",elevation:"Minimal",maps:"Thacher+State+Park+NY",guide:"Thacher State Park Indian Ladder Trail"}
+      {name:"Thacher State Park (John Boyd Thacher SP)",desc:"Just 25 min from Schenectady on the 1,000-ft Helderberg Escarpment. Dramatic cliff views over the Hudson Valley and Adirondacks. Overlook Trail is the easy cliff-edge walk (dog-friendly on 6-ft leash). Sunset here is stunning. Indian Ladder Trail may be closed early May — Overlook Trail is open year-round.",difficulty:"Easy",distance:"1–2 mi",time:"1 hr",elevation:"Minimal",maps:"Thacher+State+Park+NY",guide:"Thacher State Park Indian Ladder Trail"},
+      {name:"Schenectady Stockade District",desc:"America's FIRST historic district (designated 1962). Walkable streets of preserved 17th–19th century homes along the Mohawk River, all dog-friendly on leash. Quiet evening stroll right after check-in. Free.",difficulty:"Easy",distance:"0.5–1 mi walk",time:"30–45 min",elevation:"Flat",maps:"Schenectady+Stockade+District",guide:"Schenectady Stockade Historic District"}
     ],
     restaurants:[
       {name:"Simon Pearce Restaurant – Quechee, VT",info:"If timing works for lunch — historic mill on the Ottauquechee falls, glassblowing studio downstairs, beautiful view. Sit-down (45 min). Reserve."},
-      {name:"The City Beer Hall – Albany",info:"Casual craft beer and good food in a historic Albany building — reliable dinner after the long drive"},
-      {name:"New World Bistro Bar – Albany",info:"Top-rated Albany dinner spot, eclectic menu, locally loved — book ahead"}
+      {name:"Aperitivo Bistro – Schenectady",info:"Top-rated Italian small plates in downtown Schenectady — relaxed, well-loved local spot. Reserve."},
+      {name:"More Perreca's – Schenectady",info:"Famous for legendary bread + Italian sandwiches. Casual lunch/early dinner. Local institution since 1914."},
+      {name:"Cornell's Restaurant – Little Italy, Schenectady",info:"Old-school Italian, family-run, great for a hearty dinner after a long drive day"}
     ],
     chargers:[
       {name:"Tesla Supercharger – Augusta, ME",info:"First stop out of Maine, 30 min charge"},
       {name:"Tesla Supercharger – Lebanon, NH",info:"Mid-route, lunch + charge"},
-      {name:"ChargePoint – Albany Downtown",info:"Multiple locations near downtown lodging"}
+      {name:"Electrify America – Latham/Albany area",info:"15 min from Schenectady, top-off if needed before bed"}
     ]
   },
   {
-    day:7, title:"May 16 — Albany → Ohiopyle, PA", type:"DRIVE",
-    distance:454, hours:9.5, arrival:"6:30 PM",
+    day:7, title:"May 16 — Schenectady → Ohiopyle, PA", type:"DRIVE",
+    distance:451, hours:9.5, arrival:"6:30 PM",
     lodging:130, food:65, evCost:50,
     sunrise:"5:16 AM", sunset:"8:02 PM",
-    mapRoute:"https://www.google.com/maps/dir/Albany,+NY/Binghamton,+NY/Scranton,+PA/Bloomsburg,+PA/Ohiopyle,+PA",
+    mapRoute:"https://www.google.com/maps/dir/Schenectady,+NY/Binghamton,+NY/Scranton,+PA/Bloomsburg,+PA/Ohiopyle,+PA",
     timeline:[
-      {time:"7:30 AM",act:"Depart Albany"},
+      {time:"7:30 AM",act:"Depart Schenectady (I-88 SW directly out of town)"},
       {time:"10:00 AM",act:"Charge stop – Binghamton, NY (30 min)"},
       {time:"12:00 PM",act:"Lunch – Scranton or Wilkes-Barre, PA (45 min)"},
       {time:"2:30 PM",act:"Charge stop – Bloomsburg, PA (25 min, mid-PA top-off)"},
