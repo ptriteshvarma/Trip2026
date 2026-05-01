@@ -664,10 +664,10 @@ const bookings = [
     day: "Days 4–5 (May 13–14)"
   },
   {
-    title: "✅ BOOKED: Rushford, NY (Aaron) — May 10–11",
+    title: "✅ BOOKED: Cabin in Rushford, NY (Aaron) — May 10–11",
     urgency: "medium",
-    urgencyLabel: "Confirmed",
-    desc: "Booked stay with Aaron in Rushford, NY (~30 min from Letchworth State Park). Day 1 destination after the long Cincinnati drive. Bring a thank-you gift.",
+    urgencyLabel: "Confirmed · Cabin",
+    desc: "Cabin in Rushford, NY hosted by Aaron (~30 min from Letchworth State Park). Day 1 destination after the long Cincinnati drive. Bring a thank-you gift.",
     when: "Booked",
     who: "Aaron (host)",
     cost: "—",
@@ -675,10 +675,10 @@ const bookings = [
     day: "Night 1 — May 10"
   },
   {
-    title: "✅ BOOKED: Pemi Cabins, Lincoln NH — May 11–12",
+    title: "✅ BOOKED: Cabin in Lincoln, NH (Pemi Cabins) — May 11–12",
     urgency: "medium",
-    urgencyLabel: "Confirmed",
-    desc: "Cabin lodging in Lincoln, NH on the Pemigewasset River, right at the gateway to Franconia Notch and the White Mountains. Dog welcome.",
+    urgencyLabel: "Confirmed · Cabin",
+    desc: "Cabin at Pemi Cabins on the Pemigewasset River, right at the gateway to Franconia Notch and the White Mountains. Dog welcome.",
     when: "Booked",
     who: "Pemi Cabins",
     cost: "—",
@@ -686,10 +686,10 @@ const bookings = [
     day: "Night 2 — May 11"
   },
   {
-    title: "✅ BOOKED: Freeport, ME (Dustin & Brianna) — May 12–13",
+    title: "✅ BOOKED: Private Suite in Freeport, ME (Dustin & Brianna) — May 12–13",
     urgency: "medium",
-    urgencyLabel: "Confirmed",
-    desc: "Booked stay with Dustin & Brianna in Freeport, ME (just north of Portland — home of L.L. Bean and Wolfe's Neck Woods State Park). Bring a thank-you gift.",
+    urgencyLabel: "Confirmed · Private Suite",
+    desc: "Private suite in Freeport, ME hosted by Dustin & Brianna (just north of Portland — home of L.L. Bean and Wolfe's Neck Woods State Park). Bring a thank-you gift.",
     when: "Booked",
     who: "Dustin & Brianna (hosts)",
     cost: "—",
@@ -697,10 +697,10 @@ const bookings = [
     day: "Night 3 — May 12"
   },
   {
-    title: "✅ BOOKED: Tremont, ME (Aaron) — May 13–15",
+    title: "✅ BOOKED: Guesthouse in Tremont, ME (Aaron) — May 13–15",
     urgency: "medium",
-    urgencyLabel: "Confirmed (2 nights)",
-    desc: "Booked Acadia stay at Aaron's house in Tremont (southwest Mt Desert Island, 10 min from Bass Harbor Lighthouse, 30 min from Cadillac Mountain). 2 nights — full Acadia day on May 14.",
+    urgencyLabel: "Confirmed · Guesthouse · 2 nights",
+    desc: "Guesthouse in Tremont hosted by Aaron — southwest Mt Desert Island, 10 min from Bass Harbor Lighthouse, 30 min from Cadillac Mountain. Full Acadia day on May 14.",
     when: "Booked",
     who: "Aaron (host)",
     cost: "—",
@@ -805,7 +805,7 @@ function renderBookings(){
 // ── DATA ──
 const data = [
   {
-    day:1, title:"May 10 — Cincinnati → Rushford, NY (Aaron's)", type:"DRIVE",
+    day:1, title:"May 10 — Cincinnati → Rushford, NY (Aaron's cabin)", type:"DRIVE",
     distance:458, hours:9, arrival:"5:30 PM",
     lodging:0, food:55, evCost:51,
     sunrise:"6:23 AM", sunset:"8:18 PM",
@@ -815,15 +815,15 @@ const data = [
       {time:"10:30 AM",act:"Charge stop – Cleveland, OH (30 min)"},
       {time:"1:30 PM",act:"Lunch – Buffalo, NY area (45 min)"},
       {time:"3:30 PM",act:"Letchworth State Park — Inspiration Point + Lower Falls (1.5 hr, dogs welcome on leash)"},
-      {time:"5:30 PM",act:"Arrive Rushford, NY — staying with Aaron"},
-      {time:"6:30 PM",act:"Dinner with Aaron — relax after the long drive"}
+      {time:"5:30 PM",act:"Arrive Rushford, NY — check in to Aaron's cabin"},
+      {time:"6:30 PM",act:"Dinner + relax at the cabin after the long drive"}
     ],
     stops:[
       {name:"Letchworth State Park — Inspiration Point",desc:"On your way to Rushford. Letchworth is the 'Grand Canyon of the East' — a 600-foot deep gorge carved by the Genesee River. Inspiration Point is the most-photographed viewpoint, with sweeping canyon views and Lower Falls below. Quick 0.5 mi walk from parking, dog-friendly on 6-ft leash.",difficulty:"Easy",distance:"0.5 mi",time:"30 min",elevation:"Minimal",maps:"Inspiration+Point+Letchworth+State+Park",guide:"Letchworth Inspiration Point overlook"},
       {name:"Letchworth Lower Falls",desc:"Short walk down to the base of the Lower Falls — a powerful 70-foot waterfall in the gorge. Stone footbridge over the river. Dogs welcome on leash. Perfect post-drive leg stretch with stunning views.",difficulty:"Easy–Moderate",distance:"0.7 mi",time:"45 min",elevation:"Some stairs",maps:"Lower+Falls+Letchworth+State+Park",guide:"Letchworth Lower Falls trail"}
     ],
     restaurants:[
-      {name:"With Aaron in Rushford",info:"Booked stay — dinner at the host's place. Bring a thank-you bottle of wine."},
+      {name:"Aaron's cabin — Rushford, NY",info:"Booked cabin stay. Dinner at the cabin — bring a thank-you bottle of wine for the host."},
       {name:"Beef Haus – Buffalo, NY",info:"If stopping in Buffalo for lunch — classic beef-on-weck, dog-friendly outdoor seating in season."}
     ],
     chargers:[
@@ -832,7 +832,7 @@ const data = [
     ]
   },
   {
-    day:2, title:"May 11 — Rushford, NY → Lincoln, NH (Pemi Cabins)", type:"DRIVE",
+    day:2, title:"May 11 — Rushford, NY → Lincoln, NH (Pemi Cabins cabin)", type:"DRIVE",
     distance:461, hours:10.5, arrival:"7:00 PM",
     lodging:140, food:65, evCost:51,
     sunrise:"5:43 AM", sunset:"8:11 PM",
@@ -842,11 +842,11 @@ const data = [
       {time:"10:30 AM",act:"Charge stop – Syracuse, NY (30 min)"},
       {time:"1:00 PM",act:"Lunch + charge – Albany, NY (45 min)"},
       {time:"4:30 PM",act:"Charge stop – Lebanon, NH (25 min, last stop before mountains)"},
-      {time:"7:00 PM",act:"Arrive Lincoln, NH — check in at Pemi Cabins"},
+      {time:"7:00 PM",act:"Arrive Lincoln, NH — check in to your cabin at Pemi Cabins"},
       {time:"7:30 PM",act:"Quick dinner at Woodstock Inn Brewery (right in Lincoln) — dog-friendly patio"}
     ],
     stops:[
-      {name:"Pemi Cabins — Lincoln, NH",desc:"Booked stay. Cabin lodging on the Pemigewasset River right at the gateway to Franconia Notch and the White Mountain National Forest. After 10+ hours of driving, take an evening stroll along the Pemi River behind the cabins. Dogs welcome.",difficulty:"Easy",distance:"Short walk",time:"30 min",elevation:"Flat",maps:"Pemi+Cabins+Lincoln+NH",guide:"Pemi Cabins Lincoln NH"}
+      {name:"Pemi Cabins — Lincoln, NH",desc:"Booked cabin stay on the Pemigewasset River, right at the gateway to Franconia Notch and the White Mountain National Forest. After 10+ hours of driving, take an evening stroll along the Pemi River behind the cabins. Dogs welcome.",difficulty:"Easy",distance:"Short walk",time:"30 min",elevation:"Flat",maps:"Pemi+Cabins+Lincoln+NH",guide:"Pemi Cabins Lincoln NH"}
     ],
     restaurants:[
       {name:"Woodstock Inn Station & Brewery – North Woodstock",info:"5 min from Pemi Cabins. Beloved local brewpub, great food, cozy mountain vibe, dog-friendly outdoor patio. Late dinner reliable."},
@@ -860,7 +860,7 @@ const data = [
     ]
   },
   {
-    day:3, title:"May 12 — Lincoln, NH → Freeport, ME (Dustin & Brianna)", type:"TRANSITION",
+    day:3, title:"May 12 — Lincoln, NH → Freeport, ME (private suite)", type:"TRANSITION",
     distance:104, hours:2.9, arrival:"5:00 PM",
     lodging:0, food:75, evCost:12,
     sunrise:"5:21 AM", sunset:"7:57 PM",
@@ -871,7 +871,7 @@ const data = [
       {time:"10:00 AM",act:"Echo Lake — Cannon Mountain reflections, lakeside walk (45 min)"},
       {time:"11:00 AM",act:"Kancamagus Highway scenic drive — pull over at Sabbaday Falls (20 min walk to the falls)"},
       {time:"1:00 PM",act:"Lunch in Conway, NH or Bridgton, ME (45 min)"},
-      {time:"5:00 PM",act:"Arrive Freeport — staying with Dustin & Brianna"},
+      {time:"5:00 PM",act:"Arrive Freeport — check in to private suite hosted by Dustin & Brianna"},
       {time:"6:00 PM",act:"Wolfe's Neck Woods State Park — sunset coastal walk on Casco Bay (dog-friendly state park, free entry)"},
       {time:"7:30 PM",act:"Dinner with Dustin & Brianna in Freeport"}
     ],
@@ -882,7 +882,7 @@ const data = [
       {name:"Wolfe's Neck Woods State Park",desc:"244-acre Maine state park on Casco Bay, just 5 min from your Freeport stay. Coastal woods, ospreys nesting on Googins Island, easy paths along the rocky shore. Dogs welcome on leash. Perfect golden-hour walk after the drive.",difficulty:"Easy",distance:"1.5–2 mi",time:"1 hr",elevation:"Minimal",maps:"Wolfes+Neck+Woods+State+Park+Freeport+ME",guide:"Wolfes Neck Woods State Park Freeport"}
     ],
     restaurants:[
-      {name:"With Dustin & Brianna in Freeport",info:"Booked stay — likely a home-cooked dinner with the hosts. Bring a thank-you gift (Vermont maple syrup or NH-made chocolate from a Lincoln shop)."},
+      {name:"Private suite — Freeport, ME (Dustin & Brianna)",info:"Booked private suite. Self-contained — cook in if you'd like, or eat out. Bring a thank-you gift for the hosts (NH-made chocolate from a Lincoln shop works)."},
       {name:"Maine Beer Company – Freeport",info:"Backup option — exceptional craft beer + wood-fired pizza, dog-friendly outdoor patio. 5 min from town."},
       {name:"L.L. Bean Flagship – Freeport (open 24 hours)",info:"Only L.L. Bean store open 24/7. Free outdoor classes, the giant boot photo op — fun stop with the dog any time of evening."}
     ],
@@ -892,7 +892,7 @@ const data = [
     ]
   },
   {
-    day:4, title:"May 13 — Freeport → Tremont, ME (Aaron's, Acadia)", type:"TRANSITION",
+    day:4, title:"May 13 — Freeport → Tremont, ME (Aaron's guesthouse, Acadia)", type:"TRANSITION",
     distance:155, hours:3.5, arrival:"4:00 PM",
     lodging:0, food:75, evCost:17,
     sunrise:"5:19 AM", sunset:"7:58 PM",
@@ -903,7 +903,7 @@ const data = [
       {time:"10:30 AM",act:"Depart Freeport up Coastal Route 1"},
       {time:"12:00 PM",act:"Camden Hills State Park — drive up Mt Battie auto road (~$3, 5 min) for sweeping Penobscot Bay views"},
       {time:"1:00 PM",act:"Lunch in Camden, ME — coastal village stroll"},
-      {time:"4:00 PM",act:"Arrive Tremont, ME — settle into Aaron's house in Acadia"},
+      {time:"4:00 PM",act:"Arrive Tremont, ME — settle into Aaron's guesthouse in Acadia"},
       {time:"6:00 PM",act:"Drive 10 min to Bass Harbor Head Lighthouse for sunset (~7:58 PM)"},
       {time:"8:00 PM",act:"Dinner at Thurston's Lobster Pound (Bernard, 5 min from Tremont) — dog-friendly deck over the wharf"}
     ],
@@ -912,7 +912,7 @@ const data = [
       {name:"Bass Harbor Head Lighthouse",desc:"The MOST PHOTOGRAPHED lighthouse in Maine — 1858 structure perched on rocks at the southern tip of MDI, just 10 min from your Tremont stay. Best at sunset. Dog-friendly viewing area. Romantic.",difficulty:"Easy",distance:"10 min walk",time:"45 min",elevation:"Minimal",maps:"Bass Harbor Head Lighthouse",guide:"Bass Harbor Lighthouse sunset"}
     ],
     restaurants:[
-      {name:"Aaron's house — Tremont",info:"Booked stay (2 nights). Likely fully equipped — bring groceries from Hannaford in Ellsworth or shop in Bar Harbor."},
+      {name:"Aaron's guesthouse — Tremont, ME",info:"Booked guesthouse (2 nights). Self-contained Acadia base — pick up groceries from Hannaford in Ellsworth or shop in Bar Harbor on the way in."},
       {name:"Thurston's Lobster Pound – Bernard",info:"5 min from Tremont. Authentic working lobster pound on Bass Harbor — order at the counter, eat on the dog-friendly deck right over the water. Iconic Maine experience."},
       {name:"Seafood Ketch – Bass Harbor",info:"Walking-distance Tremont alternative. Casual seafood, harbor views, dog-friendly outdoor seating."},
       {name:"Long Cove Café – Camden",info:"If lunching in Camden — coastal café with view of the harbor, dog-friendly patio in season"}
@@ -938,7 +938,7 @@ const data = [
       {time:"3:00 PM",act:"Thunder Hole — best at 3/4 incoming tide (check NOAA chart)"},
       {time:"4:00 PM",act:"Otter Cliffs — 110-ft sea cliffs, harbor seals on the rocks below"},
       {time:"5:30 PM",act:"Drive back to Tremont side — Ship Harbor Trail tide pools (1.3 mi loop)"},
-      {time:"7:30 PM",act:"Sunset dinner at Thurston's Lobster Pound or back at Aaron's"}
+      {time:"7:30 PM",act:"Sunset dinner at Thurston's Lobster Pound or back at the guesthouse"}
     ],
     stops:[
       {name:"Cadillac Mountain Sunrise",desc:"At 1,530 ft, the highest point on the entire US Atlantic coast — and the FIRST place to see sunrise in the US for much of the year. No timed reservation needed in May (only enforced June–Oct). Drive up before dawn (it's only 30 min from Tremont). Bring blankets and coffee. Dog friendly summit.",difficulty:"Easy (drive)",distance:"Drive-up",time:"1.5 hrs",elevation:"0 (drive)",maps:"Cadillac+Mountain+Acadia+National+Park",guide:"Cadillac Mountain Acadia sunrise"},
@@ -963,7 +963,7 @@ const data = [
     sunrise:"5:19 AM", sunset:"8:01 PM",
     mapRoute:"https://www.google.com/maps/dir/Tremont,+ME/Augusta+ME/Lebanon+NH/Quechee+Gorge+VT/Albany,+NY",
     timeline:[
-      {time:"7:00 AM",act:"Goodbye to Aaron, depart Tremont early"},
+      {time:"7:00 AM",act:"Lock up the guesthouse, depart Tremont early"},
       {time:"9:30 AM",act:"Charge + coffee – Augusta, ME (30 min)"},
       {time:"12:00 PM",act:"Lunch + charge – Lebanon, NH area (45 min)"},
       {time:"1:30 PM",act:"Quechee Gorge State Park, VT — 'Vermont's Little Grand Canyon', 165-ft gorge (1 hr stop, dog-friendly)"},
