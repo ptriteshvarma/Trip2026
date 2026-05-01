@@ -489,7 +489,7 @@ function checkPw(){
   <p class="hero-sub">Cincinnati &rarr; Bar Harbor, Maine &rarr; Cincinnati</p>
   <div class="hero-stats">
     <div class="hstat"><span class="hstat-n">8</span><div class="hstat-l">Days</div></div>
-    <div class="hstat"><span class="hstat-n">2,456</span><div class="hstat-l">Miles</div></div>
+    <div class="hstat"><span class="hstat-n">2,521</span><div class="hstat-l">Miles</div></div>
     <div class="hstat"><span class="hstat-n" id="herobudget">—</span><div class="hstat-l">Budget</div></div>
     <div class="hstat"><span class="hstat-n">2</span><div class="hstat-l">Acadia Days</div></div>
     <div class="hstat"><span class="hstat-n">10.5h</span><div class="hstat-l">Max Drive</div></div>
@@ -719,26 +719,15 @@ const bookings = [
     day: "Night 6 — May 15"
   },
   {
-    title: "⏳ NEEDS BOOKING: Ohiopyle, PA — May 16–17",
-    urgency: "high",
-    urgencyLabel: "Book ASAP",
-    desc: "Limited lodging in tiny Ohiopyle. Best options: Falls Market Inn (right in town, dog-friendly), Yough Plaza Motel, or vacation rental on Vrbo. Closest larger town with hotels: Uniontown, PA (15 min away). Book early — village is small.",
-    when: "Book within 1–2 weeks",
+    title: "✅ BOOKED: Home in Terra Alta, WV — May 16–17",
+    urgency: "medium",
+    urgencyLabel: "Confirmed · Home rental",
+    desc: "Booked home rental in Terra Alta, WV — quiet last-night base in the Allegheny Mountains, just 44 mi south of Ohiopyle (visited en route on Day 7). Cooper's Rock State Forest is 15 min away if you want a quick morning overlook before driving home.",
+    when: "Booked",
     who: "Your booking",
-    cost: "$110–150/night",
-    url: "https://www.booking.com/searchresults.html?ss=Ohiopyle+Pennsylvania",
+    cost: "$140 estimate",
+    url: "https://www.google.com/maps/place/Terra+Alta,+WV",
     day: "Night 7 — May 16"
-  },
-  {
-    title: "Fallingwater Tour Tickets (optional Day 7)",
-    urgency: "high",
-    urgencyLabel: "Book Weeks Ahead",
-    desc: "Frank Lloyd Wright's masterpiece, 15 min from Ohiopyle. Timed tours sell out — book online weeks in advance. Dogs not allowed inside (can stay in shaded car during 1.5 hr tour). Skip if you arrive too late on Day 7.",
-    when: "Book online weeks in advance",
-    who: "Per person",
-    cost: "$30 (regular) or $80 (in-depth)",
-    url: "https://fallingwater.org/visit/tickets/",
-    day: "Day 7 — May 16 (afternoon arrival) or Day 8 morning"
   },
   {
     title: "Acadia National Park Pass",
@@ -989,55 +978,60 @@ const data = [
     ]
   },
   {
-    day:7, title:"May 16 — Schenectady → Ohiopyle, PA", type:"DRIVE",
-    distance:451, hours:9.5, arrival:"6:30 PM",
-    lodging:130, food:65, evCost:50,
+    day:7, title:"May 16 — Schenectady → Ohiopyle stop → Terra Alta, WV", type:"DRIVE",
+    distance:495, hours:10.5, arrival:"7:00 PM",
+    lodging:140, food:65, evCost:54,
     sunrise:"5:16 AM", sunset:"8:02 PM",
-    mapRoute:"https://www.google.com/maps/dir/Schenectady,+NY/Binghamton,+NY/Scranton,+PA/Bloomsburg,+PA/Ohiopyle,+PA",
+    mapRoute:"https://www.google.com/maps/dir/Schenectady,+NY/Binghamton,+NY/Scranton,+PA/Bloomsburg,+PA/Ohiopyle,+PA/Terra+Alta,+WV",
     timeline:[
-      {time:"7:30 AM",act:"Depart Schenectady (I-88 SW directly out of town)"},
-      {time:"10:00 AM",act:"Charge stop – Binghamton, NY (30 min)"},
-      {time:"12:00 PM",act:"Lunch – Scranton or Wilkes-Barre, PA (45 min)"},
-      {time:"2:30 PM",act:"Charge stop – Bloomsburg, PA (25 min, mid-PA top-off)"},
-      {time:"6:30 PM",act:"Arrive Ohiopyle, PA — check in"},
-      {time:"7:00 PM",act:"Quick walk to Ohiopyle Falls in town (dog welcome on leash)"},
-      {time:"8:00 PM",act:"Dinner in Ohiopyle"}
+      {time:"6:30 AM",act:"Early start — depart Schenectady (I-88 SW)"},
+      {time:"9:00 AM",act:"Charge stop – Binghamton, NY (30 min)"},
+      {time:"11:30 AM",act:"Lunch – Scranton or Wilkes-Barre, PA (45 min)"},
+      {time:"2:30 PM",act:"Charge stop – Bloomsburg, PA (25 min)"},
+      {time:"4:30 PM",act:"Arrive Ohiopyle, PA — Ohiopyle Falls (20 min) + Ferncliff Peninsula Trail (45 min, 1.8 mi loop, dog-friendly)"},
+      {time:"6:00 PM",act:"Depart Ohiopyle — drive 44 mi south on US-40/US-219 to Terra Alta (~1h 15min)"},
+      {time:"7:00 PM",act:"Arrive Terra Alta, WV — settle into the home"},
+      {time:"8:00 PM",act:"Dinner — cook at the home or grab takeout from Kingwood (15 min away)"}
     ],
     stops:[
-      {name:"Ohiopyle Falls",desc:"A dramatic 20-foot natural waterfall on the Youghiogheny River right in the center of town — steps from the road. One of the most powerful waterfalls in PA. Free to view, stunning at dusk.",difficulty:"Easy",distance:"0.2 mi",time:"20–30 min",elevation:"Minimal",maps:"Ohiopyle+Falls+PA",guide:"Ohiopyle Falls Pennsylvania"},
-      {name:"Fallingwater – Frank Lloyd Wright",desc:"One of the greatest buildings ever constructed — a private house cantilevered directly over a waterfall. A UNESCO World Heritage Site. Timed tours fill up fast. Book online in advance ($30–45/person). Dogs not allowed inside, but can be left in the car during the ~1.5 hr tour.",difficulty:"Easy (tour)",distance:"0.5 mi walk",time:"1.5 hrs",elevation:"Minimal",maps:"Fallingwater+Mill+Run+PA",guide:"Fallingwater tour tickets Frank Lloyd Wright"}
+      {name:"Ohiopyle Falls",desc:"A dramatic 20-foot natural waterfall on the Youghiogheny River right in the center of Ohiopyle — steps from the road. One of the most powerful waterfalls in PA. Free to view, dog-friendly on leash. Perfect mid-afternoon stretch break.",difficulty:"Easy",distance:"0.2 mi",time:"20–30 min",elevation:"Minimal",maps:"Ohiopyle+Falls+PA",guide:"Ohiopyle Falls Pennsylvania"},
+      {name:"Ferncliff Peninsula Trail",desc:"A forested 1.8 mi loop around a peninsula formed by a horseshoe bend in the Youghiogheny River. Peaceful, flat, and beautiful. National Natural Landmark. Dogs welcome on leash. Perfect leg-stretcher before the last 44 mi to Terra Alta.",difficulty:"Easy",distance:"1.8 mi loop",time:"45 min",elevation:"Minimal",maps:"Ferncliff+Peninsula+Trail+Ohiopyle",guide:"Ferncliff Peninsula hiking Ohiopyle"},
+      {name:"Home stay — Terra Alta, WV",desc:"Booked home rental in Terra Alta, a quiet WV town in the Allegheny Mountains. Right next door to Cooper's Rock State Forest. Perfect base for a relaxed last night before driving home.",difficulty:"Easy",distance:"—",time:"Overnight",elevation:"~2,500 ft",maps:"Terra+Alta+WV",guide:"Terra Alta West Virginia"}
     ],
     restaurants:[
-      {name:"Ohiopyle Trading Post & Café",info:"Right in town at the falls — casual, good burgers and sandwiches, local spot"},
-      {name:"Falls Market Restaurant – Ohiopyle",info:"Classic family restaurant in town, open for dinner, reliable and easy after a long drive day"}
+      {name:"Ohiopyle Trading Post & Café",info:"Quick afternoon coffee/snack stop in Ohiopyle while walking to the falls"},
+      {name:"Cook in at the home (Terra Alta)",info:"Pick up groceries at Walmart Kingwood (15 min from Terra Alta) — easy stop on the drive in from Ohiopyle"},
+      {name:"Mountaineer Family Restaurant – Kingwood, WV",info:"Casual American diner ~15 min from Terra Alta. Reliable home-style dinner if you don't want to cook."}
     ],
     chargers:[
       {name:"Electrify America – Binghamton, NY",info:"I-88 corridor, 30 min charge"},
-      {name:"ChargePoint – Scranton, PA",info:"Top off near lunch"},
-      {name:"Electrify America – Bloomsburg, PA",info:"I-80 corridor, mid-PA charge before final stretch to Ohiopyle"}
+      {name:"ChargePoint – Scranton, PA",info:"Lunch + charge mid-route"},
+      {name:"Electrify America – Bloomsburg, PA",info:"I-80 mid-PA charge before Ohiopyle exit"},
+      {name:"ChargePoint – Morgantown, WV",info:"Optional, 35 min from Terra Alta, top-off before Day 8 if needed"}
     ]
   },
   {
-    day:8, title:"May 17 — Ohiopyle → Cincinnati", type:"DRIVE",
-    distance:324, hours:5.5, arrival:"2:30 PM",
-    lodging:0, food:50, evCost:35,
+    day:8, title:"May 17 — Terra Alta, WV → Cincinnati (Straight Home)", type:"DRIVE",
+    distance:345, hours:7, arrival:"3:30 PM",
+    lodging:0, food:50, evCost:38,
     sunrise:"6:01 AM", sunset:"8:20 PM",
-    mapRoute:"https://www.google.com/maps/dir/Ohiopyle,+PA/Columbus+OH/Cincinnati+OH",
+    mapRoute:"https://www.google.com/maps/dir/Terra+Alta,+WV/Morgantown,+WV/Columbus,+OH/Cincinnati,+OH",
     timeline:[
-      {time:"8:00 AM",act:"Morning walk – Ohiopyle Falls & Ferncliff Peninsula Trail (30–45 min before leaving)"},
-      {time:"9:00 AM",act:"Depart Ohiopyle"},
-      {time:"11:30 AM",act:"Charge stop – Columbus, OH (25 min)"},
-      {time:"2:30 PM",act:"HOME! Cincinnati!"}
+      {time:"8:00 AM",act:"Coffee, pack up the home in Terra Alta"},
+      {time:"8:30 AM",act:"Depart Terra Alta — straight home to Cincinnati"},
+      {time:"9:30 AM",act:"Charge stop – Morgantown, WV (25 min)"},
+      {time:"12:30 PM",act:"Lunch + charge – Columbus, OH (45 min)"},
+      {time:"3:30 PM",act:"HOME! Cincinnati!"}
     ],
-    stops:[
-      {name:"Ferncliff Peninsula Trail",desc:"A short morning loop around a forested peninsula formed by a horseshoe bend in the Youghiogheny River. Peaceful, flat, and beautiful — perfect 30-min start before the drive home. Dog friendly on leash.",difficulty:"Easy",distance:"1.8 mi loop",time:"30–45 min",elevation:"Minimal",maps:"Ferncliff+Peninsula+Trail+Ohiopyle",guide:"Ferncliff Peninsula hiking Ohiopyle"}
-    ],
+    stops:[],
     restaurants:[
-      {name:"Ohiopyle Trading Post & Café",info:"Grab coffee and breakfast sandwiches to go before you hit the road"},
-      {name:"Celebrate at home!",info:"You just did 2,446 miles — order your favorite Cincinnati food and relax"}
+      {name:"Tudor's Biscuit World – Morgantown, WV",info:"WV institution — open early, perfect for breakfast biscuits to go on the way out"},
+      {name:"North Market – Columbus, OH",info:"Great lunch stop in Columbus on the way home — many food stalls, dog-friendly outdoor seating"},
+      {name:"Celebrate at home!",info:"You just did 2,521 miles — order your favorite Cincinnati food and relax"}
     ],
     chargers:[
-      {name:"Electrify America – Columbus, OH",info:"I-70 corridor, 25 min charge — don't skip this stop before the final push to Cincinnati"}
+      {name:"Tesla Supercharger – Morgantown, WV",info:"35 min from Terra Alta, fastest charge to start the day"},
+      {name:"Electrify America – Columbus, OH",info:"I-70 corridor, lunch + charge before final push to Cincinnati"}
     ]
   }
 ];
@@ -1267,12 +1261,12 @@ function renderTripStats(){
   const totalBudget = data.reduce((s,d)=>s+d.lodging+d.food+d.evCost,0);
   const totalEV = data.reduce((s,d)=>s+d.evCost,0);
   const totalLodging = data.reduce((s,d)=>s+d.lodging,0);
-  const states = ['Ohio','Pennsylvania','New York','New Hampshire','Maine','Vermont'];
+  const states = ['Ohio','Pennsylvania','New York','New Hampshire','Maine','Vermont','West Virginia'];
   const nationalParks = ['Acadia National Park'];
   const stateparks = ['Letchworth SP','Franconia Notch SP','Wolfe\'s Neck Woods SP','Camden Hills SP','Quechee Gorge SP','Thacher SP','Ohiopyle SP'];
 
   const cards = [
-    {icon:'🗺️', val:'2,456', lbl:'Total Miles', sub:'Round trip'},
+    {icon:'🗺️', val:'2,521', lbl:'Total Miles', sub:'Round trip'},
     {icon:'📅', val:totalDays, lbl:'Days', sub:`${driveDays} drive · ${exploreDays} explore`},
     {icon:'🏔️', val:totalStops, lbl:'Stops & Trails', sub:'Hikes, sights, landmarks'},
     {icon:'🌲', val:nationalParks.length, lbl:'National Parks', sub:'Acadia NP'},
