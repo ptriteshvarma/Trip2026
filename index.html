@@ -1342,6 +1342,14 @@ function renderTile(d){
     <div class="dining">
       <div class="dining-name">${icon('fork','width="13" height="13"')} ${r.name}</div>
       <div class="dining-info">${r.info}</div>
+      <div class="trail-btns" style="margin-top:8px">
+        <button class="trail-btn tbm" onclick="event.stopPropagation();openMap('${r.name.replace(/'/g,"\\'")}')">
+          ${icon('map','width="11" height="11"')} Maps
+        </button>
+        <button class="trail-btn tbg" onclick="event.stopPropagation();openSearch('${r.name.replace(/'/g,"\\'")}')">
+          ${icon('search','width="11" height="11"')} Search
+        </button>
+      </div>
     </div>`).join('');
 
   const chargeHTML=d.chargers.map(c=>`
