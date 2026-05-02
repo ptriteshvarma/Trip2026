@@ -1155,7 +1155,7 @@ const data = [
       {time:"7:30 PM",act:"Dinner with Dustin & Brianna in Freeport"}
     ],
     stops:[
-      {name:"Flume Gorge — Franconia Notch State Park",desc:"NH's crown jewel — an 800-ft natural granite gorge with waterfalls, covered bridges, and boardwalks carved through 90-foot cliff walls. 2 mi loop. Dogs welcome on leash. Buy tickets online in advance to skip the line. Worth every penny.",difficulty:"Easy–Moderate",distance:"2 mi loop",time:"1.5 hrs",elevation:"200 ft",maps:"Flume+Gorge+Franconia+Notch+NH",guide:"Flume Gorge Franconia Notch hiking"},
+      {name:"Flume Gorge — Franconia Notch State Park",dogs:false,dogStrategy:"Split up — one person does the gorge loop (~1.5 hrs) while the other walks the dog in the designated pet area at the Flume parking lot. Or book same-day drop-off at K9 Fun Town, Twin Mountain (~20 min, reservekennels.com). You're already checked out of Pemi Cabins so the dog is with you.",desc:"NH's crown jewel — an 800-ft natural granite gorge with waterfalls, covered bridges, and boardwalks carved through 90-foot cliff walls. 2 mi loop. Timed entry required ($18/adult online). Spectacular narrow passage through solid granite — worth every penny.",difficulty:"Easy–Moderate",distance:"2 mi loop",time:"1.5 hrs",elevation:"200 ft",maps:"Flume+Gorge+Franconia+Notch+NH",guide:"Flume Gorge Franconia Notch hiking"},
       {name:"Echo Lake — Franconia Notch",desc:"A glacially-carved mountain lake inside Franconia Notch State Park. Cannon Mountain towers above. Quick lakeside walk before continuing east. Dogs on leash.",difficulty:"Easy",distance:"Short walk",time:"30–45 min",elevation:"Flat",maps:"Echo+Lake+Franconia+Notch+NH",guide:"Echo Lake Franconia Notch"},
       {name:"Kancamagus Highway",desc:"One of New England's most scenic drives — 34 miles through White Mountain National Forest. No commercial development. Pull over at Sabbaday Falls (~20 min easy walk to triple-tier waterfall, dog-friendly).",difficulty:"Drive",distance:"34 mi",time:"1–1.5 hrs",elevation:"N/A",maps:"Kancamagus+Highway+NH+scenic+drive",guide:"Kancamagus Highway driving guide"},
       {name:"Wolfe's Neck Woods State Park",desc:"244-acre Maine state park on Casco Bay, just 5 min from your Freeport stay. Coastal woods, ospreys nesting on Googins Island, easy paths along the rocky shore. Dogs welcome on leash. Perfect golden-hour walk after the drive.",difficulty:"Easy",distance:"1.5–2 mi",time:"1 hr",elevation:"Minimal",maps:"Wolfes+Neck+Woods+State+Park+Freeport+ME",guide:"Wolfes Neck Woods State Park Freeport"}
@@ -1368,8 +1368,9 @@ function renderTile(d){
                   'linear-gradient(135deg,rgba(30,58,95,.6),rgba(37,99,235,.4))';
 
   const trailsHTML=d.stops.map(s=>`
-    <div class="trail">
-      <h4>${icon('map','width="14" height="14"')} ${s.name}</h4>
+    <div class="trail" style="${s.dogs===false?'border-left-color:var(--red);':'' }">
+      <h4>${icon('map','width="14" height="14"')} ${s.name}${s.dogs===false?'&nbsp;<span style="font-size:9px;font-weight:700;background:rgba(196,122,114,.2);color:var(--red);border:1px solid rgba(196,122,114,.4);border-radius:20px;padding:2px 8px;letter-spacing:.5px">🐾 NO DOGS</span>':''}</h4>
+      ${s.dogs===false?`<div style="background:rgba(196,122,114,.1);border:1px solid rgba(196,122,114,.25);border-radius:10px;padding:8px 12px;margin-bottom:10px;font-size:11px;color:var(--red)"><strong>Dogs not allowed on this trail.</strong> ${s.dogStrategy||'One person explores while the other waits with the dog in the designated pet area at the parking lot.'}</div>`:''}
       <p class="trail-desc">${s.desc}</p>
       <div class="trail-chips">
         <div class="trail-chip"><span>Difficulty</span><span>${s.difficulty}</span></div>
