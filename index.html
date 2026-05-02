@@ -659,15 +659,26 @@ function checkPw(){
 // ── ADVANCE BOOKINGS ──
 const bookings = [
   {
-    title: "Cadillac Mountain Sunrise — Drive Up",
+    title: "⚠️ BOOK NOW: Flume Gorge Timed Entry — May 12",
+    urgency: "urgent",
+    urgencyLabel: "BOOK TODAY — May 12 is 10 days away",
+    desc: "Flume Gorge at Franconia Notch State Park requires TIMED ENTRY reservations online. May 12 is a Tuesday so less crowded than weekends, but slots still go — especially for the 8 AM opening. Online tickets are $18/adult vs $21 at the gate. Book your slot now for 8:00 or 8:30 AM so you hit it fresh before the Kancamagus drive.",
+    when: "Book NOW at nhstateparks.reserveamerica.com",
+    who: "2 adults — $36 total online",
+    cost: "$18/adult online · $21 at gate",
+    url: "https://newhampshirestateparks.reserveamerica.com/",
+    day: "Day 3 (May 12) — first stop, 8 AM"
+  },
+  {
+    title: "Cadillac Mountain Sunrise — No Reservation Needed May 14",
     urgency: "medium",
-    urgencyLabel: "No Reservation Needed in May",
-    desc: "Great news — the Cadillac Mountain timed entry reservation is only required July–October. In May you can drive up any time without booking. Sunrise is ~5:20 AM — leave Bar Harbor by 4:45 AM to catch it.",
-    when: "No booking needed — just show up!",
+    urgencyLabel: "Safe — Reservation Required from May 20 Onward",
+    desc: "Cadillac Mountain timed-entry reservations are required May 20–October 25, 2026. Your visit is May 14 — you are 6 days before the cutoff. No reservation needed, just drive up. Sunrise is 5:20 AM — leave Tremont by 4:45 AM.",
+    when: "No booking needed — just show up before dawn",
     who: "Per vehicle (park pass required)",
     cost: "Included with park pass",
     url: "https://www.nps.gov/acad/planyourvisit/cadillacmountain.htm",
-    day: "Day 5 (May 14) — sunrise drive from Tremont"
+    day: "Day 5 (May 14) — leave Tremont by 4:45 AM"
   },
   {
     title: "Acadia Park Loop Road — No Timed Entry in May",
@@ -750,12 +761,34 @@ const bookings = [
     title: "Acadia National Park Pass",
     urgency: "medium",
     urgencyLabel: "Buy Before You Go",
-    desc: "America the Beautiful Annual Pass ($80) covers Acadia + every other national park for a full year — best value if you visit 3+ parks/year. Otherwise a 7-day Acadia vehicle pass is $35.",
-    when: "Buy online before the trip",
+    desc: "America the Beautiful Annual Pass ($80) covers Acadia + every other national park for a full year — best value if you visit any other parks this year. Otherwise a 7-day Acadia vehicle pass is $35. You can buy at the gate or online. No timed entry needed in May.",
+    when: "Buy online or at the gate on arrival",
     who: "Per vehicle",
-    cost: "$35 (7-day) or $80 (annual)",
+    cost: "$35 (7-day Acadia) or $80 (annual all parks)",
     url: "https://www.nps.gov/acad/planyourvisit/fees.htm",
     day: "Before Day 4 (May 13)"
+  },
+  {
+    title: "Letchworth State Park — $10 Vehicle Fee",
+    urgency: "low",
+    urgencyLabel: "Pay at Gate · No Booking Needed",
+    desc: "Letchworth charges a $10/vehicle day-use fee May–October (9 AM–5 PM). Pay cash or card at the gate when you arrive. No advance booking needed.",
+    when: "Pay at the entrance gate",
+    who: "Per vehicle",
+    cost: "$10/vehicle",
+    url: "https://parks.ny.gov/parks/letchworth",
+    day: "Day 1 (May 10) — afternoon stop"
+  },
+  {
+    title: "Maine State Park Day Use Fees — Have $25 Cash",
+    urgency: "low",
+    urgencyLabel: "Pay at Gate · Wolfe's Neck = Cash Only",
+    desc: "Two Maine state park stops charge day-use fees: Wolfe's Neck Woods State Park ($6/adult — cash only, limited parking) on Day 3, and Camden Hills State Park ($6/adult) on Day 4. No advance booking needed at either. Keep $25 cash handy.",
+    when: "Pay at gate — no advance booking",
+    who: "Per adult",
+    cost: "$6/adult each · Wolfe's Neck = cash only",
+    url: "https://maine.gov/dacf/parks/index.shtml",
+    day: "Day 3 (May 12) Wolfe's Neck · Day 4 (May 13) Camden Hills"
   },
   {
     title: "⚠️ Black Flies — Pack Bug Spray",
@@ -1057,13 +1090,16 @@ const data = [
       {time:"7:00 AM",act:"Depart Cincinnati"},
       {time:"10:30 AM",act:"Charge stop – Cleveland, OH (30 min)"},
       {time:"1:30 PM",act:"Lunch – Buffalo, NY area (45 min)"},
-      {time:"3:30 PM",act:"Letchworth State Park — Inspiration Point + Lower Falls (1.5 hr, dogs welcome on leash)"},
-      {time:"5:30 PM",act:"Arrive Rushford, NY — check in to Aaron's cabin"},
+      {time:"3:30 PM",act:"Letchworth State Park — Inspiration Point overlook (best canyon view, 20 min)"},
+      {time:"4:00 PM",act:"Middle Falls — the 107-ft crown jewel waterfall, 5 min walk from Genesee Arch Bridge (30 min)"},
+      {time:"4:45 PM",act:"Lower Falls — 70-ft waterfall at gorge base, stone footbridge (20 min)"},
+      {time:"5:45 PM",act:"Arrive Rushford, NY — check in to Aaron's cabin"},
       {time:"6:30 PM",act:"Dinner + relax at the cabin after the long drive"}
     ],
     stops:[
       {name:"Letchworth State Park — Inspiration Point",desc:"On your way to Rushford. Letchworth is the 'Grand Canyon of the East' — a 600-foot deep gorge carved by the Genesee River. Inspiration Point is the most-photographed viewpoint, with sweeping canyon views and Lower Falls below. Quick 0.5 mi walk from parking, dog-friendly on 6-ft leash.",difficulty:"Easy",distance:"0.5 mi",time:"30 min",elevation:"Minimal",maps:"Inspiration+Point+Letchworth+State+Park",guide:"Letchworth Inspiration Point overlook"},
-      {name:"Letchworth Lower Falls",desc:"Short walk down to the base of the Lower Falls — a powerful 70-foot waterfall in the gorge. Stone footbridge over the river. Dogs welcome on leash. Perfect post-drive leg stretch with stunning views.",difficulty:"Easy–Moderate",distance:"0.7 mi",time:"45 min",elevation:"Some stairs",maps:"Lower+Falls+Letchworth+State+Park",guide:"Letchworth Lower Falls trail"}
+      {name:"Letchworth Middle Falls — The Crown Jewel",desc:"The most spectacular waterfall in Letchworth — 107 ft, the widest and most powerful of the three. View from the Genesee Arch Bridge puts you directly above the gorge. 5 min walk from the main parking area. This is the photo you came for. Dog-friendly on leash.",difficulty:"Easy",distance:"0.3 mi",time:"30 min",elevation:"Minimal",maps:"Middle+Falls+Letchworth+State+Park",guide:"Letchworth Middle Falls Genesee Arch Bridge"},
+      {name:"Letchworth Lower Falls",desc:"Short walk down to the base of the Lower Falls — a powerful 70-foot waterfall in the gorge. Stone footbridge over the river. Dogs welcome on leash. Perfect last stop before heading to Rushford.",difficulty:"Easy–Moderate",distance:"0.7 mi",time:"25 min",elevation:"Some stairs",maps:"Lower+Falls+Letchworth+State+Park",guide:"Letchworth Lower Falls trail"}
     ],
     restaurants:[
       {name:"Aaron's cabin — Rushford, NY",info:"Booked cabin stay. Dinner at the cabin — bring a thank-you bottle of wine for the host."},
@@ -1142,16 +1178,18 @@ const data = [
     mapRoute:"https://www.google.com/maps/dir/Freeport,+ME/Camden+Hills+State+Park+ME/Bass+Harbor+Head+Lighthouse+ME/Tremont,+ME",
     timeline:[
       {time:"8:00 AM",act:"Breakfast with Dustin & Brianna, pack up"},
-      {time:"9:30 AM",act:"L.L. Bean Flagship + giant boot photo (30 min, optional)"},
-      {time:"10:30 AM",act:"Depart Freeport up Coastal Route 1"},
-      {time:"12:00 PM",act:"Camden Hills State Park — drive up Mt Battie auto road (~$3, 5 min) for sweeping Penobscot Bay views"},
-      {time:"1:00 PM",act:"Lunch in Camden, ME — coastal village stroll"},
-      {time:"4:00 PM",act:"Arrive Tremont, ME — settle into Aaron's guesthouse in Acadia"},
-      {time:"6:00 PM",act:"Drive 10 min to Bass Harbor Head Lighthouse for sunset (~7:58 PM)"},
+      {time:"9:00 AM",act:"Depart Freeport south — Portland Head Light detour (30 min drive)"},
+      {time:"9:30 AM",act:"Portland Head Light, Cape Elizabeth — most photographed lighthouse in America (45 min, dog-friendly grounds, free)"},
+      {time:"10:30 AM",act:"North on Route 1 — scenic coastal Maine drive toward Camden"},
+      {time:"12:30 PM",act:"Camden Hills State Park — drive up Mt Battie auto road ($6/adult, 5 min) for sweeping Penobscot Bay + Camden Harbor views"},
+      {time:"1:30 PM",act:"Lunch in Camden, ME — harbor stroll"},
+      {time:"5:00 PM",act:"Arrive Tremont, ME — settle into Aaron's guesthouse in Acadia"},
+      {time:"6:15 PM",act:"Drive 10 min to Bass Harbor Head Lighthouse for sunset (~7:58 PM)"},
       {time:"8:00 PM",act:"Dinner at Thurston's Lobster Pound (Bernard, 5 min from Tremont) — dog-friendly deck over the wharf"}
     ],
     stops:[
-      {name:"Camden Hills State Park",desc:"Coastal Maine state park between Freeport and Acadia. Drive up Mt Battie's auto road for the iconic view of Camden Harbor and Penobscot Bay — the photo on every Maine postcard. Or hike up the easy Mt Battie Trail. Dogs welcome on leash throughout the park.",difficulty:"Easy (drive) or Moderate (hike)",distance:"Auto road or 1 mi hike",time:"30–60 min",elevation:"800 ft (hike) or 0 (drive)",maps:"Camden+Hills+State+Park+Maine",guide:"Camden Hills State Park Mt Battie"},
+      {name:"Portland Head Light — Cape Elizabeth",desc:"THE most photographed lighthouse in America — authorized by George Washington in 1787, built 1791. Fort Williams Park, Cape Elizabeth, just 30 min south of Freeport. Rocky dramatic coastline, keeper's cottage, open grounds. Dog-friendly. Free to walk the grounds. Museum is $5/person. This is the lighthouse photo you've seen on every Maine postcard.",difficulty:"Easy",distance:"Short walk",time:"45 min",elevation:"Minimal",maps:"Portland+Head+Light+Cape+Elizabeth+Maine",guide:"Portland Head Light Cape Elizabeth ME"},
+      {name:"Camden Hills State Park",desc:"Coastal Maine state park between Portland and Acadia. Drive up Mt Battie's auto road ($6/adult) for the iconic view of Camden Harbor and Penobscot Bay — one of the most beautiful coastal panoramas in New England. Dogs welcome on leash.",difficulty:"Easy (drive)",distance:"Auto road",time:"30–45 min",elevation:"0 (drive)",maps:"Camden+Hills+State+Park+Maine",guide:"Camden Hills State Park Mt Battie"},
       {name:"Bass Harbor Head Lighthouse",desc:"The MOST PHOTOGRAPHED lighthouse in Maine — 1858 structure perched on rocks at the southern tip of MDI, just 10 min from your Tremont stay. Best at sunset. Dog-friendly viewing area. Romantic.",difficulty:"Easy",distance:"10 min walk",time:"45 min",elevation:"Minimal",maps:"Bass Harbor Head Lighthouse",guide:"Bass Harbor Lighthouse sunset"}
     ],
     restaurants:[
@@ -1175,7 +1213,9 @@ const data = [
       {time:"4:30 AM",act:"Wake — drive 30 min Tremont → Cadillac Mountain (no reservation in May)"},
       {time:"5:00 AM",act:"Cadillac Mountain summit — wait for sunrise at 5:20 AM (highest point on US Atlantic coast)"},
       {time:"6:30 AM",act:"Coffee + breakfast in Bar Harbor (Café This Way or 2 Cats)"},
-      {time:"8:30 AM",act:"Jordan Pond Loop — 3.3 mi flat trail with The Bubbles reflected in glassy water"},
+      {time:"8:30 AM",act:"Jordan Pond Loop — 3.3 mi flat trail with The Bubbles perfectly reflected in glassy water (2 hrs)"},
+      {time:"10:45 AM",act:"Drive to Bar Harbor — check Bar Island tidal bar timing on NOAA app"},
+      {time:"11:00 AM",act:"Bar Island Land Bridge — walk across the natural tidal bar to an island (low tide only, ~20 min, unique to Acadia)"},
       {time:"11:30 AM",act:"Lunch at Side Street Café in Bar Harbor — dog-friendly patio"},
       {time:"1:00 PM",act:"Sand Beach + Ocean Path Trail — sea cliffs, lighthouses, crashing waves"},
       {time:"3:00 PM",act:"Thunder Hole — best at 3/4 incoming tide (check NOAA chart)"},
@@ -1187,7 +1227,9 @@ const data = [
       {name:"Cadillac Mountain Sunrise",desc:"At 1,530 ft, the highest point on the entire US Atlantic coast — and the FIRST place to see sunrise in the US for much of the year. No timed reservation needed in May (only enforced June–Oct). Drive up before dawn (it's only 30 min from Tremont). Bring blankets and coffee. Dog friendly summit.",difficulty:"Easy (drive)",distance:"Drive-up",time:"1.5 hrs",elevation:"0 (drive)",maps:"Cadillac+Mountain+Acadia+National+Park",guide:"Cadillac Mountain Acadia sunrise"},
       {name:"Jordan Pond Loop",desc:"MOST PHOTOGRAPHED spot in the park. A glacial pond perfectly mirroring The Bubbles — twin rounded mountains rising directly behind it. Flat 3.3 mi trail around the water, mostly on a wooden boardwalk. Dogs welcome on 6-ft leash. Pack snacks — Jordan Pond House restaurant is closed in May.",difficulty:"Easy",distance:"3.3 mi loop",time:"2 hrs",elevation:"~100 ft",maps:"Jordan Pond Loop Acadia",guide:"Jordan Pond Trail Acadia"},
       {name:"Ocean Path + Sand Beach + Thunder Hole + Otter Cliffs",desc:"The iconic Acadia coastal corridor — all linked by the flat 3.3-mi Ocean Path. Sand Beach (rare granite-sand beach), Thunder Hole (booms at 3/4 tide), and Otter Cliffs (110-ft sea cliffs, best sunset spot). Dog friendly on 6-ft leash. Bring bug spray for May black flies.",difficulty:"Easy",distance:"Up to 3.3 mi",time:"2.5–3 hrs",elevation:"~50 ft",maps:"Ocean+Path+Acadia+National+Park",guide:"Ocean Path Acadia coastline"},
-      {name:"Ship Harbor Trail",desc:"Right next to your Tremont stay (10 min). 1.3 mi figure-8 loop through forest down to a rocky coastline with TIDE POOLS — starfish, sea urchins, anemones, periwinkles. Quiet, not touristy, perfect end-of-day stop. Dogs welcome.",difficulty:"Easy",distance:"1.3 mi loop",time:"1 hr",elevation:"Minimal",maps:"Ship Harbor Trail Acadia",guide:"Ship Harbor tide pools"}
+      {name:"Bar Island Land Bridge",desc:"From Bar Harbor's Village Green, a natural gravel tidal bar emerges from the ocean and lets you walk out to Bar Island — only accessible ~2-3 hours around low tide. Check NOAA Bar Harbor tides the night before and plan your visit window. Free, part of Acadia, absolutely unique. Dog-friendly.",difficulty:"Easy",distance:"0.5 mi round trip",time:"20 min + check tides",elevation:"Flat",maps:"Bar+Island+Bar+Harbor+ME",guide:"Bar Island Bar Harbor tidal bar access"},
+      {name:"Flying Mountain Trail — Somes Sound Views",desc:"1.3 mi out-and-back, just 15 min from your Tremont guesthouse. Climbs 274 ft to panoramic views of Somes Sound — the only fjord on the US Atlantic coast — and Southwest Harbor. Much less crowded than the eastern side of Acadia. Great alternative afternoon hike. Dog-friendly on leash.",difficulty:"Moderate",distance:"1.3 mi",time:"45 min",elevation:"274 ft",maps:"Flying Mountain Trail Acadia+National+Park",guide:"Flying Mountain Trail Acadia Somes Sound"},
+      {name:"Ship Harbor Trail",desc:"10 min from your Tremont stay. 1.3 mi figure-8 loop to rocky coastline with tide pools — starfish, sea urchins, anemones. Quiet, not touristy. Dogs welcome on leash.",difficulty:"Easy",distance:"1.3 mi loop",time:"1 hr",elevation:"Minimal",maps:"Ship Harbor Trail Acadia",guide:"Ship Harbor tide pools Acadia"}
     ],
     restaurants:[
       {name:"Café This Way – Bar Harbor",info:"Top breakfast spot in Bar Harbor — relaxed, locally loved, dog-friendly outdoor patio in season"},
@@ -1209,13 +1251,16 @@ const data = [
       {time:"7:00 AM",act:"Lock up the guesthouse, depart Tremont early"},
       {time:"9:30 AM",act:"Charge + coffee – Augusta, ME (30 min)"},
       {time:"12:00 PM",act:"Lunch + charge – Lebanon, NH area (45 min)"},
-      {time:"1:30 PM",act:"Quechee Gorge State Park, VT — 'Vermont's Little Grand Canyon', 165-ft gorge (1 hr stop, dog-friendly)"},
-      {time:"4:00 PM",act:"Thacher State Park, NY — Overlook Trail along the Helderberg Escarpment (25 min from Schenectady, 1 hr stop)"},
-      {time:"6:00 PM",act:"Arrive Schenectady, NY — check in"},
-      {time:"7:00 PM",act:"Walk the Stockade District (America's first historic district) + dinner downtown"}
+      {time:"1:30 PM",act:"Quechee Gorge State Park, VT — 165-ft gorge bridge view + rim trail loop (45 min, dog-friendly, free)"},
+      {time:"2:30 PM",act:"Woodstock, VT — 3 miles from Quechee, most photographed New England village (covered bridge, green, 30 min stroll)"},
+      {time:"3:15 PM",act:"West on I-89/I-88 toward New York"},
+      {time:"5:15 PM",act:"Thacher State Park, NY — Overlook Trail along the Helderberg Escarpment cliff edge (1 hr stop, dog-friendly)"},
+      {time:"6:30 PM",act:"Arrive Schenectady, NY — check in"},
+      {time:"7:30 PM",act:"Walk the Stockade District (America's first historic district) + dinner downtown"}
     ],
     stops:[
-      {name:"Quechee Gorge State Park, VT",desc:"'Vermont's Little Grand Canyon' — a 165-ft deep gorge cut by the Ottauquechee River, right off US-4. Iconic bridge view is free and 30 seconds from the parking lot. For an actual hike, the 1.5-mile rim trail loop is dog-friendly on leash and takes ~45 min. Perfect stretch break mid-drive.",difficulty:"Easy",distance:"1.5 mi loop",time:"45 min–1 hr",elevation:"Minimal",maps:"Quechee+Gorge+State+Park+Vermont",guide:"Quechee Gorge State Park Vermont"},
+      {name:"Quechee Gorge State Park, VT",desc:"'Vermont's Little Grand Canyon' — a 165-ft deep gorge cut by the Ottauquechee River, right off US-4. Iconic bridge view is free and 30 seconds from the parking lot. Rim trail loop is dog-friendly on leash, 45 min. Free — Vermont charges no day-use fee at Quechee.",difficulty:"Easy",distance:"1.5 mi loop",time:"45 min",elevation:"Minimal",maps:"Quechee+Gorge+State+Park+Vermont",guide:"Quechee Gorge State Park Vermont"},
+      {name:"Woodstock, Vermont",desc:"3 miles east of Quechee — the quintessential New England village. Covered bridge over the Ottauquechee, immaculate village green, white-steepled church, Federal-era homes lining Elm Street. Consistently ranked the most beautiful village in Vermont. 20-30 minute stroll is all you need. Dog-friendly streets.",difficulty:"Easy",distance:"0.5–1 mi walk",time:"30 min",elevation:"Flat",maps:"Woodstock+Vermont+village",guide:"Woodstock Vermont things to do"},
       {name:"Thacher State Park (John Boyd Thacher SP)",desc:"Just 25 min from Schenectady on the 1,000-ft Helderberg Escarpment. Dramatic cliff views over the Hudson Valley and Adirondacks. Overlook Trail is the easy cliff-edge walk (dog-friendly on 6-ft leash). Sunset here is stunning. Indian Ladder Trail may be closed early May — Overlook Trail is open year-round.",difficulty:"Easy",distance:"1–2 mi",time:"1 hr",elevation:"Minimal",maps:"Thacher+State+Park+NY",guide:"Thacher State Park Indian Ladder Trail"},
       {name:"Schenectady Stockade District",desc:"America's FIRST historic district (designated 1962). Walkable streets of preserved 17th–19th century homes along the Mohawk River, all dog-friendly on leash. Quiet evening stroll right after check-in. Free.",difficulty:"Easy",distance:"0.5–1 mi walk",time:"30–45 min",elevation:"Flat",maps:"Schenectady+Stockade+District",guide:"Schenectady Stockade Historic District"}
     ],
@@ -1271,13 +1316,17 @@ const data = [
     sunrise:"6:01 AM", sunset:"8:20 PM",
     mapRoute:"https://www.google.com/maps/dir/Terra+Alta,+WV/Morgantown,+WV/Columbus,+OH/Cincinnati,+OH",
     timeline:[
-      {time:"8:00 AM",act:"Coffee, pack up the home in Terra Alta"},
-      {time:"8:30 AM",act:"Depart Terra Alta — straight home to Cincinnati"},
-      {time:"9:30 AM",act:"Charge stop – Morgantown, WV (25 min)"},
+      {time:"7:00 AM",act:"Coffee — quick drive to Cooper's Rock State Forest (15 min)"},
+      {time:"7:15 AM",act:"Cooper's Rock Overlook — 200-ft quartzite cliff over the Cheat River Canyon (0.5 mi, 30 min, free, dog-friendly)"},
+      {time:"8:00 AM",act:"Back to Terra Alta — pack up the home"},
+      {time:"9:00 AM",act:"Depart Terra Alta — straight home to Cincinnati"},
+      {time:"10:00 AM",act:"Charge stop – Morgantown, WV (25 min)"},
       {time:"12:30 PM",act:"Lunch + charge – Columbus, OH (45 min)"},
       {time:"3:30 PM",act:"HOME! Cincinnati!"}
     ],
-    stops:[],
+    stops:[
+      {name:"Cooper's Rock State Forest — Overlook",desc:"15 min from your Terra Alta home. A massive quartzite cliff jutting 200 ft above the Cheat River Canyon — one of the most dramatic overlooks in West Virginia. 0.5 mi walk from the parking lot to the rock. Free, dog-friendly, sunrise light on the canyon walls is stunning. Perfect final morning moment before the long drive home.",difficulty:"Easy",distance:"0.5 mi",time:"30 min",elevation:"Minimal",maps:"Coopers+Rock+State+Forest+Overlook+WV",guide:"Coopers Rock State Forest West Virginia overlook"}
+    ],
     restaurants:[
       {name:"Tudor's Biscuit World – Morgantown, WV",info:"WV institution — open early, perfect for breakfast biscuits to go on the way out"},
       {name:"North Market – Columbus, OH",info:"Great lunch stop in Columbus on the way home — many food stalls, dog-friendly outdoor seating"},
