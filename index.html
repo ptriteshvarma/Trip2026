@@ -659,17 +659,6 @@ function checkPw(){
 // ── ADVANCE BOOKINGS ──
 const bookings = [
   {
-    title: "⚠️ BOOK NOW: Flume Gorge Timed Entry — May 12",
-    urgency: "urgent",
-    urgencyLabel: "BOOK TODAY — May 12 is 10 days away",
-    desc: "Flume Gorge at Franconia Notch State Park requires TIMED ENTRY reservations online. May 12 is a Tuesday so less crowded than weekends, but slots still go — especially for the 8 AM opening. Online tickets are $18/adult vs $21 at the gate. Book your slot now for 8:00 or 8:30 AM so you hit it fresh before the Kancamagus drive.",
-    when: "Book NOW at nhstateparks.reserveamerica.com",
-    who: "2 adults — $36 total online",
-    cost: "$18/adult online · $21 at gate",
-    url: "https://newhampshirestateparks.reserveamerica.com/",
-    day: "Day 3 (May 12) — first stop, 8 AM"
-  },
-  {
     title: "Cadillac Mountain Sunrise — No Reservation Needed May 14",
     urgency: "medium",
     urgencyLabel: "Safe — Reservation Required from May 20 Onward",
@@ -767,17 +756,6 @@ const bookings = [
     cost: "$35 (7-day Acadia) or $80 (annual all parks)",
     url: "https://www.nps.gov/acad/planyourvisit/fees.htm",
     day: "Before Day 4 (May 13)"
-  },
-  {
-    title: "Letchworth State Park — $10 Vehicle Fee",
-    urgency: "low",
-    urgencyLabel: "Pay at Gate · No Booking Needed",
-    desc: "Letchworth charges a $10/vehicle day-use fee May–October (9 AM–5 PM). Pay cash or card at the gate when you arrive. No advance booking needed.",
-    when: "Pay at the entrance gate",
-    who: "Per vehicle",
-    cost: "$10/vehicle",
-    url: "https://parks.ny.gov/parks/letchworth",
-    day: "Day 1 (May 10) — afternoon stop"
   },
   {
     title: "Maine State Park Day Use Fees — Have $25 Cash",
@@ -1145,18 +1123,17 @@ const data = [
     sunrise:"5:21 AM", sunset:"7:57 PM",
     mapRoute:"https://www.google.com/maps/dir/Lincoln,+NH/Franconia+Notch+State+Park,+NH/Echo+Lake+Franconia+Notch+NH/Kancamagus+Highway+NH/Freeport,+ME",
     timeline:[
-      {time:"7:30 AM",act:"Leave dog at Pemi Cabins cabin — drive 5 min to Flume Gorge (confirm checkout time with host first, call 603-745-8323)"},
-      {time:"8:00 AM",act:"Flume Gorge — both go together, 800-ft granite gorge boardwalk loop (1.5 hrs, NO dogs allowed, $18/person with timed ticket)"},
-      {time:"9:30 AM",act:"Return to Pemi Cabins — pick up dog, check out, load car"},
-      {time:"10:00 AM",act:"Echo Lake — Cannon Mountain reflections, lakeside walk (45 min)"},
-      {time:"11:00 AM",act:"Kancamagus Highway scenic drive — pull over at Sabbaday Falls (20 min walk to the falls)"},
-      {time:"1:00 PM",act:"Lunch in Conway, NH or Bridgton, ME (45 min)"},
+      {time:"8:00 AM",act:"Check out Pemi Cabins — load dog in car"},
+      {time:"8:30 AM",act:"Echo Lake — Cannon Mountain reflections, lakeside walk with dog (45 min, dog-friendly, free)"},
+      {time:"9:30 AM",act:"Drive west on Kancamagus Highway scenic corridor"},
+      {time:"10:00 AM",act:"Sabbaday Falls pull-over — easy 20 min walk to triple-tier waterfall (dog-friendly, free, scenic)"},
+      {time:"11:00 AM",act:"Continue Kancamagus Highway drive to Conway area"},
+      {time:"1:00 PM",act:"Lunch in Conway, NH or Bridgton, ME (45 min, dog-friendly spots)"},
       {time:"5:00 PM",act:"Arrive Freeport — check in to private suite hosted by Dustin & Brianna"},
-      {time:"6:00 PM",act:"Wolfe's Neck Woods State Park — sunset coastal walk on Casco Bay (dog-friendly state park, free entry)"},
+      {time:"6:00 PM",act:"Wolfe's Neck Woods State Park — sunset coastal walk on Casco Bay (dog-friendly state park, $6/adult)"},
       {time:"7:30 PM",act:"Dinner with Dustin & Brianna in Freeport"}
     ],
     stops:[
-      {name:"Flume Gorge — Franconia Notch State Park",dogs:false,dogStrategy:"Pemi Cabins is only 2 miles / 5 min from Flume Gorge. Leave the dog at the cabin, do the gorge together (~1.5 hrs), return before checkout. Call Pemi Cabins at (603) 745-8323 to confirm checkout time and that dog can stay in cabin unattended — most cabin hosts are fine with this.",desc:"NH's crown jewel — an 800-ft natural granite gorge with waterfalls, covered bridges, and boardwalks carved through 90-foot cliff walls. 2 mi loop. Timed entry required ($18/adult online). Spectacular narrow passage through solid granite — worth every penny.",difficulty:"Easy–Moderate",distance:"2 mi loop",time:"1.5 hrs",elevation:"200 ft",maps:"Flume+Gorge+Franconia+Notch+NH",guide:"Flume Gorge Franconia Notch hiking"},
       {name:"Echo Lake — Franconia Notch",desc:"A glacially-carved mountain lake inside Franconia Notch State Park. Cannon Mountain towers above. Quick lakeside walk before continuing east. Dogs on leash.",difficulty:"Easy",distance:"Short walk",time:"30–45 min",elevation:"Flat",maps:"Echo+Lake+Franconia+Notch+NH",guide:"Echo Lake Franconia Notch"},
       {name:"Kancamagus Highway",desc:"One of New England's most scenic drives — 34 miles through White Mountain National Forest. No commercial development. Pull over at Sabbaday Falls (~20 min easy walk to triple-tier waterfall, dog-friendly).",difficulty:"Drive",distance:"34 mi",time:"1–1.5 hrs",elevation:"N/A",maps:"Kancamagus+Highway+NH+scenic+drive",guide:"Kancamagus Highway driving guide"},
       {name:"Wolfe's Neck Woods State Park",desc:"244-acre Maine state park on Casco Bay, just 5 min from your Freeport stay. Coastal woods, ospreys nesting on Googins Island, easy paths along the rocky shore. Dogs welcome on leash. Perfect golden-hour walk after the drive.",difficulty:"Easy",distance:"1.5–2 mi",time:"1 hr",elevation:"Minimal",maps:"Wolfes+Neck+Woods+State+Park+Freeport+ME",guide:"Wolfes Neck Woods State Park Freeport"}
