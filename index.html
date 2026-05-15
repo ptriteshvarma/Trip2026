@@ -1225,21 +1225,24 @@ const data = [
     ]
   },
   {
-    day:6, title:"May 15 — Tremont → Schenectady, NY (direct drive)", type:"DRIVE",
-    distance:443, hours:9, arrival:"5:00 PM",
+    day:6, title:"May 15 — Tremont → Schenectady, NY (coastal route via Ogunquit)", type:"DRIVE",
+    distance:450, hours:10, arrival:"6:00 PM",
     lodging:110, food:70, evCost:49,
     sunrise:"5:19 AM", sunset:"8:01 PM",
-    mapRoute:"https://www.google.com/maps/dir/?api=1&origin=Tremont,+ME&destination=Schenectady,+NY&travelmode=driving",
+    mapRoute:"https://www.google.com/maps/dir/Tremont,+ME/Ogunquit,+ME/Schenectady,+NY",
     timeline:[
-      {time:"7:00 AM",act:"Lock up the guesthouse, depart Tremont — direct drive day, no scenic stops"},
-      {time:"9:30 AM",act:"Charge + coffee – Augusta, ME (30 min)"},
-      {time:"12:00 PM",act:"Lunch + charge – Lebanon, NH area (45 min)"},
-      {time:"3:00 PM",act:"Optional quick charge – Albany area if needed (20 min)"},
-      {time:"5:00 PM",act:"Arrive Schenectady, NY — check in, settle in, take dog for a walk"},
-      {time:"7:00 PM",act:"Dinner in Schenectady — Aperitivo Bistro or More Perreca's"}
+      {time:"7:00 AM",act:"Lock up the guesthouse, depart Tremont — coastal I-95 route via Boston metro"},
+      {time:"9:30 AM",act:"Charge + coffee – Electrify America Augusta, ME (30 min)"},
+      {time:"11:30 AM",act:"Ogunquit, ME — Marginal Way coastal cliffside walk + Perkins Cove (1 hr, dog-friendly, last Maine coastal moment)"},
+      {time:"12:30 PM",act:"Quick lunch in Ogunquit or Portsmouth, NH (30 min)"},
+      {time:"3:00 PM",act:"Charge – Lee or Sturbridge MA on MA Pike (30 min)"},
+      {time:"5:00 PM",act:"Optional final top-off – Electrify America Latham, NY (15 min)"},
+      {time:"6:00 PM",act:"Arrive Schenectady, NY — check in, settle in, take dog for a walk"},
+      {time:"7:30 PM",act:"Dinner in Schenectady — Aperitivo Bistro or More Perreca's"}
     ],
     stops:[
-      {name:"Quechee Gorge State Park, VT",desc:"'Vermont's Little Grand Canyon' — a 165-ft deep gorge cut by the Ottauquechee River, right off US-4. Iconic bridge view is free and 30 seconds from the parking lot. Rim trail loop is dog-friendly on leash, 45 min. Free — Vermont charges no day-use fee at Quechee.",difficulty:"Easy",distance:"1.5 mi loop",time:"45 min",elevation:"Minimal",maps:"Quechee+Gorge+State+Park+Vermont",guide:"Quechee Gorge State Park Vermont"},
+      {name:"Ogunquit, ME — Marginal Way + Perkins Cove",desc:"Iconic 1.25-mile cliffside coastal walk along southern Maine's rocky shore. Starts at Ogunquit Beach, follows the cliff edge to Perkins Cove (working harbor with shops + restaurants). Dog-friendly on leash. Free, just off I-95 Exit 7. Your last Maine coastal moment of the trip — perfect mid-drive stretch.",difficulty:"Easy",distance:"1.25 mi one-way (2.5 mi round trip)",time:"45 min – 1 hr",elevation:"Minimal",maps:"Ogunquit+Marginal+Way+Maine",guide:"Ogunquit Marginal Way coastal walk"},
+      {name:"Quechee Gorge State Park, VT (skipped — inland route alternative)",desc:"'Vermont's Little Grand Canyon' — a 165-ft deep gorge cut by the Ottauquechee River, right off US-4. Iconic bridge view is free and 30 seconds from the parking lot. Rim trail loop is dog-friendly on leash, 45 min. Free — Vermont charges no day-use fee at Quechee.",difficulty:"Easy",distance:"1.5 mi loop",time:"45 min",elevation:"Minimal",maps:"Quechee+Gorge+State+Park+Vermont",guide:"Quechee Gorge State Park Vermont"},
       {name:"Woodstock, Vermont",desc:"3 miles east of Quechee — the quintessential New England village. Covered bridge over the Ottauquechee, immaculate village green, white-steepled church, Federal-era homes lining Elm Street. Consistently ranked the most beautiful village in Vermont. 20-30 minute stroll is all you need. Dog-friendly streets.",difficulty:"Easy",distance:"0.5–1 mi walk",time:"30 min",elevation:"Flat",maps:"Woodstock+Vermont+village",guide:"Woodstock Vermont things to do"},
       {name:"Thacher State Park (John Boyd Thacher SP)",desc:"Just 25 min from Schenectady on the 1,000-ft Helderberg Escarpment. Dramatic cliff views over the Hudson Valley and Adirondacks. Overlook Trail is the easy cliff-edge walk (dog-friendly on 6-ft leash). Sunset here is stunning. Indian Ladder Trail may be closed early May — Overlook Trail is open year-round.",difficulty:"Easy",distance:"1–2 mi",time:"1 hr",elevation:"Minimal",maps:"Thacher+State+Park+NY",guide:"Thacher State Park Indian Ladder Trail"},
       {name:"Schenectady Stockade District",desc:"America's FIRST historic district (designated 1962). Walkable streets of preserved 17th–19th century homes along the Mohawk River, all dog-friendly on leash. Quiet evening stroll right after check-in. Free.",difficulty:"Easy",distance:"0.5–1 mi walk",time:"30–45 min",elevation:"Flat",maps:"Schenectady+Stockade+District",guide:"Schenectady Stockade Historic District"}
@@ -1251,10 +1254,12 @@ const data = [
       {name:"Cornell's Restaurant – Little Italy, Schenectady",info:"Old-school Italian, family-run, great for a hearty dinner after a long drive day"}
     ],
     chargers:[
-      {name:"Electrify America – Augusta, ME (Walmart)",info:"~95 mi from Tremont. CCS1 compatible, 150kW DC fast. First charge stop, 30 min to 80%. Walmart on Civic Center Dr.",maps:"Electrify America Augusta Maine Walmart"},
-      {name:"Electrify America – West Lebanon, NH (Walmart)",info:"~120 mi from Augusta. CCS1, 150kW DC fast. Lunch + charge mid-route. Walmart on Centerra Pkwy.",maps:"Electrify America West Lebanon NH Walmart"},
-      {name:"Electrify America – Latham, NY (Walmart)",info:"~200 mi from Lebanon, 15 min from Schenectady. CCS1, 150kW. Optional final top-off if battery low.",maps:"Electrify America Latham NY Walmart"},
-      {name:"ChargePoint – Manchester, NH (backup)",info:"Alternative if EA West Lebanon is full or down. CCS1 DC fast available on I-93.",maps:"ChargePoint DC fast Manchester NH"}
+      {name:"Electrify America – Augusta, ME (Walmart)",info:"~95 mi from Tremont. CCS1, 150kW DC fast. First charge stop, 30 min to 80%. Walmart on Civic Center Dr.",maps:"Electrify America Augusta Maine Walmart"},
+      {name:"Electrify America – Portsmouth, NH",info:"~210 mi from Tremont, just past Ogunquit. CCS1, 150kW. Backup if Augusta charge insufficient. I-95 corridor.",maps:"Electrify America Portsmouth NH"},
+      {name:"Electrify America – Newton, MA (Mass Pike I-90)",info:"~280 mi from Tremont. CCS1, 150kW. Boston-area Mass Pike service area.",maps:"Electrify America Newton MA Mass Pike"},
+      {name:"Electrify America – Sturbridge, MA (Mass Pike)",info:"~340 mi from Tremont. CCS1, 150kW. Mid-MA Pike service plaza, lunch + charge.",maps:"Electrify America Sturbridge MA Mass Pike"},
+      {name:"Electrify America – Lee, MA (Walmart)",info:"~390 mi from Tremont. CCS1, 150kW. Berkshires area, last MA charge before NY.",maps:"Electrify America Lee MA Walmart"},
+      {name:"Electrify America – Latham, NY (Walmart)",info:"~430 mi from Tremont, 15 min from Schenectady. CCS1, 150kW. Optional final top-off.",maps:"Electrify America Latham NY Walmart"}
     ]
   },
   {
