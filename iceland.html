@@ -73,6 +73,14 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 .notes{background:rgba(251,191,36,.05);border:1px solid rgba(251,191,36,.15);border-radius:14px;padding:16px;margin-bottom:14px}
 .notes h4{display:flex;align-items:center;gap:7px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--amber2);margin-bottom:10px}
 .notes p{font-size:12px;color:var(--text);line-height:1.7}
+.ico{display:inline-block;width:13px;height:13px;vertical-align:-2px;flex-shrink:0;background-color:currentColor;-webkit-mask:no-repeat center/contain;mask:no-repeat center/contain}
+.ico-lg{width:17px;height:17px;vertical-align:-4px}
+.ico-ok{color:var(--sage);-webkit-mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='black'><path d='M1 8.25a1.25 1.25 0 112.5 0v7.5a1.25 1.25 0 11-2.5 0v-7.5zM11 3V1.7c0-.268.14-.526.395-.607A2 2 0 0114 3c0 .995-.182 1.948-.514 2.826-.204.54.166 1.174.744 1.174h2.52c1.243 0 2.261 1.01 2.146 2.247a23.864 23.864 0 01-1.341 5.974C17.153 16.323 16.072 17 14.9 17h-3.192a3 3 0 01-1.341-.317l-2.734-1.366A3 3 0 006.292 15H5V8h.963c.685 0 1.258-.483 1.612-1.068a4.011 4.011 0 012.166-1.73c.432-.143.853-.386 1.011-.814.16-.432.248-.9.248-1.388z'/></svg>");mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='black'><path d='M1 8.25a1.25 1.25 0 112.5 0v7.5a1.25 1.25 0 11-2.5 0v-7.5zM11 3V1.7c0-.268.14-.526.395-.607A2 2 0 0114 3c0 .995-.182 1.948-.514 2.826-.204.54.166 1.174.744 1.174h2.52c1.243 0 2.261 1.01 2.146 2.247a23.864 23.864 0 01-1.341 5.974C17.153 16.323 16.072 17 14.9 17h-3.192a3 3 0 01-1.341-.317l-2.734-1.366A3 3 0 006.292 15H5V8h.963c.685 0 1.258-.483 1.612-1.068a4.011 4.011 0 012.166-1.73c.432-.143.853-.386 1.011-.814.16-.432.248-.9.248-1.388z'/></svg>")}
+.ico-warn{color:var(--amber2);-webkit-mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='black'><path fill-rule='evenodd' d='M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z' clip-rule='evenodd'/></svg>");mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='black'><path fill-rule='evenodd' d='M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z' clip-rule='evenodd'/></svg>")}
+.ico-no{color:var(--red);-webkit-mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='black'><path fill-rule='evenodd' d='M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z' clip-rule='evenodd'/></svg>");mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='black'><path fill-rule='evenodd' d='M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z' clip-rule='evenodd'/></svg>")}
+.ico-map{-webkit-mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='black'><path fill-rule='evenodd' d='M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 103 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 002.273 1.765 11.842 11.842 0 00.976.544l.062.029.018.008.006.003zM10 11.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z' clip-rule='evenodd'/></svg>");mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='black'><path fill-rule='evenodd' d='M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 103 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 002.273 1.765 11.842 11.842 0 00.976.544l.062.029.018.008.006.003zM10 11.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z' clip-rule='evenodd'/></svg>")}
+.map-btn{display:inline-flex;align-items:center;gap:7px;padding:10px 14px;border-radius:50px;background:rgba(122,170,184,.1);border:1px solid rgba(122,170,184,.3);color:var(--sky);font-size:11px;font-weight:600;text-decoration:none;letter-spacing:.3px;transition:.2s;margin-top:4px}
+.map-btn:hover{background:rgba(122,170,184,.18);border-color:rgba(122,170,184,.5)}
 @media(max-width:640px){.hero{padding:44px 16px 80px}.hero h1{letter-spacing:-1px;font-size:clamp(32px,10vw,52px)}.hero-sub{font-size:12px}.hero-stats{gap:8px}.hstat{padding:10px 14px;min-width:80px}.hstat-n{font-size:22px}.hstat-l{font-size:9px}.nav-strip{padding:10px 12px}.controls{padding:0 12px;gap:6px}.btn{padding:8px 14px;font-size:11px}.grid{grid-template-columns:1fr;padding:0 12px}.tile-band{padding:14px}.tile-band-text h3{font-size:13px}.detail-scroll{padding:14px 14px 20px}}
 </style>
 </head>
@@ -95,14 +103,15 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 <div style="max-width:960px;margin:14px auto 0;padding:0 20px">
   <div style="background:var(--card2);border:1px solid var(--border);border-radius:14px;padding:14px 16px;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:center">
     <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--faint)">Toddler Legend (age 3)</div>
-    <div style="display:flex;align-items:center;gap:7px;font-size:12px;color:var(--text)"><span style="font-size:16px">🧒</span> kid-friendly</div>
-    <div style="display:flex;align-items:center;gap:7px;font-size:12px;color:var(--text)"><span style="font-size:16px">⚠️</span> use caution</div>
-    <div style="display:flex;align-items:center;gap:7px;font-size:12px;color:var(--text)"><span style="font-size:16px">❌</span> not recommended</div>
+    <div style="display:flex;align-items:center;gap:7px;font-size:12px;color:var(--text)"><span class="ico ico-lg ico-ok"></span> kid-friendly</div>
+    <div style="display:flex;align-items:center;gap:7px;font-size:12px;color:var(--text)"><span class="ico ico-lg ico-warn"></span> use caution</div>
+    <div style="display:flex;align-items:center;gap:7px;font-size:12px;color:var(--text)"><span class="ico ico-lg ico-no"></span> not recommended</div>
   </div>
 </div>
 <div class="controls">
   <a class="btn btn-o" href="index.html">View Acadia Template</a>
   <a class="btn btn-p" href="https://www.google.com/search?q=iceland+whale+watching+tours" target="_blank" rel="noopener">Search Whale Watching Tours</a>
+  <a class="btn btn-g" href="https://www.google.com/maps/dir/Keflav%C3%ADk+International+Airport/K%C3%B3pavogur,+Iceland/Vestmannaeyjab%C3%A6r/Hvolsv%C3%B6llur/Borgarnes/Keflav%C3%ADk+International+Airport" target="_blank" rel="noopener"><span class="ico ico-map"></span> Overall Trip Route</a>
 </div>
 <div class="grid">
   <div class="tile">
@@ -120,8 +129,9 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       </div>
       <div class="info-box">
         <div class="info-box-lbl">Things to Do</div>
-        <div class="info-box-val">🧒 Blue Lagoon, 🧒 City shopping</div>
+        <div class="info-box-val"><span class="ico ico-ok"></span> Blue Lagoon, <span class="ico ico-ok"></span> City shopping</div>
       </div>
+      <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Keflav%C3%ADk+International+Airport/Blue+Lagoon+Iceland/K%C3%B3pavogur,+Iceland"><span class="ico ico-map"></span> Map Route — KEF → Blue Lagoon → Kópavogur</a>
     </div>
   </div>
   <div class="tile">
@@ -139,12 +149,13 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       </div>
       <div class="info-box">
         <div class="info-box-lbl">Things to Do</div>
-        <div class="info-box-val">⚠️ Volcano crater hike, 🧒 Relax, 🧒 Book whale watching tour</div>
+        <div class="info-box-val"><span class="ico ico-warn"></span> Volcano crater hike, <span class="ico ico-ok"></span> Relax, <span class="ico ico-ok"></span> Book whale watching tour</div>
       </div>
       <div class="notes">
         <h4>Reminder</h4>
         <p>Book the whale watching tour today so you have the best choice of departure times and a reliable operator.</p>
       </div>
+      <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/K%C3%B3pavogur,+Iceland/Fagradalsfjall+Volcano/K%C3%B3pavogur,+Iceland"><span class="ico ico-map"></span> Map Route — Kópavogur → Fagradalsfjall → Kópavogur</a>
     </div>
   </div>
   <div class="tile">
@@ -162,8 +173,9 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       </div>
       <div class="info-box">
         <div class="info-box-lbl">Things to Do</div>
-        <div class="info-box-val">🧒 Þingvellir, 🧒 Geysir/Strokkur, ⚠️ Gullfoss viewing, ⚠️ Highland Center optional</div>
+        <div class="info-box-val"><span class="ico ico-ok"></span> Þingvellir, <span class="ico ico-ok"></span> Geysir/Strokkur, <span class="ico ico-warn"></span> Gullfoss viewing, <span class="ico ico-warn"></span> Highland Center optional</div>
       </div>
+      <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/K%C3%B3pavogur,+Iceland/%C3%9Eingvellir+National+Park/Geysir/Gullfoss+Waterfall/K%C3%B3pavogur,+Iceland"><span class="ico ico-map"></span> Map Route — Golden Circle loop</a>
     </div>
   </div>
   <div class="tile">
@@ -181,8 +193,9 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       </div>
       <div class="info-box">
         <div class="info-box-lbl">Things to Do</div>
-        <div class="info-box-val">🧒 Westman Islands coastal viewpoints (keep it easy and calm)</div>
+        <div class="info-box-val"><span class="ico ico-ok"></span> Westman Islands coastal viewpoints (keep it easy and calm)</div>
       </div>
+      <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/K%C3%B3pavogur,+Iceland/Landeyjah%C3%B6fn+Ferry+Terminal/Vestmannaeyjab%C3%A6r"><span class="ico ico-map"></span> Map Route — Kópavogur → Landeyjahöfn ferry → Vestmannaeyjar</a>
     </div>
   </div>
   <div class="tile">
@@ -200,8 +213,9 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       </div>
       <div class="info-box">
         <div class="info-box-lbl">Things to Do</div>
-        <div class="info-box-val">⚠️ Kerid, ⚠️ Seljalandsfoss/Gljúfrabúi, ❌ Sólheimajökull, ❌ Reynisfjara</div>
+        <div class="info-box-val"><span class="ico ico-warn"></span> Kerid, <span class="ico ico-warn"></span> Seljalandsfoss/Gljúfrabúi, <span class="ico ico-no"></span> Sólheimajökull, <span class="ico ico-no"></span> Reynisfjara</div>
       </div>
+      <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Vestmannaeyjab%C3%A6r/Landeyjah%C3%B6fn+Ferry+Terminal/Kerid+Crater/Seljalandsfoss/Hvolsv%C3%B6llur"><span class="ico ico-map"></span> Map Route — Vestmannaeyjar → Kerid → Seljalandsfoss → Hvolsvöllur</a>
     </div>
   </div>
   <div class="tile">
@@ -219,8 +233,9 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       </div>
       <div class="info-box">
         <div class="info-box-lbl">Things to Do</div>
-        <div class="info-box-val">🧒 Fjaðrárgljúfur boardwalk, 🧒 Skógafoss base, ❌ Reykjadalur, ⚠️ Kerid, ❌ Plane wreck walk</div>
+        <div class="info-box-val"><span class="ico ico-ok"></span> Fjaðrárgljúfur boardwalk, <span class="ico ico-ok"></span> Skógafoss base, <span class="ico ico-no"></span> Reykjadalur, <span class="ico ico-warn"></span> Kerid, <span class="ico ico-no"></span> Plane wreck walk</div>
       </div>
+      <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Hvolsv%C3%B6llur/Sk%C3%B3gafoss/Fja%C3%B0r%C3%A1rglj%C3%BAfur+Canyon/Kerid+Crater/Borgarnes"><span class="ico ico-map"></span> Map Route — Hvolsvöllur → Skógafoss → Fjaðrárgljúfur → Kerid → Borgarnes</a>
     </div>
   </div>
   <div class="tile">
@@ -238,8 +253,9 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       </div>
       <div class="info-box">
         <div class="info-box-lbl">Things to Do</div>
-        <div class="info-box-val">⚠️ Berserkjahraun lava field, 🧒 Kirkjufell viewpoint, ⚠️ Lóndrangar cliffs, 🧒 Arnarstapi village walk, 🧒 Snjófell Restaurant, ❌ Dritvik & Djúpalónssandur black sand beach</div>
+        <div class="info-box-val"><span class="ico ico-warn"></span> Berserkjahraun lava field, <span class="ico ico-ok"></span> Kirkjufell viewpoint, <span class="ico ico-warn"></span> Lóndrangar cliffs, <span class="ico ico-ok"></span> Arnarstapi village walk, <span class="ico ico-ok"></span> Snjófell Restaurant, <span class="ico ico-no"></span> Dritvik & Djúpalónssandur black sand beach</div>
       </div>
+      <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Borgarnes/Berserkjahraun/Kirkjufell/L%C3%B3ndrangar/Arnarstapi/Dj%C3%BApal%C3%B3nssandur/Borgarnes"><span class="ico ico-map"></span> Map Route — Snæfellsnes peninsula loop</a>
     </div>
   </div>
   <div class="tile">
@@ -259,6 +275,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
         <div class="info-box-lbl">Things to Do</div>
         <div class="info-box-val">Flight at 4:45 PM</div>
       </div>
+      <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Borgarnes/Keflav%C3%ADk+International+Airport"><span class="ico ico-map"></span> Map Route — Borgarnes → KEF Airport</a>
     </div>
   </div>
 </div>
