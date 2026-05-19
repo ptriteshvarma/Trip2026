@@ -102,7 +102,10 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 .pt-dot{width:8px;height:8px;border-radius:50%;background:currentColor;opacity:.55}
 .pt-btn.active .pt-dot{opacity:1}
 [hidden]{display:none !important}
-@media(max-width:640px){.hero{padding:44px 16px 80px}.hero h1{letter-spacing:-1px;font-size:clamp(32px,10vw,52px)}.hero-sub{font-size:12px}.hero-stats{gap:8px}.hstat{padding:10px 14px;min-width:80px}.hstat-n{font-size:22px}.hstat-l{font-size:9px}.nav-strip{padding:10px 12px}.controls{padding:0 12px;gap:6px}.btn{padding:8px 14px;font-size:11px}.grid{grid-template-columns:1fr;padding:0 12px}.tile-band{padding:14px}.tile-band-text h3{font-size:13px}.detail-scroll{padding:14px 14px 20px}}
+.place-link{color:inherit;text-decoration:underline;text-decoration-color:rgba(124,196,217,.38);text-decoration-thickness:1px;text-underline-offset:3px;transition:.15s;-webkit-tap-highlight-color:rgba(124,196,217,.22);cursor:pointer}
+.place-link:hover{color:var(--sage);text-decoration-color:var(--sage)}
+.place-link:active{opacity:.65}
+@media(max-width:640px){.hero{padding:44px 16px 80px}.hero h1{letter-spacing:-1px;font-size:clamp(32px,10vw,52px)}.hero-sub{font-size:12px}.hero-stats{gap:8px}.hstat{padding:10px 14px;min-width:80px}.hstat-n{font-size:22px}.hstat-l{font-size:9px}.nav-strip{padding:10px 12px}.controls{padding:0 12px;gap:6px}.btn{padding:8px 14px;font-size:11px}.grid{grid-template-columns:1fr;padding:0 12px}.tile-band{padding:14px}.tile-band-text h3{font-size:13px}.detail-scroll{padding:14px 14px 20px}.map-btn{font-size:10.5px;padding:9px 12px;white-space:normal;line-height:1.3}.schedule-time{width:58px;font-size:9.5px}.schedule-item{font-size:12.5px}.eats-item{font-size:12.5px}.pt-btn{padding:8px 14px;font-size:11px}.todo-item{font-size:15px}.info-box-val{font-size:17px}}
 </style>
 </head>
 <body>
@@ -371,8 +374,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
     <div class="tile-band" style="background:var(--transition-g)">
       <div class="tile-num">1</div>
       <div class="tile-band-text">
-        <h3>May 24 — Reykjavík</h3>
-        <p>Arrival, Old Harbour fish soup, Hallgrímskirkja, Laugavegur stroll.</p>
+        <h3>May 24 — Blue Lagoon + Reykjavík</h3>
+        <p>Land at KEF, decompress at Blue Lagoon, then settle in Reykjavík.</p>
       </div>
     </div>
     <div class="detail-scroll">
@@ -384,6 +387,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
         <div class="info-box-lbl">Things to Do</div>
         <div class="info-box-val">
           <div class="todo-list">
+            <div class="todo-item"><span class="ico ico-ok"></span> Blue Lagoon arrival soak (pre-book)</div>
             <div class="todo-item"><span class="ico ico-ok"></span> Old Harbour &amp; Sægreifinn fish soup</div>
             <div class="todo-item"><span class="ico ico-ok"></span> Hallgrímskirkja elevator</div>
             <div class="todo-item"><span class="ico ico-ok"></span> Nap / rest at hotel</div>
@@ -394,22 +398,29 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       <div class="info-box">
         <div class="info-box-lbl">Day Plan</div>
         <div class="schedule-list">
-          <div class="schedule-item"><div class="schedule-time">9–11am</div><div class="schedule-act">Land at KEF · 45 min drive to Reykjavík · drop bags / freshen up</div></div>
-          <div class="schedule-item"><div class="schedule-time">11am</div><div class="schedule-act">Reykjavík Old Harbour — boats + fish soup lunch</div></div>
-          <div class="schedule-item"><div class="schedule-time">1:30pm</div><div class="schedule-act">Hallgrímskirkja elevator to the top — panoramic city view</div></div>
-          <div class="schedule-item"><div class="schedule-time">3pm</div><div class="schedule-act">Hotel nap — jet lag hits toddlers hard</div></div>
+          <div class="schedule-item"><div class="schedule-time">9–10am</div><div class="schedule-act">Land at KEF · pick up rental car (with car seat)</div></div>
+          <div class="schedule-item"><div class="schedule-time">10:30am</div><div class="schedule-act">Blue Lagoon (pre-booked) — warm geothermal soak to reset after the flight</div></div>
+          <div class="schedule-item"><div class="schedule-time">1pm</div><div class="schedule-act">Continue to Reykjavík (~30 min) · drop bags / check in</div></div>
+          <div class="schedule-item"><div class="schedule-time">2pm</div><div class="schedule-act">Light lunch at Reykjavík Old Harbour — fish soup at Sægreifinn, watch the boats</div></div>
+          <div class="schedule-item"><div class="schedule-time">3:30pm</div><div class="schedule-act">Hotel nap — jet lag hits toddlers hard</div></div>
+          <div class="schedule-item"><div class="schedule-time">5:30pm</div><div class="schedule-act">Hallgrímskirkja elevator to the top — panoramic city view</div></div>
           <div class="schedule-item"><div class="schedule-time">Evening</div><div class="schedule-act">Laugavegur Street stroll + dinner</div></div>
         </div>
       </div>
       <div class="info-box">
         <div class="info-box-lbl">Eats</div>
         <div class="eats-list">
+          <div class="eats-item"><span class="eats-name">Blue Lagoon Café / Spa Restaurant</span><span class="eats-info">On-site snack or sit-down after the soak — convenient before the drive in</span></div>
           <div class="eats-item"><span class="eats-name">Sægreifinn · Sea Baron</span><span class="eats-info">Fresh fish soup on the Old Harbour — toddlers love watching the boats</span></div>
           <div class="eats-item"><span class="eats-name">Noodle Station</span><span class="eats-info">Quick warm ramen on Laugavegur — easy weeknight dinner</span></div>
           <div class="eats-item"><span class="eats-name">Grillmarkurinn</span><span class="eats-info">Sit-down family dining alternative on Laugavegur</span></div>
         </div>
       </div>
-      <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Keflav%C3%ADk+International+Airport/Reykjav%C3%ADk+Old+Harbour/Hallgr%C3%ADmskirkja/Laugavegur+Reykjav%C3%ADk"><span class="ico ico-map"></span> Map Route — KEF → Old Harbour → Hallgrímskirkja → Laugavegur</a>
+      <div class="notes">
+        <h4>Blue Lagoon Booking</h4>
+        <p>Pre-book 2–3 months in advance — children under 2 free, 2–14 charged. Booking it for arrival day puts you in the water within 90 min of landing, which is the best jet-lag reset for the toddler (and you).</p>
+      </div>
+      <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Keflav%C3%ADk+International+Airport/Blue+Lagoon+Iceland/Reykjav%C3%ADk+Old+Harbour/Hallgr%C3%ADmskirkja/Laugavegur+Reykjav%C3%ADk"><span class="ico ico-map"></span> Map Route — KEF → Blue Lagoon → Old Harbour → Hallgrímskirkja</a>
     </div>
   </div>
   <div class="tile">
@@ -564,8 +575,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
     <div class="tile-band" style="background:var(--explore-g)">
       <div class="tile-num">5</div>
       <div class="tile-band-text">
-        <h3>May 28 — Whale Watching + Blue Lagoon</h3>
-        <p>Old Harbour whale tour morning, Blue Lagoon afternoon, farewell dinner.</p>
+        <h3>May 28 — Whale Watching + Laugardalur</h3>
+        <p>Old Harbour whale tour morning, family pool + zoo afternoon, farewell dinner.</p>
       </div>
     </div>
     <div class="detail-scroll">
@@ -578,9 +589,10 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
         <div class="info-box-val">
           <div class="todo-list">
             <div class="todo-item"><span class="ico ico-ok"></span> Whale watching from Old Harbour (pre-book, bundle up)</div>
-            <div class="todo-item"><span class="ico ico-ok"></span> Blue Lagoon afternoon (pre-book)</div>
-            <div class="todo-item"><span class="ico ico-ok"></span> Farewell dinner (Messinn or Café Paris)</div>
-            <div class="todo-item"><span class="ico ico-ok"></span> Laugardalur family pool — rainy-day / cancellation backup</div>
+            <div class="todo-item"><span class="ico ico-ok"></span> Laugardalur family pool — geothermally-heated outdoor</div>
+            <div class="todo-item"><span class="ico ico-ok"></span> Laugardalur Zoo — seals, reindeer, arctic foxes</div>
+            <div class="todo-item"><span class="ico ico-ok"></span> Laugardalur playground — burn toddler energy</div>
+            <div class="todo-item"><span class="ico ico-ok"></span> Farewell dinner (Messinn or Café Paris) · pack bags</div>
           </div>
         </div>
       </div>
@@ -588,29 +600,25 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
         <div class="info-box-lbl">Day Plan</div>
         <div class="schedule-list">
           <div class="schedule-item"><div class="schedule-time">9am</div><div class="schedule-act">Whale watching from Reykjavík Old Harbour (Elding · ~3 hrs · thermal layers!)</div></div>
-          <div class="schedule-item"><div class="schedule-time">12pm</div><div class="schedule-act">Lunch near Old Harbour · warm up · change clothes</div></div>
-          <div class="schedule-item"><div class="schedule-time">2pm</div><div class="schedule-act">Blue Lagoon afternoon slot (pre-booked) — warm geothermal wind-down</div></div>
-          <div class="schedule-item"><div class="schedule-time">Evening</div><div class="schedule-act">Farewell dinner · pack bags tonight</div></div>
+          <div class="schedule-item"><div class="schedule-time">12pm</div><div class="schedule-act">Lunch near Old Harbour · warm up · change into dry clothes</div></div>
+          <div class="schedule-item"><div class="schedule-time">2pm</div><div class="schedule-act">Laugardalur — family pool + zoo (seals, reindeer, arctic foxes) + playground · best toddler afternoon in Iceland</div></div>
+          <div class="schedule-item"><div class="schedule-time">Evening</div><div class="schedule-act">Farewell dinner · pack bags tonight (early-ish start tomorrow)</div></div>
         </div>
       </div>
       <div class="info-box">
         <div class="info-box-lbl">Eats</div>
         <div class="eats-list">
           <div class="eats-item"><span class="eats-name">Sægreifinn · Sea Baron</span><span class="eats-info">Warm fish soup right at Old Harbour — perfect post-tour recovery</span></div>
+          <div class="eats-item"><span class="eats-name">Laugardalur Café</span><span class="eats-info">Easy lunch right at the park — playground access before and after</span></div>
           <div class="eats-item"><span class="eats-name">Messinn</span><span class="eats-info">Family-friendly Icelandic fish — Reykjavík farewell dinner</span></div>
           <div class="eats-item"><span class="eats-name">Café Paris</span><span class="eats-info">Main-square farewell alternative — relaxed sit-down</span></div>
-          <div class="eats-item"><span class="eats-name">Laugardalur Café</span><span class="eats-info">Backup if doing the family pool instead — playground right there</span></div>
         </div>
       </div>
       <div class="notes">
         <h4>Whale Watching with a Toddler</h4>
-        <p>Elding (eldingwhalewatching.is) accepts under-4 free, 7–15 reduced. The tour is 2.5–3 hrs on the open Atlantic — pack thermal layers and waterproofs, snacks, and a carrier for cabin breaks. Pick a calm-weather morning. If the tour cancels, swap in Laugardalur for the morning.</p>
+        <p>Elding (eldingwhalewatching.is) accepts under-4 free, 7–15 reduced. The tour is 2.5–3 hrs on the open Atlantic — pack thermal layers and waterproofs, snacks, and a carrier for cabin breaks. Pick a calm-weather morning. If the tour cancels, swap straight into Laugardalur for the morning instead.</p>
       </div>
-      <div class="notes">
-        <h4>Blue Lagoon Booking</h4>
-        <p>Pre-book Blue Lagoon 2–3 months in advance. Under 2 free, 2–14 charged. The warm geothermal water is a perfect wind-down after a cold boat ride.</p>
-      </div>
-      <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Reykjav%C3%ADk/Reykjav%C3%ADk+Old+Harbour/Blue+Lagoon+Iceland/Reykjav%C3%ADk"><span class="ico ico-map"></span> Map Route — Reykjavík → Old Harbour → Blue Lagoon → Reykjavík</a>
+      <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Reykjav%C3%ADk/Reykjav%C3%ADk+Old+Harbour/Laugardalur/Reykjav%C3%ADk"><span class="ico ico-map"></span> Map Route — Reykjavík → Old Harbour → Laugardalur → Reykjavík</a>
     </div>
   </div>
   <div class="tile">
@@ -705,6 +713,48 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
   }
   document.querySelectorAll('.pt-btn').forEach(b=>{
     b.addEventListener('click', function(){ setPlan(this.dataset.plan); window.scrollTo({top:0,behavior:'smooth'}); });
+  });
+
+  function buildUrl(text){
+    var cleaned = text.replace(/\s+/g,' ').trim();
+    if(!cleaned) return null;
+    var q = /iceland/i.test(cleaned) ? cleaned : cleaned + ' iceland';
+    return 'https://www.google.com/search?q=' + encodeURIComponent(q);
+  }
+  function wrapTextNode(parent, textNode){
+    var text = textNode.textContent;
+    var trimmed = text.trim();
+    if(!trimmed) return;
+    var url = buildUrl(trimmed);
+    if(!url) return;
+    var leading = text.match(/^\s*/)[0];
+    var trailing = text.match(/\s*$/)[0];
+    var a = document.createElement('a');
+    a.href = url;
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.className = 'place-link';
+    a.textContent = trimmed;
+    var frag = document.createDocumentFragment();
+    if(leading) frag.appendChild(document.createTextNode(leading));
+    frag.appendChild(a);
+    if(trailing) frag.appendChild(document.createTextNode(trailing));
+    parent.replaceChild(frag, textNode);
+  }
+  function linkifyText(el){
+    var textNodes = [];
+    for(var i=0;i<el.childNodes.length;i++){
+      var c = el.childNodes[i];
+      if(c.nodeType === 3 && c.textContent.trim()) textNodes.push(c);
+    }
+    textNodes.forEach(function(tn){ wrapTextNode(el, tn); });
+  }
+  document.querySelectorAll('.todo-item, .schedule-act, .eats-name').forEach(linkifyText);
+  document.querySelectorAll('.info-box').forEach(function(box){
+    var lbl = box.querySelector('.info-box-lbl');
+    var val = box.querySelector('.info-box-val');
+    if(!lbl || !val) return;
+    if(lbl.textContent.trim().toLowerCase() === 'stay') linkifyText(val);
   });
 })();
 </script>
