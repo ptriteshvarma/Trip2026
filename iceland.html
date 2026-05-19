@@ -81,6 +81,9 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 .ico-map{-webkit-mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='black'><path fill-rule='evenodd' d='M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 103 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 002.273 1.765 11.842 11.842 0 00.976.544l.062.029.018.008.006.003zM10 11.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z' clip-rule='evenodd'/></svg>");mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='black'><path fill-rule='evenodd' d='M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 103 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 002.273 1.765 11.842 11.842 0 00.976.544l.062.029.018.008.006.003zM10 11.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z' clip-rule='evenodd'/></svg>")}
 .map-btn{display:inline-flex;align-items:center;gap:7px;padding:10px 14px;border-radius:50px;background:rgba(122,170,184,.1);border:1px solid rgba(122,170,184,.3);color:var(--sky);font-size:11px;font-weight:600;text-decoration:none;letter-spacing:.3px;transition:.2s;margin-top:4px}
 .map-btn:hover{background:rgba(122,170,184,.18);border-color:rgba(122,170,184,.5)}
+.todo-list{display:flex;flex-direction:column;gap:9px}
+.todo-item{display:flex;align-items:flex-start;gap:10px;font-size:17px;font-weight:600;font-family:'Playfair Display',serif;color:var(--text);line-height:1.35}
+.todo-item .ico{margin-top:7px}
 @media(max-width:640px){.hero{padding:44px 16px 80px}.hero h1{letter-spacing:-1px;font-size:clamp(32px,10vw,52px)}.hero-sub{font-size:12px}.hero-stats{gap:8px}.hstat{padding:10px 14px;min-width:80px}.hstat-n{font-size:22px}.hstat-l{font-size:9px}.nav-strip{padding:10px 12px}.controls{padding:0 12px;gap:6px}.btn{padding:8px 14px;font-size:11px}.grid{grid-template-columns:1fr;padding:0 12px}.tile-band{padding:14px}.tile-band-text h3{font-size:13px}.detail-scroll{padding:14px 14px 20px}}
 </style>
 </head>
@@ -129,7 +132,12 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       </div>
       <div class="info-box">
         <div class="info-box-lbl">Things to Do</div>
-        <div class="info-box-val"><span class="ico ico-ok"></span> Blue Lagoon, <span class="ico ico-ok"></span> City shopping</div>
+        <div class="info-box-val">
+          <div class="todo-list">
+            <div class="todo-item"><span class="ico ico-ok"></span> Blue Lagoon</div>
+            <div class="todo-item"><span class="ico ico-ok"></span> City shopping</div>
+          </div>
+        </div>
       </div>
       <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Keflav%C3%ADk+International+Airport/Blue+Lagoon+Iceland/K%C3%B3pavogur,+Iceland"><span class="ico ico-map"></span> Map Route — KEF → Blue Lagoon → Kópavogur</a>
     </div>
@@ -149,7 +157,13 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       </div>
       <div class="info-box">
         <div class="info-box-lbl">Things to Do</div>
-        <div class="info-box-val"><span class="ico ico-warn"></span> Volcano crater hike, <span class="ico ico-ok"></span> Relax, <span class="ico ico-ok"></span> Book whale watching tour</div>
+        <div class="info-box-val">
+          <div class="todo-list">
+            <div class="todo-item"><span class="ico ico-warn"></span> Volcano crater hike</div>
+            <div class="todo-item"><span class="ico ico-ok"></span> Relax</div>
+            <div class="todo-item"><span class="ico ico-ok"></span> Book whale watching tour</div>
+          </div>
+        </div>
       </div>
       <div class="notes">
         <h4>Reminder</h4>
@@ -173,7 +187,14 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       </div>
       <div class="info-box">
         <div class="info-box-lbl">Things to Do</div>
-        <div class="info-box-val"><span class="ico ico-ok"></span> Þingvellir, <span class="ico ico-ok"></span> Geysir/Strokkur, <span class="ico ico-warn"></span> Gullfoss viewing, <span class="ico ico-warn"></span> Highland Center optional</div>
+        <div class="info-box-val">
+          <div class="todo-list">
+            <div class="todo-item"><span class="ico ico-ok"></span> Þingvellir</div>
+            <div class="todo-item"><span class="ico ico-ok"></span> Geysir / Strokkur</div>
+            <div class="todo-item"><span class="ico ico-warn"></span> Gullfoss viewing</div>
+            <div class="todo-item"><span class="ico ico-warn"></span> Highland Center optional</div>
+          </div>
+        </div>
       </div>
       <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/K%C3%B3pavogur,+Iceland/%C3%9Eingvellir+National+Park/Geysir/Gullfoss+Waterfall/K%C3%B3pavogur,+Iceland"><span class="ico ico-map"></span> Map Route — Golden Circle loop</a>
     </div>
@@ -193,7 +214,11 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       </div>
       <div class="info-box">
         <div class="info-box-lbl">Things to Do</div>
-        <div class="info-box-val"><span class="ico ico-ok"></span> Westman Islands coastal viewpoints (keep it easy and calm)</div>
+        <div class="info-box-val">
+          <div class="todo-list">
+            <div class="todo-item"><span class="ico ico-ok"></span> Westman Islands coastal viewpoints (keep it easy and calm)</div>
+          </div>
+        </div>
       </div>
       <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/K%C3%B3pavogur,+Iceland/Landeyjah%C3%B6fn+Ferry+Terminal/Vestmannaeyjab%C3%A6r"><span class="ico ico-map"></span> Map Route — Kópavogur → Landeyjahöfn ferry → Vestmannaeyjar</a>
     </div>
@@ -213,7 +238,14 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       </div>
       <div class="info-box">
         <div class="info-box-lbl">Things to Do</div>
-        <div class="info-box-val"><span class="ico ico-warn"></span> Kerid, <span class="ico ico-warn"></span> Seljalandsfoss/Gljúfrabúi, <span class="ico ico-no"></span> Sólheimajökull, <span class="ico ico-no"></span> Reynisfjara</div>
+        <div class="info-box-val">
+          <div class="todo-list">
+            <div class="todo-item"><span class="ico ico-warn"></span> Kerid</div>
+            <div class="todo-item"><span class="ico ico-warn"></span> Seljalandsfoss / Gljúfrabúi</div>
+            <div class="todo-item"><span class="ico ico-no"></span> Sólheimajökull</div>
+            <div class="todo-item"><span class="ico ico-no"></span> Reynisfjara</div>
+          </div>
+        </div>
       </div>
       <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Vestmannaeyjab%C3%A6r/Landeyjah%C3%B6fn+Ferry+Terminal/Kerid+Crater/Seljalandsfoss/Hvolsv%C3%B6llur"><span class="ico ico-map"></span> Map Route — Vestmannaeyjar → Kerid → Seljalandsfoss → Hvolsvöllur</a>
     </div>
@@ -233,7 +265,15 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       </div>
       <div class="info-box">
         <div class="info-box-lbl">Things to Do</div>
-        <div class="info-box-val"><span class="ico ico-ok"></span> Fjaðrárgljúfur boardwalk, <span class="ico ico-ok"></span> Skógafoss base, <span class="ico ico-no"></span> Reykjadalur, <span class="ico ico-warn"></span> Kerid, <span class="ico ico-no"></span> Plane wreck walk</div>
+        <div class="info-box-val">
+          <div class="todo-list">
+            <div class="todo-item"><span class="ico ico-ok"></span> Fjaðrárgljúfur boardwalk</div>
+            <div class="todo-item"><span class="ico ico-ok"></span> Skógafoss base</div>
+            <div class="todo-item"><span class="ico ico-no"></span> Reykjadalur</div>
+            <div class="todo-item"><span class="ico ico-warn"></span> Kerid</div>
+            <div class="todo-item"><span class="ico ico-no"></span> Plane wreck walk</div>
+          </div>
+        </div>
       </div>
       <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Hvolsv%C3%B6llur/Sk%C3%B3gafoss/Fja%C3%B0r%C3%A1rglj%C3%BAfur+Canyon/Kerid+Crater/Borgarnes"><span class="ico ico-map"></span> Map Route — Hvolsvöllur → Skógafoss → Fjaðrárgljúfur → Kerid → Borgarnes</a>
     </div>
@@ -253,7 +293,16 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       </div>
       <div class="info-box">
         <div class="info-box-lbl">Things to Do</div>
-        <div class="info-box-val"><span class="ico ico-warn"></span> Berserkjahraun lava field, <span class="ico ico-ok"></span> Kirkjufell viewpoint, <span class="ico ico-warn"></span> Lóndrangar cliffs, <span class="ico ico-ok"></span> Arnarstapi village walk, <span class="ico ico-ok"></span> Snjófell Restaurant, <span class="ico ico-no"></span> Dritvik & Djúpalónssandur black sand beach</div>
+        <div class="info-box-val">
+          <div class="todo-list">
+            <div class="todo-item"><span class="ico ico-warn"></span> Berserkjahraun lava field</div>
+            <div class="todo-item"><span class="ico ico-ok"></span> Kirkjufell viewpoint</div>
+            <div class="todo-item"><span class="ico ico-warn"></span> Lóndrangar cliffs</div>
+            <div class="todo-item"><span class="ico ico-ok"></span> Arnarstapi village walk</div>
+            <div class="todo-item"><span class="ico ico-ok"></span> Snjófell Restaurant</div>
+            <div class="todo-item"><span class="ico ico-no"></span> Dritvik &amp; Djúpalónssandur black sand beach</div>
+          </div>
+        </div>
       </div>
       <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Borgarnes/Berserkjahraun/Kirkjufell/L%C3%B3ndrangar/Arnarstapi/Dj%C3%BApal%C3%B3nssandur/Borgarnes"><span class="ico ico-map"></span> Map Route — Snæfellsnes peninsula loop</a>
     </div>
