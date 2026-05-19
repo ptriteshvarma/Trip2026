@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iceland Trip Template</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #1e2220;
+  --bg2: #252b27;
+  --card: #2c3330;
+  --card2: #323a37;
+  --border: rgba(255,255,255,0.07);
+  --amber: #c8954a;
+  --amber2: #d4a46a;
+  --sage: #7aaa82;
+  --pine: #5d9068;
+  --sky: #7aaab8;
+  --ocean: #5a8fa8;
+  --red: #c47a72;
+  --text: #d8d4cc;
+  --muted: #8a9490;
+  --faint: #5e6a64;
+  --drive-g: linear-gradient(135deg,#5a3a1a,#8a5e2a);
+  --explore-g: linear-gradient(135deg,#1e3a28,#3a6648);
+  --transition-g: linear-gradient(135deg,#1e303a,#2a5068);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+.hero{position:relative;background:var(--bg2);overflow:hidden;padding:60px 20px 100px;text-align:center}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(1.5px 1.5px at 10% 15%,rgba(255,255,255,.7) 0%,transparent 100%),radial-gradient(1px 1px at 25% 40%,rgba(255,255,255,.5) 0%,transparent 100%),radial-gradient(2px 2px at 40% 10%,rgba(255,255,255,.6) 0%,transparent 100%),radial-gradient(1px 1px at 55% 30%,rgba(255,255,255,.4) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 70% 12%,rgba(255,255,255,.8) 0%,transparent 100%),radial-gradient(1px 1px at 80% 45%,rgba(255,255,255,.5) 0%,transparent 100%),radial-gradient(2px 2px at 90% 20%,rgba(255,255,255,.6) 0%,transparent 100%),radial-gradient(1px 1px at 15% 60%,rgba(255,255,255,.3) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 60% 55%,rgba(255,255,255,.5) 0%,transparent 100%),radial-gradient(1px 1px at 35% 70%,rgba(255,255,255,.4) 0%,transparent 100%);}
+.hero::after{content:'';position:absolute;top:-60px;right:10%;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(251,191,36,.08) 0%,transparent 70%);pointer-events:none}
+.hero-badge{display:inline-block;border:1px solid rgba(251,191,36,.4);color:var(--amber2);padding:5px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:20px;background:rgba(251,191,36,.08)}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(38px,8vw,80px);font-weight:900;letter-spacing:-2px;line-height:1;margin-bottom:10px;color:#fff;text-shadow:0 0 40px rgba(74,222,128,.2)}
+.hero h1 em{color:var(--sage);font-style:normal}
+.hero-sub{color:var(--muted);font-size:14px;letter-spacing:.5px;margin-bottom:40px}
+.hero-stats{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;position:relative;z-index:2}
+.hstat{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:16px;padding:14px 22px;backdrop-filter:blur(10px);min-width:100px;transition:.2s}
+.hstat:hover{border-color:rgba(74,222,128,.3);background:rgba(74,222,128,.05)}
+.hstat-n{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--sage);display:block;line-height:1}
+.hstat-l{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:var(--faint);margin-top:4px}
+.nav-strip{background:var(--bg2);border-bottom:1px solid var(--border);padding:14px 20px;position:sticky;top:0;z-index:50;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.nav-inner{display:flex;align-items:center;gap:4px;min-width:max-content;max-width:900px;margin:0 auto}
+.nav-dot{display:flex;flex-direction:column;align-items:center;gap:4px;padding:6px 10px;border-radius:10px;cursor:default;transition:.2s;flex-shrink:0}
+.nav-dot:hover{background:rgba(255,255,255,.06)}
+.nd-circle{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;flex-shrink:0}
+.nd-label{font-size:9px;font-weight:600;color:var(--faint);text-transform:uppercase;letter-spacing:.6px;white-space:nowrap}
+.controls{max-width:960px;margin:24px auto 0;padding:0 16px;display:flex;gap:8px;flex-wrap:wrap}
+.btn{padding:9px 18px;border-radius:50px;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-weight:600;font-size:12px;transition:.2s;display:inline-flex;align-items:center;gap:6px;letter-spacing:.3px}
+.btn svg{width:14px;height:14px}
+.btn-p{background:var(--amber);color:#0b0b0b}
+.btn-p:hover{background:var(--amber2)}
+.btn-o{background:transparent;color:var(--sage);border:1.5px solid rgba(74,222,128,.4)}
+.btn-o:hover{background:rgba(74,222,128,.1)}
+.btn-g{background:rgba(255,255,255,.06);color:var(--muted);border:1px solid var(--border)}
+.btn-g:hover{background:rgba(255,255,255,.1);color:var(--text)}
+.grid{max-width:960px;margin:24px auto 60px;padding:0 16px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.tile{background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden;cursor:default;transition:.25s;display:flex;flex-direction:column}
+.tile:hover{border-color:rgba(255,255,255,.16);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.4)}
+.tile-band{padding:20px;display:flex;align-items:flex-start;gap:14px;position:relative;overflow:hidden}
+.tile-band::after{content:'';position:absolute;inset:0;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='1'/%3E%3C/g%3E%3C/svg%3E")}
+.tile-num{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#fff;flex-shrink:0;box-shadow:0 4px 12px rgba(0,0,0,.3);background:var(--sky)}
+.tile-band-text{flex:1;min-width:0}
+.tile-band-text h3{font-size:14px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:6px}
+.tile-band-text p{font-size:12px;color:var(--muted);line-height:1.5}
+.detail-scroll{padding:18px 18px 24px}
+.info-box{background:var(--card2);border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:12px}
+.info-box-lbl{display:flex;align-items:center;gap:6px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--faint);margin-bottom:8px}
+.info-box-val{font-size:20px;font-weight:700;font-family:'Playfair Display',serif;color:var(--text)}
+.info-box-sub{font-size:11px;color:var(--muted);margin-top:3px}
+.notes{background:rgba(251,191,36,.05);border:1px solid rgba(251,191,36,.15);border-radius:14px;padding:16px;margin-bottom:14px}
+.notes h4{display:flex;align-items:center;gap:7px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--amber2);margin-bottom:10px}
+.notes p{font-size:12px;color:var(--text);line-height:1.7}
+@media(max-width:640px){.hero{padding:44px 16px 80px}.hero h1{letter-spacing:-1px;font-size:clamp(32px,10vw,52px)}.hero-sub{font-size:12px}.hero-stats{gap:8px}.hstat{padding:10px 14px;min-width:80px}.hstat-n{font-size:22px}.hstat-l{font-size:9px}.nav-strip{padding:10px 12px}.controls{padding:0 12px;gap:6px}.btn{padding:8px 14px;font-size:11px}.grid{grid-template-columns:1fr;padding:0 12px}.tile-band{padding:14px}.tile-band-text h3{font-size:13px}.detail-scroll{padding:14px 14px 20px}}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="hero-badge">Iceland Adventure &bull; Sep 3–10</div>
+  <h1>Iceland<br><em>Template</em></h1>
+  <p class="hero-sub">Kópavogur &rarr; Vestmannaeyjar &rarr; Hvolsvöllur &rarr; Borgarnes &rarr; Reykjavík &middot; <strong style="color:var(--sage)">8 days · Whale watching · North Atlantic style</strong></p>
+  <div class="hero-stats">
+    <div class="hstat"><span class="hstat-n">8</span><div class="hstat-l">Days</div></div>
+    <div class="hstat"><span class="hstat-n">Sep 3</span><div class="hstat-l">Start Date</div></div>
+    <div class="hstat"><span class="hstat-n">Sep 10</span><div class="hstat-l">End Date</div></div>
+    <div class="hstat"><span class="hstat-n">1</span><div class="hstat-l">Whale Tour</div></div>
+    <div class="hstat"><span class="hstat-n">7</span><div class="hstat-l">Nights</div></div>
+  </div>
+</div>
+<div style="max-width:960px;margin:0 auto;padding:14px 20px 0;text-align:center;font-size:12px;color:var(--muted);line-height:1.6">
+  <span style="display:inline-block;background:rgba(122,170,130,.1);border:1px solid rgba(122,170,130,.25);border-radius:20px;padding:6px 14px">Iceland overview in Acadia-style design. Tap each card for the day plan and a whale watching booking reminder.</span>
+</div>
+<div class="controls">
+  <a class="btn btn-o" href="index.html">View Acadia Template</a>
+  <a class="btn btn-p" href="https://www.google.com/search?q=iceland+whale+watching+tours" target="_blank" rel="noopener">Search Whale Watching Tours</a>
+</div>
+<div class="grid">
+  <div class="tile">
+    <div class="tile-band" style="background:var(--transition-g)">
+      <div class="tile-num">1</div>
+      <div class="tile-band-text">
+        <h3>Sep 3 — Kópavogur</h3>
+        <p>Arrival and city shopping with Reykjavik easy access.</p>
+      </div>
+    </div>
+    <div class="detail-scroll">
+      <div class="info-box">
+        <div class="info-box-lbl">Stay</div>
+        <div class="info-box-val">Kópavogur</div>
+      </div>
+      <div class="info-box">
+        <div class="info-box-lbl">Things to Do</div>
+        <div class="info-box-val">Blue Lagoon, City shopping</div>
+      </div>
+    </div>
+  </div>
+  <div class="tile">
+    <div class="tile-band" style="background:var(--drive-g)">
+      <div class="tile-num">2</div>
+      <div class="tile-band-text">
+        <h3>Sep 4 — Kópavogur</h3>
+        <p>Volcano hike, relaxation, and booking reminder.</p>
+      </div>
+    </div>
+    <div class="detail-scroll">
+      <div class="info-box">
+        <div class="info-box-lbl">Stay</div>
+        <div class="info-box-val">Kópavogur</div>
+      </div>
+      <div class="info-box">
+        <div class="info-box-lbl">Things to Do</div>
+        <div class="info-box-val">Volcano crater hike, Relax, Book whale watching tour</div>
+      </div>
+      <div class="notes">
+        <h4>Reminder</h4>
+        <p>Book the whale watching tour today so you have the best choice of departure times and a reliable operator.</p>
+      </div>
+    </div>
+  </div>
+  <div class="tile">
+    <div class="tile-band" style="background:var(--explore-g)">
+      <div class="tile-num">3</div>
+      <div class="tile-band-text">
+        <h3>Sep 5 — Kópavogur</h3>
+        <p>Golden Circle day with Iceland's iconic natural attractions.</p>
+      </div>
+    </div>
+    <div class="detail-scroll">
+      <div class="info-box">
+        <div class="info-box-lbl">Stay</div>
+        <div class="info-box-val">Kópavogur</div>
+      </div>
+      <div class="info-box">
+        <div class="info-box-lbl">Things to Do</div>
+        <div class="info-box-val">Þingvellir National Park, The Great Geysir and Strokkur, Gullfoss Waterfall, Optional Highland Center Hrauneyjar</div>
+      </div>
+    </div>
+  </div>
+  <div class="tile">
+    <div class="tile-band" style="background:var(--drive-g)">
+      <div class="tile-num">4</div>
+      <div class="tile-band-text">
+        <h3>Sep 6 — Ofanleiti, Vestmannaeyjabær</h3>
+        <p>Westman Islands exploration with volcanic scenery.</p>
+      </div>
+    </div>
+    <div class="detail-scroll">
+      <div class="info-box">
+        <div class="info-box-lbl">Stay</div>
+        <div class="info-box-val">Ofanleiti, Vestmannaeyjabær</div>
+      </div>
+      <div class="info-box">
+        <div class="info-box-lbl">Things to Do</div>
+        <div class="info-box-val">Westman Islands: Sprangan, Herjolfsdalur, Storhofdi, Eldfell</div>
+      </div>
+    </div>
+  </div>
+  <div class="tile">
+    <div class="tile-band" style="background:var(--transition-g)">
+      <div class="tile-num">5</div>
+      <div class="tile-band-text">
+        <h3>Sep 7 — Hvolsvöllur</h3>
+        <p>South coast highlights from Kerid to Reynisfjara.</p>
+      </div>
+    </div>
+    <div class="detail-scroll">
+      <div class="info-box">
+        <div class="info-box-lbl">Stay</div>
+        <div class="info-box-val">Lynghagavegur Cosy cottage Miðtún, Hvolsvöllur</div>
+      </div>
+      <div class="info-box">
+        <div class="info-box-lbl">Things to Do</div>
+        <div class="info-box-val">Kerid Crater, Seljalandsfoss, Gljúfrabúi, Sólheimajökull, Reynisfjara (Vik)</div>
+      </div>
+    </div>
+  </div>
+  <div class="tile">
+    <div class="tile-band" style="background:var(--explore-g)">
+      <div class="tile-num">6</div>
+      <div class="tile-band-text">
+        <h3>Sep 8 — Borgarnes</h3>
+        <p>South coast canyon, waterfall, thermal spring, and plane wreck.</p>
+      </div>
+    </div>
+    <div class="detail-scroll">
+      <div class="info-box">
+        <div class="info-box-lbl">Stay</div>
+        <div class="info-box-val">Fossatúni, Borgarnes</div>
+      </div>
+      <div class="info-box">
+        <div class="info-box-lbl">Things to Do</div>
+        <div class="info-box-val">Fjaðrárgljúfur canyon, Skógafoss, Reykjadalur hot spring, Kerid, Sólheimasandur plane wreck</div>
+      </div>
+    </div>
+  </div>
+  <div class="tile">
+    <div class="tile-band" style="background:var(--drive-g)">
+      <div class="tile-num">7</div>
+      <div class="tile-band-text">
+        <h3>Sep 9 — Borgarnes</h3>
+        <p>Snæfellsnes Peninsula circuit with waterfalls and coastal viewpoints.</p>
+      </div>
+    </div>
+    <div class="detail-scroll">
+      <div class="info-box">
+        <div class="info-box-lbl">Stay</div>
+        <div class="info-box-val">Fossatúni, Borgarnes</div>
+      </div>
+      <div class="info-box">
+        <div class="info-box-lbl">Things to Do</div>
+        <div class="info-box-val">Berserkjahraun, Kirkjufell, Lóndrangar, Arnarstapi, Snjófell Restaurant, Dritvik and Djúpalónssandur</div>
+      </div>
+    </div>
+  </div>
+  <div class="tile">
+    <div class="tile-band" style="background:var(--transition-g)">
+      <div class="tile-num">8</div>
+      <div class="tile-band-text">
+        <h3>Sep 10 — Departure Day</h3>
+        <p>Last Iceland morning and flight home.</p>
+      </div>
+    </div>
+    <div class="detail-scroll">
+      <div class="info-box">
+        <div class="info-box-lbl">Stay</div>
+        <div class="info-box-val">N/A</div>
+      </div>
+      <div class="info-box">
+        <div class="info-box-lbl">Things to Do</div>
+        <div class="info-box-val">Flight at 4:45 PM</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="tripstats-wrap" style="margin-top:0">
+  <div class="be-header">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+    Iceland Trip Notes
+  </div>
+  <div class="notes">
+    <h4>Whale Watching Tour</h4>
+    <p>Book the whale watching tour on Sep 4 now while the schedule is still flexible. This is the best day to secure a morning departure from Reykjavík or nearby coastal ports.</p>
+  </div>
+  <div class="notes">
+    <h4>Travel Tip</h4>
+    <p>Keep Sep 6 open for the Westman Islands and allow extra time for ferry schedules; weather can shift quickly in early September.</p>
+  </div>
+</div>
+<div class="footer" style="border-top:1px solid var(--border);padding-bottom:40px">
+  <p>Acadia-style Iceland itinerary template · Static schedule sheet · Whale watching reminder included</p>
+</div>
+</body>
+</html>

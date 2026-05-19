@@ -426,61 +426,6 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 </head>
 <body>
 
-<!-- PASSWORD GATE -->
-<div id="gate" style="
-  position:fixed;inset:0;z-index:9999;
-  background:linear-gradient(160deg,#0b160b 0%,#1a2f1a 50%,#0d1a2a 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  font-family:'Inter',sans-serif;padding:20px;
-">
-  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#7aaa82" stroke-width="1.5" style="margin-bottom:16px">
-    <path d="M8 16l4-8 4 8M6 20h12"/>
-    <path d="M12 3C9.24 3 7 5.24 7 8v1H5v12h14V9h-2V8c0-2.76-2.24-5-5-5z" stroke="#5a8fa8" stroke-width="1.2"/>
-  </svg>
-  <div style="color:#d8d4cc;font-size:22px;font-weight:700;margin-bottom:6px;font-family:'Playfair Display',serif">Meher &amp; Ritu Road Trip 2026</div>
-  <div style="color:#5e6a64;font-size:13px;margin-bottom:32px">Enter password to continue</div>
-  <div style="position:relative;width:100%;max-width:280px">
-    <input id="pwInput" type="password" placeholder="Password"
-      style="
-        width:100%;padding:13px 16px;border-radius:12px;
-        background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
-        color:#d8d4cc;font-family:'Inter',sans-serif;font-size:15px;
-        outline:none;letter-spacing:2px;text-align:center
-      "
-      onkeydown="if(event.key==='Enter')checkPw()"
-    >
-  </div>
-  <div id="pwErr" style="color:#c47a72;font-size:12px;margin-top:10px;height:16px"></div>
-  <button onclick="checkPw()" style="
-    margin-top:16px;padding:11px 36px;border-radius:50px;border:none;cursor:pointer;
-    background:#5d9068;color:#fff;font-family:'Inter',sans-serif;font-weight:700;font-size:13px;
-    transition:.2s;letter-spacing:.5px
-  " onmouseover="this.style.background='#7aaa82'" onmouseout="this.style.background='#5d9068'">
-    Unlock Trip
-  </button>
-</div>
-<script>
-(function(){
-  if(sessionStorage.getItem('mrtrip2026')==='ok'){
-    document.getElementById('gate').style.display='none';
-  }
-})();
-function checkPw(){
-  const v=document.getElementById('pwInput').value;
-  if(v==='1819'){
-    sessionStorage.setItem('mrtrip2026','ok');
-    const g=document.getElementById('gate');
-    g.style.transition='opacity .4s';g.style.opacity='0';
-    setTimeout(()=>g.style.display='none',400);
-  } else {
-    const err=document.getElementById('pwErr');
-    err.textContent='Incorrect password. Try again.';
-    document.getElementById('pwInput').value='';
-    document.getElementById('pwInput').focus();
-    setTimeout(()=>err.textContent='',3000);
-  }
-}
-</script>
 
 <!-- HERO -->
 <div class="hero">
