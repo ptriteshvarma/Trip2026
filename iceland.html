@@ -3,28 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Iceland Trip Template</title>
+<title>Iceland Family Trip</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #1e2220;
-  --bg2: #252b27;
-  --card: #2c3330;
-  --card2: #323a37;
-  --border: rgba(255,255,255,0.07);
+  --bg: #14181f;
+  --bg2: #1c222b;
+  --card: #232a35;
+  --card2: #2b3340;
+  --border: rgba(255,255,255,0.08);
   --amber: #c8954a;
   --amber2: #d4a46a;
-  --sage: #7aaa82;
-  --pine: #5d9068;
-  --sky: #7aaab8;
-  --ocean: #5a8fa8;
+  --sage: #7cc4d9;
+  --pine: #5a9eb8;
+  --sky: #8fbfd9;
+  --ocean: #4a7fa0;
   --red: #c47a72;
-  --text: #d8d4cc;
-  --muted: #8a9490;
-  --faint: #5e6a64;
-  --drive-g: linear-gradient(135deg,#5a3a1a,#8a5e2a);
-  --explore-g: linear-gradient(135deg,#1e3a28,#3a6648);
-  --transition-g: linear-gradient(135deg,#1e303a,#2a5068);
+  --text: #d6dee7;
+  --muted: #8896a3;
+  --faint: #5e6a75;
+  --kid-green: #6acf9d;
+  --aurora: #b48bd9;
+  --drive-g: linear-gradient(135deg,#1d1814,#3a2820);
+  --explore-g: linear-gradient(135deg,#1a3a4d,#3a78a8);
+  --transition-g: linear-gradient(135deg,#2a2548,#5a3870);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -33,12 +35,12 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 .hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(1.5px 1.5px at 10% 15%,rgba(255,255,255,.7) 0%,transparent 100%),radial-gradient(1px 1px at 25% 40%,rgba(255,255,255,.5) 0%,transparent 100%),radial-gradient(2px 2px at 40% 10%,rgba(255,255,255,.6) 0%,transparent 100%),radial-gradient(1px 1px at 55% 30%,rgba(255,255,255,.4) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 70% 12%,rgba(255,255,255,.8) 0%,transparent 100%),radial-gradient(1px 1px at 80% 45%,rgba(255,255,255,.5) 0%,transparent 100%),radial-gradient(2px 2px at 90% 20%,rgba(255,255,255,.6) 0%,transparent 100%),radial-gradient(1px 1px at 15% 60%,rgba(255,255,255,.3) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 60% 55%,rgba(255,255,255,.5) 0%,transparent 100%),radial-gradient(1px 1px at 35% 70%,rgba(255,255,255,.4) 0%,transparent 100%);}
 .hero::after{content:'';position:absolute;top:-60px;right:10%;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(251,191,36,.08) 0%,transparent 70%);pointer-events:none}
 .hero-badge{display:inline-block;border:1px solid rgba(251,191,36,.4);color:var(--amber2);padding:5px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:20px;background:rgba(251,191,36,.08)}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(38px,8vw,80px);font-weight:900;letter-spacing:-2px;line-height:1;margin-bottom:10px;color:#fff;text-shadow:0 0 40px rgba(74,222,128,.2)}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(38px,8vw,80px);font-weight:900;letter-spacing:-2px;line-height:1;margin-bottom:10px;color:#fff;text-shadow:0 0 40px rgba(124,196,217,.2)}
 .hero h1 em{color:var(--sage);font-style:normal}
 .hero-sub{color:var(--muted);font-size:14px;letter-spacing:.5px;margin-bottom:40px}
 .hero-stats{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;position:relative;z-index:2}
 .hstat{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:16px;padding:14px 22px;backdrop-filter:blur(10px);min-width:100px;transition:.2s}
-.hstat:hover{border-color:rgba(74,222,128,.3);background:rgba(74,222,128,.05)}
+.hstat:hover{border-color:rgba(124,196,217,.3);background:rgba(124,196,217,.05)}
 .hstat-n{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--sage);display:block;line-height:1}
 .hstat-l{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:var(--faint);margin-top:4px}
 .nav-strip{background:var(--bg2);border-bottom:1px solid var(--border);padding:14px 20px;position:sticky;top:0;z-index:50;overflow-x:auto;-webkit-overflow-scrolling:touch}
@@ -52,8 +54,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 .btn svg{width:14px;height:14px}
 .btn-p{background:var(--amber);color:#0b0b0b}
 .btn-p:hover{background:var(--amber2)}
-.btn-o{background:transparent;color:var(--sage);border:1.5px solid rgba(74,222,128,.4)}
-.btn-o:hover{background:rgba(74,222,128,.1)}
+.btn-o{background:transparent;color:var(--sage);border:1.5px solid rgba(124,196,217,.4)}
+.btn-o:hover{background:rgba(124,196,217,.1)}
 .btn-g{background:rgba(255,255,255,.06);color:var(--muted);border:1px solid var(--border)}
 .btn-g:hover{background:rgba(255,255,255,.1);color:var(--text)}
 .grid{max-width:960px;margin:24px auto 60px;padding:0 16px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
@@ -75,7 +77,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 .notes p{font-size:12px;color:var(--text);line-height:1.7}
 .ico{display:inline-block;width:13px;height:13px;vertical-align:-2px;flex-shrink:0;background-color:currentColor;-webkit-mask:no-repeat center/contain;mask:no-repeat center/contain}
 .ico-lg{width:17px;height:17px;vertical-align:-4px}
-.ico-ok{color:var(--sage);-webkit-mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='black'><path d='M1 8.25a1.25 1.25 0 112.5 0v7.5a1.25 1.25 0 11-2.5 0v-7.5zM11 3V1.7c0-.268.14-.526.395-.607A2 2 0 0114 3c0 .995-.182 1.948-.514 2.826-.204.54.166 1.174.744 1.174h2.52c1.243 0 2.261 1.01 2.146 2.247a23.864 23.864 0 01-1.341 5.974C17.153 16.323 16.072 17 14.9 17h-3.192a3 3 0 01-1.341-.317l-2.734-1.366A3 3 0 006.292 15H5V8h.963c.685 0 1.258-.483 1.612-1.068a4.011 4.011 0 012.166-1.73c.432-.143.853-.386 1.011-.814.16-.432.248-.9.248-1.388z'/></svg>");mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='black'><path d='M1 8.25a1.25 1.25 0 112.5 0v7.5a1.25 1.25 0 11-2.5 0v-7.5zM11 3V1.7c0-.268.14-.526.395-.607A2 2 0 0114 3c0 .995-.182 1.948-.514 2.826-.204.54.166 1.174.744 1.174h2.52c1.243 0 2.261 1.01 2.146 2.247a23.864 23.864 0 01-1.341 5.974C17.153 16.323 16.072 17 14.9 17h-3.192a3 3 0 01-1.341-.317l-2.734-1.366A3 3 0 006.292 15H5V8h.963c.685 0 1.258-.483 1.612-1.068a4.011 4.011 0 012.166-1.73c.432-.143.853-.386 1.011-.814.16-.432.248-.9.248-1.388z'/></svg>")}
+.ico-ok{color:var(--kid-green);-webkit-mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='black'><path d='M1 8.25a1.25 1.25 0 112.5 0v7.5a1.25 1.25 0 11-2.5 0v-7.5zM11 3V1.7c0-.268.14-.526.395-.607A2 2 0 0114 3c0 .995-.182 1.948-.514 2.826-.204.54.166 1.174.744 1.174h2.52c1.243 0 2.261 1.01 2.146 2.247a23.864 23.864 0 01-1.341 5.974C17.153 16.323 16.072 17 14.9 17h-3.192a3 3 0 01-1.341-.317l-2.734-1.366A3 3 0 006.292 15H5V8h.963c.685 0 1.258-.483 1.612-1.068a4.011 4.011 0 012.166-1.73c.432-.143.853-.386 1.011-.814.16-.432.248-.9.248-1.388z'/></svg>");mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='black'><path d='M1 8.25a1.25 1.25 0 112.5 0v7.5a1.25 1.25 0 11-2.5 0v-7.5zM11 3V1.7c0-.268.14-.526.395-.607A2 2 0 0114 3c0 .995-.182 1.948-.514 2.826-.204.54.166 1.174.744 1.174h2.52c1.243 0 2.261 1.01 2.146 2.247a23.864 23.864 0 01-1.341 5.974C17.153 16.323 16.072 17 14.9 17h-3.192a3 3 0 01-1.341-.317l-2.734-1.366A3 3 0 006.292 15H5V8h.963c.685 0 1.258-.483 1.612-1.068a4.011 4.011 0 012.166-1.73c.432-.143.853-.386 1.011-.814.16-.432.248-.9.248-1.388z'/></svg>")}
 .ico-warn{color:var(--amber2);-webkit-mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='black'><path fill-rule='evenodd' d='M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z' clip-rule='evenodd'/></svg>");mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='black'><path fill-rule='evenodd' d='M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z' clip-rule='evenodd'/></svg>")}
 .ico-no{color:var(--red);-webkit-mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='black'><path fill-rule='evenodd' d='M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z' clip-rule='evenodd'/></svg>");mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='black'><path fill-rule='evenodd' d='M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z' clip-rule='evenodd'/></svg>")}
 .ico-map{-webkit-mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='black'><path fill-rule='evenodd' d='M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 103 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 002.273 1.765 11.842 11.842 0 00.976.544l.062.029.018.008.006.003zM10 11.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z' clip-rule='evenodd'/></svg>");mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='black'><path fill-rule='evenodd' d='M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 103 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 002.273 1.765 11.842 11.842 0 00.976.544l.062.029.018.008.006.003zM10 11.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z' clip-rule='evenodd'/></svg>")}
@@ -84,24 +86,44 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 .todo-list{display:flex;flex-direction:column;gap:9px}
 .todo-item{display:flex;align-items:flex-start;gap:10px;font-size:17px;font-weight:600;font-family:'Playfair Display',serif;color:var(--text);line-height:1.35}
 .todo-item .ico{margin-top:7px}
+.plan-toggle{max-width:960px;margin:18px auto 0;padding:0 16px;display:flex;justify-content:center}
+.plan-toggle-inner{background:var(--card);border:1px solid var(--border);border-radius:50px;padding:5px;display:inline-flex;gap:4px;flex-wrap:wrap;max-width:100%}
+.pt-btn{background:transparent;border:none;color:var(--muted);padding:9px 18px;border-radius:50px;font-family:'Inter',sans-serif;font-size:12px;font-weight:600;cursor:pointer;letter-spacing:.3px;transition:.2s;display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
+.pt-btn:hover{color:var(--text)}
+.pt-btn.active{background:var(--sage);color:#0b1018;box-shadow:0 4px 14px rgba(124,196,217,.25)}
+.pt-dot{width:8px;height:8px;border-radius:50%;background:currentColor;opacity:.55}
+.pt-btn.active .pt-dot{opacity:1}
+[hidden]{display:none !important}
 @media(max-width:640px){.hero{padding:44px 16px 80px}.hero h1{letter-spacing:-1px;font-size:clamp(32px,10vw,52px)}.hero-sub{font-size:12px}.hero-stats{gap:8px}.hstat{padding:10px 14px;min-width:80px}.hstat-n{font-size:22px}.hstat-l{font-size:9px}.nav-strip{padding:10px 12px}.controls{padding:0 12px;gap:6px}.btn{padding:8px 14px;font-size:11px}.grid{grid-template-columns:1fr;padding:0 12px}.tile-band{padding:14px}.tile-band-text h3{font-size:13px}.detail-scroll{padding:14px 14px 20px}}
 </style>
 </head>
 <body>
 <div class="hero">
-  <div class="hero-badge">Iceland Adventure &bull; Sep 3–10</div>
-  <h1>Iceland<br><em>Template</em></h1>
-  <p class="hero-sub">Kópavogur &rarr; Vestmannaeyjar &rarr; Hvolsvöllur &rarr; Borgarnes &rarr; Reykjavík &middot; <strong style="color:var(--sage)">8 days · Whale watching · North Atlantic style</strong></p>
-  <div class="hero-stats">
-    <div class="hstat"><span class="hstat-n">8</span><div class="hstat-l">Days</div></div>
-    <div class="hstat"><span class="hstat-n">Sep 3</span><div class="hstat-l">Start Date</div></div>
-    <div class="hstat"><span class="hstat-n">Sep 10</span><div class="hstat-l">End Date</div></div>
-    <div class="hstat"><span class="hstat-n">1</span><div class="hstat-l">Whale Tour</div></div>
-    <div class="hstat"><span class="hstat-n">7</span><div class="hstat-l">Nights</div></div>
+  <div class="hero-badge">Iceland Family Trip &bull; Two Routes</div>
+  <h1>Iceland<br><em>Family Trip</em></h1>
+  <div data-plan="sep">
+    <p class="hero-sub">Kópavogur &rarr; Vestmannaeyjar &rarr; Hvolsvöllur &rarr; Borgarnes &rarr; Reykjavík &middot; <strong style="color:var(--sage)">8 days · Whale watching · North Atlantic style</strong></p>
+    <div class="hero-stats">
+      <div class="hstat"><span class="hstat-n">8</span><div class="hstat-l">Days</div></div>
+      <div class="hstat"><span class="hstat-n">Sep 3</span><div class="hstat-l">Start Date</div></div>
+      <div class="hstat"><span class="hstat-n">Sep 10</span><div class="hstat-l">End Date</div></div>
+      <div class="hstat"><span class="hstat-n">1</span><div class="hstat-l">Whale Tour</div></div>
+      <div class="hstat"><span class="hstat-n">7</span><div class="hstat-l">Nights</div></div>
+    </div>
+  </div>
+  <div data-plan="may" hidden>
+    <p class="hero-sub">Reykjavík &rarr; Vík &rarr; Geirland &rarr; Reykjavík &middot; <strong style="color:var(--sage)">6 days · 3-year-old friendly · Ring Road South</strong></p>
+    <div class="hero-stats">
+      <div class="hstat"><span class="hstat-n">6</span><div class="hstat-l">Days</div></div>
+      <div class="hstat"><span class="hstat-n">May 24</span><div class="hstat-l">Start Date</div></div>
+      <div class="hstat"><span class="hstat-n">May 29</span><div class="hstat-l">End Date</div></div>
+      <div class="hstat"><span class="hstat-n">5</span><div class="hstat-l">Nights</div></div>
+      <div class="hstat"><span class="hstat-n">3-yr</span><div class="hstat-l">Toddler</div></div>
+    </div>
   </div>
 </div>
 <div style="max-width:960px;margin:0 auto;padding:14px 20px 0;text-align:center;font-size:12px;color:var(--muted);line-height:1.6">
-  <span style="display:inline-block;background:rgba(122,170,130,.1);border:1px solid rgba(122,170,130,.25);border-radius:20px;padding:6px 14px">Iceland overview in Acadia-style design. Tap each card for the day plan and a whale watching booking reminder.</span>
+  <span style="display:inline-block;background:rgba(124,196,217,.1);border:1px solid rgba(124,196,217,.28);border-radius:20px;padding:6px 14px">Two routes available — switch between the September whale-watching plan and the May toddler-friendly Ring Road South plan.</span>
 </div>
 <div style="max-width:960px;margin:14px auto 0;padding:0 20px">
   <div style="background:var(--card2);border:1px solid var(--border);border-radius:14px;padding:14px 16px;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:center">
@@ -111,12 +133,19 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
     <div style="display:flex;align-items:center;gap:7px;font-size:12px;color:var(--text)"><span class="ico ico-lg ico-no"></span> not recommended</div>
   </div>
 </div>
+<div class="plan-toggle">
+  <div class="plan-toggle-inner">
+    <button class="pt-btn active" data-plan="sep" type="button"><span class="pt-dot"></span> Sep · 8 Days · Whale Route</button>
+    <button class="pt-btn" data-plan="may" type="button"><span class="pt-dot"></span> May · 6 Days · Toddler Route</button>
+  </div>
+</div>
 <div class="controls">
   <a class="btn btn-o" href="index.html">View Acadia Template</a>
-  <a class="btn btn-p" href="https://www.google.com/search?q=iceland+whale+watching+tours" target="_blank" rel="noopener">Search Whale Watching Tours</a>
-  <a class="btn btn-g" href="https://www.google.com/maps/dir/Keflav%C3%ADk+International+Airport/K%C3%B3pavogur,+Iceland/Vestmannaeyjab%C3%A6r/Hvolsv%C3%B6llur/Borgarnes/Keflav%C3%ADk+International+Airport" target="_blank" rel="noopener"><span class="ico ico-map"></span> Overall Trip Route</a>
+  <a class="btn btn-p" data-plan="sep" href="https://www.google.com/search?q=iceland+whale+watching+tours" target="_blank" rel="noopener">Search Whale Watching Tours</a>
+  <a class="btn btn-g" data-plan="sep" href="https://www.google.com/maps/dir/Keflav%C3%ADk+International+Airport/K%C3%B3pavogur,+Iceland/Vestmannaeyjab%C3%A6r/Hvolsv%C3%B6llur/Borgarnes/Keflav%C3%ADk+International+Airport" target="_blank" rel="noopener"><span class="ico ico-map"></span> Overall Trip Route (Sep)</a>
+  <a class="btn btn-g" data-plan="may" href="https://www.google.com/maps/dir/Keflav%C3%ADk+International+Airport/Reykjav%C3%ADk/V%C3%ADk/Geirland/J%C3%B6kuls%C3%A1rl%C3%B3n/Reykjav%C3%ADk/Keflav%C3%ADk+International+Airport" target="_blank" rel="noopener" hidden><span class="ico ico-map"></span> Overall Trip Route (May)</a>
 </div>
-<div class="grid">
+<div class="grid" data-plan="sep">
   <div class="tile">
     <div class="tile-band" style="background:var(--transition-g)">
       <div class="tile-num">1</div>
@@ -328,11 +357,196 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
     </div>
   </div>
 </div>
-<div class="tripstats-wrap" style="margin-top:0">
-  <div class="be-header">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-    Iceland Trip Notes
+<div class="grid" data-plan="may" hidden>
+  <div class="tile">
+    <div class="tile-band" style="background:var(--transition-g)">
+      <div class="tile-num">1</div>
+      <div class="tile-band-text">
+        <h3>May 24 — Reykjavík</h3>
+        <p>Arrival, Old Harbour fish soup, Hallgrímskirkja, Laugavegur stroll.</p>
+      </div>
+    </div>
+    <div class="detail-scroll">
+      <div class="info-box">
+        <div class="info-box-lbl">Stay</div>
+        <div class="info-box-val">Reykjavík</div>
+      </div>
+      <div class="info-box">
+        <div class="info-box-lbl">Things to Do</div>
+        <div class="info-box-val">
+          <div class="todo-list">
+            <div class="todo-item"><span class="ico ico-ok"></span> Old Harbour &amp; Sægreifinn fish soup</div>
+            <div class="todo-item"><span class="ico ico-ok"></span> Hallgrímskirkja elevator</div>
+            <div class="todo-item"><span class="ico ico-ok"></span> Nap / rest at hotel</div>
+            <div class="todo-item"><span class="ico ico-ok"></span> Laugavegur stroll</div>
+          </div>
+        </div>
+      </div>
+      <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Keflav%C3%ADk+International+Airport/Reykjav%C3%ADk+Old+Harbour/Hallgr%C3%ADmskirkja/Laugavegur+Reykjav%C3%ADk"><span class="ico ico-map"></span> Map Route — KEF → Old Harbour → Hallgrímskirkja → Laugavegur</a>
+    </div>
   </div>
+  <div class="tile">
+    <div class="tile-band" style="background:var(--drive-g)">
+      <div class="tile-num">2</div>
+      <div class="tile-band-text">
+        <h3>May 25 — Vík via Golden Circle</h3>
+        <p>Þingvellir, Geysir, Gullfoss, then south coast drive.</p>
+      </div>
+    </div>
+    <div class="detail-scroll">
+      <div class="info-box">
+        <div class="info-box-lbl">Stay</div>
+        <div class="info-box-val">Vík</div>
+      </div>
+      <div class="info-box">
+        <div class="info-box-lbl">Things to Do</div>
+        <div class="info-box-val">
+          <div class="todo-list">
+            <div class="todo-item"><span class="ico ico-ok"></span> Þingvellir rift valley walk</div>
+            <div class="todo-item"><span class="ico ico-ok"></span> Geysir / Strokkur eruptions</div>
+            <div class="todo-item"><span class="ico ico-ok"></span> Gullfoss platforms (stroller-friendly)</div>
+            <div class="todo-item"><span class="ico ico-warn"></span> 2.5 hr drive Reykjavík → Vík</div>
+          </div>
+        </div>
+      </div>
+      <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Reykjav%C3%ADk/%C3%9Eingvellir+National+Park/Geysir/Gullfoss+Waterfall/V%C3%ADk"><span class="ico ico-map"></span> Map Route — Reykjavík → Golden Circle → Vík</a>
+    </div>
+  </div>
+  <div class="tile">
+    <div class="tile-band" style="background:var(--explore-g)">
+      <div class="tile-num">3</div>
+      <div class="tile-band-text">
+        <h3>May 26 — Geirland</h3>
+        <p>Black sand beach, sea arch, GOT canyon, roadside falls.</p>
+      </div>
+    </div>
+    <div class="detail-scroll">
+      <div class="info-box">
+        <div class="info-box-lbl">Stay</div>
+        <div class="info-box-val">Geirland (near Kirkjubæjarklaustur)</div>
+      </div>
+      <div class="info-box">
+        <div class="info-box-lbl">Things to Do</div>
+        <div class="info-box-val">
+          <div class="todo-list">
+            <div class="todo-item"><span class="ico ico-warn"></span> Reynisfjara black sand beach (sneaker waves)</div>
+            <div class="todo-item"><span class="ico ico-ok"></span> Dyrhólaey arch viewpoint</div>
+            <div class="todo-item"><span class="ico ico-ok"></span> Fjaðrárgljúfur boardwalk</div>
+            <div class="todo-item"><span class="ico ico-ok"></span> Foss á Síðu roadside falls</div>
+          </div>
+        </div>
+      </div>
+      <div class="notes">
+        <h4>Reynisfjara Safety</h4>
+        <p>Sneaker waves at Reynisfjara are dangerously unpredictable. Hold your toddler's hand at ALL times and stay well back from the water.</p>
+      </div>
+      <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/V%C3%ADk/Reynisfjara/Dyrh%C3%B3laey/Fja%C3%B0r%C3%A1rglj%C3%BAfur+Canyon/Foss+%C3%A1+S%C3%AD%C3%B0u/Geirland"><span class="ico ico-map"></span> Map Route — Vík → Reynisfjara → Dyrhólaey → Fjaðrárgljúfur → Geirland</a>
+    </div>
+  </div>
+  <div class="tile">
+    <div class="tile-band" style="background:var(--drive-g)">
+      <div class="tile-num">4</div>
+      <div class="tile-band-text">
+        <h3>May 27 — Back to Reykjavík</h3>
+        <p>Glacier lagoon, Diamond Beach, then the long drive west.</p>
+      </div>
+    </div>
+    <div class="detail-scroll">
+      <div class="info-box">
+        <div class="info-box-lbl">Stay</div>
+        <div class="info-box-val">Reykjavík</div>
+      </div>
+      <div class="info-box">
+        <div class="info-box-lbl">Things to Do</div>
+        <div class="info-box-val">
+          <div class="todo-list">
+            <div class="todo-item"><span class="ico ico-ok"></span> Skaftafell visitor center &amp; glacier view</div>
+            <div class="todo-item"><span class="ico ico-ok"></span> Jökulsárlón glacier lagoon</div>
+            <div class="todo-item"><span class="ico ico-ok"></span> Diamond Beach (stay back from water)</div>
+            <div class="todo-item"><span class="ico ico-ok"></span> Seljalandsfoss walk-behind</div>
+            <div class="todo-item"><span class="ico ico-warn"></span> 4+ hr drive back to Reykjavík</div>
+          </div>
+        </div>
+      </div>
+      <div class="notes">
+        <h4>Long Drive Day</h4>
+        <p>This is the longest drive of the trip. Stock the car with snacks, audiobooks, and a tablet. Break it up at Seljalandsfoss on the way.</p>
+      </div>
+      <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Geirland/Skaftafell/J%C3%B6kuls%C3%A1rl%C3%B3n/Diamond+Beach+Iceland/Seljalandsfoss/Reykjav%C3%ADk"><span class="ico ico-map"></span> Map Route — Geirland → Jökulsárlón → Diamond Beach → Seljalandsfoss → Reykjavík</a>
+    </div>
+  </div>
+  <div class="tile">
+    <div class="tile-band" style="background:var(--explore-g)">
+      <div class="tile-num">5</div>
+      <div class="tile-band-text">
+        <h3>May 28 — Reykjavík Relaxed</h3>
+        <p>Family pool morning, Blue Lagoon afternoon, farewell dinner.</p>
+      </div>
+    </div>
+    <div class="detail-scroll">
+      <div class="info-box">
+        <div class="info-box-lbl">Stay</div>
+        <div class="info-box-val">Reykjavík</div>
+      </div>
+      <div class="info-box">
+        <div class="info-box-lbl">Things to Do</div>
+        <div class="info-box-val">
+          <div class="todo-list">
+            <div class="todo-item"><span class="ico ico-ok"></span> Laugardalur family pool &amp; zoo</div>
+            <div class="todo-item"><span class="ico ico-ok"></span> Blue Lagoon (afternoon, pre-book)</div>
+            <div class="todo-item"><span class="ico ico-ok"></span> Farewell dinner (Messinn or Café Paris)</div>
+          </div>
+        </div>
+      </div>
+      <div class="notes">
+        <h4>Blue Lagoon Booking</h4>
+        <p>Pre-book Blue Lagoon 2–3 months in advance. Under 2 free, 2–14 charged. Alternative: skip and use the Laugardalur family pool for a fraction of the cost.</p>
+      </div>
+      <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Reykjav%C3%ADk/Laugardalur/Blue+Lagoon+Iceland/Reykjav%C3%ADk"><span class="ico ico-map"></span> Map Route — Reykjavík → Laugardalur → Blue Lagoon → Reykjavík</a>
+    </div>
+  </div>
+  <div class="tile">
+    <div class="tile-band" style="background:var(--transition-g)">
+      <div class="tile-num">6</div>
+      <div class="tile-band-text">
+        <h3>May 29 — Departure</h3>
+        <p>Breakfast, last Laugavegur stroll, drive to KEF.</p>
+      </div>
+    </div>
+    <div class="detail-scroll">
+      <div class="info-box">
+        <div class="info-box-lbl">Stay</div>
+        <div class="info-box-val">N/A</div>
+      </div>
+      <div class="info-box">
+        <div class="info-box-lbl">Things to Do</div>
+        <div class="info-box-val">
+          <div class="todo-list">
+            <div class="todo-item"><span class="ico ico-ok"></span> Icelandic breakfast (skyr, rye, smoked salmon)</div>
+            <div class="todo-item"><span class="ico ico-ok"></span> Last Laugavegur stroll for souvenirs</div>
+            <div class="todo-item"><span class="ico ico-warn"></span> Leave by 1 PM for 4 PM flight</div>
+          </div>
+        </div>
+      </div>
+      <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Reykjav%C3%ADk/Keflav%C3%ADk+International+Airport"><span class="ico ico-map"></span> Map Route — Reykjavík → KEF Airport</a>
+    </div>
+  </div>
+</div>
+<div class="tripstats-wrap" data-plan="may" hidden style="max-width:960px;margin:0 auto 40px;padding:0 16px">
+  <div class="notes">
+    <h4>Sneaker Waves</h4>
+    <p>Keep the toddler FAR from wave shores at Reynisfjara and Diamond Beach. Sneaker waves are dangerously unpredictable — hold hands at all times.</p>
+  </div>
+  <div class="notes">
+    <h4>Car Seat &amp; Midnight Sun</h4>
+    <p>Book a car seat with your rental in advance. Late May has midnight sun — pack a sleep mask or blackout setup for the toddler.</p>
+  </div>
+  <div class="notes">
+    <h4>Toddler Travel Kit</h4>
+    <p>Bring a soft carrier (Ergobaby) in addition to a stroller — many paths are uneven. Pack waterproofs and warm layers; May is 5–12°C.</p>
+  </div>
+</div>
+<div class="tripstats-wrap" data-plan="sep" style="max-width:960px;margin:0 auto 40px;padding:0 16px">
   <div class="notes">
     <h4>Whale Watching Tour</h4>
     <p>Book the whale watching tour on Sep 4 now while the schedule is still flexible. This is the best day to secure a morning departure from Reykjavík or nearby coastal ports.</p>
@@ -342,8 +556,21 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
     <p>Keep Sep 6 open for the Westman Islands and allow extra time for ferry schedules; weather can shift quickly in early September.</p>
   </div>
 </div>
-<div class="footer" style="border-top:1px solid var(--border);padding-bottom:40px">
-  <p>Acadia-style Iceland itinerary template · Static schedule sheet · Whale watching reminder included</p>
+<div class="footer" style="border-top:1px solid var(--border);padding:24px 16px 40px;text-align:center;color:var(--faint);font-size:11px">
+  <p>Iceland family trip · Two routes (Sep whale-watching · May toddler-friendly) · Switch above</p>
 </div>
+<script>
+(function(){
+  function setPlan(name){
+    document.querySelectorAll('.pt-btn').forEach(b=>b.classList.toggle('active', b.dataset.plan===name));
+    document.querySelectorAll('[data-plan]:not(.pt-btn)').forEach(el=>{
+      el.hidden = el.dataset.plan !== name;
+    });
+  }
+  document.querySelectorAll('.pt-btn').forEach(b=>{
+    b.addEventListener('click', function(){ setPlan(this.dataset.plan); window.scrollTo({top:0,behavior:'smooth'}); });
+  });
+})();
+</script>
 </body>
 </html>
