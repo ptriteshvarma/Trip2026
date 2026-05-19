@@ -86,6 +86,14 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 .todo-list{display:flex;flex-direction:column;gap:9px}
 .todo-item{display:flex;align-items:flex-start;gap:10px;font-size:17px;font-weight:600;font-family:'Playfair Display',serif;color:var(--text);line-height:1.35}
 .todo-item .ico{margin-top:7px}
+.schedule-list{display:flex;flex-direction:column;gap:11px}
+.schedule-item{display:flex;gap:12px;font-size:13px;line-height:1.45;color:var(--text)}
+.schedule-time{flex-shrink:0;width:68px;color:var(--sage);font-weight:700;font-size:10px;letter-spacing:.7px;text-transform:uppercase;padding-top:3px}
+.schedule-act{flex:1}
+.eats-list{display:flex;flex-direction:column;gap:11px}
+.eats-item{font-size:13px;line-height:1.5}
+.eats-name{color:var(--sage);font-weight:700;font-size:10px;letter-spacing:.7px;text-transform:uppercase;display:block;margin-bottom:3px}
+.eats-info{color:var(--text)}
 .plan-toggle{max-width:960px;margin:18px auto 0;padding:0 16px;display:flex;justify-content:center}
 .plan-toggle-inner{background:var(--card);border:1px solid var(--border);border-radius:50px;padding:5px;display:inline-flex;gap:4px;flex-wrap:wrap;max-width:100%}
 .pt-btn{background:transparent;border:none;color:var(--muted);padding:9px 18px;border-radius:50px;font-family:'Inter',sans-serif;font-size:12px;font-weight:600;cursor:pointer;letter-spacing:.3px;transition:.2s;display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
@@ -143,6 +151,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
   <a class="btn btn-o" href="index.html">View Acadia Template</a>
   <a class="btn btn-p" data-plan="sep" href="https://www.google.com/search?q=iceland+whale+watching+tours" target="_blank" rel="noopener">Search Whale Watching Tours</a>
   <a class="btn btn-g" data-plan="sep" href="https://www.google.com/maps/dir/Keflav%C3%ADk+International+Airport/K%C3%B3pavogur,+Iceland/Vestmannaeyjab%C3%A6r/Hvolsv%C3%B6llur/Borgarnes/Keflav%C3%ADk+International+Airport" target="_blank" rel="noopener"><span class="ico ico-map"></span> Overall Trip Route (Sep)</a>
+  <a class="btn btn-p" data-plan="may" href="https://www.google.com/search?q=elding+whale+watching+reykjavik" target="_blank" rel="noopener" hidden>Book Whale Watching (Elding)</a>
   <a class="btn btn-g" data-plan="may" href="https://www.google.com/maps/dir/Keflav%C3%ADk+International+Airport/Reykjav%C3%ADk/V%C3%ADk/Geirland/J%C3%B6kuls%C3%A1rl%C3%B3n/Reykjav%C3%ADk/Keflav%C3%ADk+International+Airport" target="_blank" rel="noopener" hidden><span class="ico ico-map"></span> Overall Trip Route (May)</a>
 </div>
 <div class="grid" data-plan="sep">
@@ -382,6 +391,24 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
           </div>
         </div>
       </div>
+      <div class="info-box">
+        <div class="info-box-lbl">Day Plan</div>
+        <div class="schedule-list">
+          <div class="schedule-item"><div class="schedule-time">9–11am</div><div class="schedule-act">Land at KEF · 45 min drive to Reykjavík · drop bags / freshen up</div></div>
+          <div class="schedule-item"><div class="schedule-time">11am</div><div class="schedule-act">Reykjavík Old Harbour — boats + fish soup lunch</div></div>
+          <div class="schedule-item"><div class="schedule-time">1:30pm</div><div class="schedule-act">Hallgrímskirkja elevator to the top — panoramic city view</div></div>
+          <div class="schedule-item"><div class="schedule-time">3pm</div><div class="schedule-act">Hotel nap — jet lag hits toddlers hard</div></div>
+          <div class="schedule-item"><div class="schedule-time">Evening</div><div class="schedule-act">Laugavegur Street stroll + dinner</div></div>
+        </div>
+      </div>
+      <div class="info-box">
+        <div class="info-box-lbl">Eats</div>
+        <div class="eats-list">
+          <div class="eats-item"><span class="eats-name">Sægreifinn · Sea Baron</span><span class="eats-info">Fresh fish soup on the Old Harbour — toddlers love watching the boats</span></div>
+          <div class="eats-item"><span class="eats-name">Noodle Station</span><span class="eats-info">Quick warm ramen on Laugavegur — easy weeknight dinner</span></div>
+          <div class="eats-item"><span class="eats-name">Grillmarkurinn</span><span class="eats-info">Sit-down family dining alternative on Laugavegur</span></div>
+        </div>
+      </div>
       <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Keflav%C3%ADk+International+Airport/Reykjav%C3%ADk+Old+Harbour/Hallgr%C3%ADmskirkja/Laugavegur+Reykjav%C3%ADk"><span class="ico ico-map"></span> Map Route — KEF → Old Harbour → Hallgrímskirkja → Laugavegur</a>
     </div>
   </div>
@@ -407,6 +434,24 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
             <div class="todo-item"><span class="ico ico-ok"></span> Gullfoss platforms (stroller-friendly)</div>
             <div class="todo-item"><span class="ico ico-warn"></span> 2.5 hr drive Reykjavík → Vík</div>
           </div>
+        </div>
+      </div>
+      <div class="info-box">
+        <div class="info-box-lbl">Day Plan</div>
+        <div class="schedule-list">
+          <div class="schedule-item"><div class="schedule-time">8am</div><div class="schedule-act">Early start from Reykjavík (beat the crowds, keep toddler schedule)</div></div>
+          <div class="schedule-item"><div class="schedule-time">9am</div><div class="schedule-act">Þingvellir National Park — flat rift valley walk between tectonic plates</div></div>
+          <div class="schedule-item"><div class="schedule-time">11am</div><div class="schedule-act">Geysir / Strokkur — erupts every 5–10 min, stay behind the rope</div></div>
+          <div class="schedule-item"><div class="schedule-time">1pm</div><div class="schedule-act">Gullfoss — stroller-accessible platforms, loud + misty, kids LOVE it</div></div>
+          <div class="schedule-item"><div class="schedule-time">3pm</div><div class="schedule-act">Drive 2.5 hr to Vík — audiobook + snacks</div></div>
+          <div class="schedule-item"><div class="schedule-time">Evening</div><div class="schedule-act">Dinner in Vík · quick peek at the black sand beach from town if toddler still has energy · early night</div></div>
+        </div>
+      </div>
+      <div class="info-box">
+        <div class="info-box-lbl">Eats</div>
+        <div class="eats-list">
+          <div class="eats-item"><span class="eats-name">Suður-Vík</span><span class="eats-info">Relaxed family-friendly dinner spot in Vík</span></div>
+          <div class="eats-item"><span class="eats-name">N1 / Olis petrol stations</span><span class="eats-info">Hot dogs and soup mid-drive — toddler-approved Iceland classic</span></div>
         </div>
       </div>
       <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Reykjav%C3%ADk/%C3%9Eingvellir+National+Park/Geysir/Gullfoss+Waterfall/V%C3%ADk"><span class="ico ico-map"></span> Map Route — Reykjavík → Golden Circle → Vík</a>
@@ -436,6 +481,25 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
           </div>
         </div>
       </div>
+      <div class="info-box">
+        <div class="info-box-lbl">Day Plan</div>
+        <div class="schedule-list">
+          <div class="schedule-item"><div class="schedule-time">8:30am</div><div class="schedule-act">Reynisfjara black sand beach — go early, hold hands at ALL times, stay well back</div></div>
+          <div class="schedule-item"><div class="schedule-time">10am</div><div class="schedule-act">Dyrhólaey lighthouse viewpoint — natural sea arch, short walk, carrier helps</div></div>
+          <div class="schedule-item"><div class="schedule-time">11:30am</div><div class="schedule-act">Fjaðrárgljúfur — the GOT canyon, easy boardwalk with guardrails</div></div>
+          <div class="schedule-item"><div class="schedule-time">1pm</div><div class="schedule-act">Lunch at Kirkjubæjarklaustur — quick town stop (Systrafoss falls if time) · then drive to Geirland</div></div>
+          <div class="schedule-item"><div class="schedule-time">3–5pm</div><div class="schedule-act">Foss á Síðu — roadside falls next to a farm, no walk needed</div></div>
+          <div class="schedule-item"><div class="schedule-time">Evening</div><div class="schedule-act">Rest at Geirland — quiet farming area, giant skies, glacier views</div></div>
+        </div>
+      </div>
+      <div class="info-box">
+        <div class="info-box-lbl">Eats</div>
+        <div class="eats-list">
+          <div class="eats-item"><span class="eats-name">Kirkjubæjarklaustur</span><span class="eats-info">Tiny town with lunch options + Systrafoss roadside falls — natural mid-route break</span></div>
+          <div class="eats-item"><span class="eats-name">N1 / Olis pit stop</span><span class="eats-info">Hot dog or soup en route — many petrol stations on the south coast</span></div>
+          <div class="eats-item"><span class="eats-name">Geirland Country Hotel</span><span class="eats-info">On-site restaurant in the rural area — or pack a picnic for in-room dinner</span></div>
+        </div>
+      </div>
       <div class="notes">
         <h4>Reynisfjara Safety</h4>
         <p>Sneaker waves at Reynisfjara are dangerously unpredictable. Hold your toddler's hand at ALL times and stay well back from the water.</p>
@@ -463,24 +527,45 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
             <div class="todo-item"><span class="ico ico-ok"></span> Skaftafell visitor center &amp; glacier view</div>
             <div class="todo-item"><span class="ico ico-ok"></span> Jökulsárlón glacier lagoon</div>
             <div class="todo-item"><span class="ico ico-ok"></span> Diamond Beach (stay back from water)</div>
+            <div class="todo-item"><span class="ico ico-ok"></span> Skógafoss base (stroller-friendly)</div>
             <div class="todo-item"><span class="ico ico-ok"></span> Seljalandsfoss walk-behind</div>
             <div class="todo-item"><span class="ico ico-warn"></span> 4+ hr drive back to Reykjavík</div>
           </div>
         </div>
       </div>
+      <div class="info-box">
+        <div class="info-box-lbl">Day Plan</div>
+        <div class="schedule-list">
+          <div class="schedule-item"><div class="schedule-time">8am</div><div class="schedule-act">Drive past Vatnajökull (Europe's largest glacier) · Skaftafell visitor center short flat walk</div></div>
+          <div class="schedule-item"><div class="schedule-time">10am</div><div class="schedule-act">Jökulsárlón glacier lagoon — floating blue icebergs, kids love spotting the "ice islands"</div></div>
+          <div class="schedule-item"><div class="schedule-time">11am</div><div class="schedule-act">Diamond Beach — ice chunks on black sand, 5-min walk, stay back from water</div></div>
+          <div class="schedule-item"><div class="schedule-time">12:30pm</div><div class="schedule-act">Begin the long drive back — snacks, audiobooks, tablet for the toddler</div></div>
+          <div class="schedule-item"><div class="schedule-time">2:30pm</div><div class="schedule-act">Skógafoss base — iconic 60m waterfall, flat path right up to the spray</div></div>
+          <div class="schedule-item"><div class="schedule-time">3:30pm</div><div class="schedule-act">Seljalandsfoss — walk behind the waterfall, pack rain ponchos!</div></div>
+          <div class="schedule-item"><div class="schedule-time">5:30pm</div><div class="schedule-act">Arrive Reykjavík · quiet dinner · earn that glass of wine</div></div>
+        </div>
+      </div>
+      <div class="info-box">
+        <div class="info-box-lbl">Eats</div>
+        <div class="eats-list">
+          <div class="eats-item"><span class="eats-name">Skaftafell visitor center café</span><span class="eats-info">Mid-morning warm-up + glacier-view restrooms</span></div>
+          <div class="eats-item"><span class="eats-name">N1 / Olis pit stops</span><span class="eats-info">Hot dogs / soup for the long drive home — refuel every couple of hours</span></div>
+          <div class="eats-item"><span class="eats-name">Reykjavík (quiet dinner)</span><span class="eats-info">Easy hotel-nearby dinner after the long drive — order in if needed</span></div>
+        </div>
+      </div>
       <div class="notes">
         <h4>Long Drive Day</h4>
-        <p>This is the longest drive of the trip. Stock the car with snacks, audiobooks, and a tablet. Break it up at Seljalandsfoss on the way.</p>
+        <p>This is the longest drive of the trip. Stock the car with snacks, audiobooks, and a tablet. Break it up at Skógafoss and Seljalandsfoss on the way.</p>
       </div>
-      <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Geirland/Skaftafell/J%C3%B6kuls%C3%A1rl%C3%B3n/Diamond+Beach+Iceland/Seljalandsfoss/Reykjav%C3%ADk"><span class="ico ico-map"></span> Map Route — Geirland → Jökulsárlón → Diamond Beach → Seljalandsfoss → Reykjavík</a>
+      <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Geirland/Skaftafell/J%C3%B6kuls%C3%A1rl%C3%B3n/Diamond+Beach+Iceland/Sk%C3%B3gafoss/Seljalandsfoss/Reykjav%C3%ADk"><span class="ico ico-map"></span> Map Route — Geirland → Jökulsárlón → Diamond Beach → Skógafoss → Seljalandsfoss → Reykjavík</a>
     </div>
   </div>
   <div class="tile">
     <div class="tile-band" style="background:var(--explore-g)">
       <div class="tile-num">5</div>
       <div class="tile-band-text">
-        <h3>May 28 — Reykjavík Relaxed</h3>
-        <p>Family pool morning, Blue Lagoon afternoon, farewell dinner.</p>
+        <h3>May 28 — Whale Watching + Blue Lagoon</h3>
+        <p>Old Harbour whale tour morning, Blue Lagoon afternoon, farewell dinner.</p>
       </div>
     </div>
     <div class="detail-scroll">
@@ -492,17 +577,40 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
         <div class="info-box-lbl">Things to Do</div>
         <div class="info-box-val">
           <div class="todo-list">
-            <div class="todo-item"><span class="ico ico-ok"></span> Laugardalur family pool &amp; zoo</div>
-            <div class="todo-item"><span class="ico ico-ok"></span> Blue Lagoon (afternoon, pre-book)</div>
+            <div class="todo-item"><span class="ico ico-ok"></span> Whale watching from Old Harbour (pre-book, bundle up)</div>
+            <div class="todo-item"><span class="ico ico-ok"></span> Blue Lagoon afternoon (pre-book)</div>
             <div class="todo-item"><span class="ico ico-ok"></span> Farewell dinner (Messinn or Café Paris)</div>
+            <div class="todo-item"><span class="ico ico-ok"></span> Laugardalur family pool — rainy-day / cancellation backup</div>
           </div>
         </div>
       </div>
+      <div class="info-box">
+        <div class="info-box-lbl">Day Plan</div>
+        <div class="schedule-list">
+          <div class="schedule-item"><div class="schedule-time">9am</div><div class="schedule-act">Whale watching from Reykjavík Old Harbour (Elding · ~3 hrs · thermal layers!)</div></div>
+          <div class="schedule-item"><div class="schedule-time">12pm</div><div class="schedule-act">Lunch near Old Harbour · warm up · change clothes</div></div>
+          <div class="schedule-item"><div class="schedule-time">2pm</div><div class="schedule-act">Blue Lagoon afternoon slot (pre-booked) — warm geothermal wind-down</div></div>
+          <div class="schedule-item"><div class="schedule-time">Evening</div><div class="schedule-act">Farewell dinner · pack bags tonight</div></div>
+        </div>
+      </div>
+      <div class="info-box">
+        <div class="info-box-lbl">Eats</div>
+        <div class="eats-list">
+          <div class="eats-item"><span class="eats-name">Sægreifinn · Sea Baron</span><span class="eats-info">Warm fish soup right at Old Harbour — perfect post-tour recovery</span></div>
+          <div class="eats-item"><span class="eats-name">Messinn</span><span class="eats-info">Family-friendly Icelandic fish — Reykjavík farewell dinner</span></div>
+          <div class="eats-item"><span class="eats-name">Café Paris</span><span class="eats-info">Main-square farewell alternative — relaxed sit-down</span></div>
+          <div class="eats-item"><span class="eats-name">Laugardalur Café</span><span class="eats-info">Backup if doing the family pool instead — playground right there</span></div>
+        </div>
+      </div>
+      <div class="notes">
+        <h4>Whale Watching with a Toddler</h4>
+        <p>Elding (eldingwhalewatching.is) accepts under-4 free, 7–15 reduced. The tour is 2.5–3 hrs on the open Atlantic — pack thermal layers and waterproofs, snacks, and a carrier for cabin breaks. Pick a calm-weather morning. If the tour cancels, swap in Laugardalur for the morning.</p>
+      </div>
       <div class="notes">
         <h4>Blue Lagoon Booking</h4>
-        <p>Pre-book Blue Lagoon 2–3 months in advance. Under 2 free, 2–14 charged. Alternative: skip and use the Laugardalur family pool for a fraction of the cost.</p>
+        <p>Pre-book Blue Lagoon 2–3 months in advance. Under 2 free, 2–14 charged. The warm geothermal water is a perfect wind-down after a cold boat ride.</p>
       </div>
-      <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Reykjav%C3%ADk/Laugardalur/Blue+Lagoon+Iceland/Reykjav%C3%ADk"><span class="ico ico-map"></span> Map Route — Reykjavík → Laugardalur → Blue Lagoon → Reykjavík</a>
+      <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Reykjav%C3%ADk/Reykjav%C3%ADk+Old+Harbour/Blue+Lagoon+Iceland/Reykjav%C3%ADk"><span class="ico ico-map"></span> Map Route — Reykjavík → Old Harbour → Blue Lagoon → Reykjavík</a>
     </div>
   </div>
   <div class="tile">
@@ -528,6 +636,22 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
           </div>
         </div>
       </div>
+      <div class="info-box">
+        <div class="info-box-lbl">Day Plan</div>
+        <div class="schedule-list">
+          <div class="schedule-item"><div class="schedule-time">Morning</div><div class="schedule-act">Relaxed Icelandic breakfast at the hotel · checkout</div></div>
+          <div class="schedule-item"><div class="schedule-time">10am</div><div class="schedule-act">Final Laugavegur wander — Icelandic chocolate, lopapeysa wool, puffin plushies for the little one</div></div>
+          <div class="schedule-item"><div class="schedule-time">1pm</div><div class="schedule-act">Drive to Keflavík (45 min) · return rental car first · allow extra time with a toddler</div></div>
+          <div class="schedule-item"><div class="schedule-time">4pm</div><div class="schedule-act">Departure — goodbye Iceland</div></div>
+        </div>
+      </div>
+      <div class="info-box">
+        <div class="info-box-lbl">Eats</div>
+        <div class="eats-list">
+          <div class="eats-item"><span class="eats-name">Hotel Icelandic breakfast</span><span class="eats-info">Skyr, rye bread, smoked salmon — the proper Icelandic send-off</span></div>
+          <div class="eats-item"><span class="eats-name">Reykjavík Roasters / Bakarí</span><span class="eats-info">Last coffee + pastry on Laugavegur before heading out</span></div>
+        </div>
+      </div>
       <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Reykjav%C3%ADk/Keflav%C3%ADk+International+Airport"><span class="ico ico-map"></span> Map Route — Reykjavík → KEF Airport</a>
     </div>
   </div>
@@ -544,6 +668,18 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
   <div class="notes">
     <h4>Toddler Travel Kit</h4>
     <p>Bring a soft carrier (Ergobaby) in addition to a stroller — many paths are uneven. Pack waterproofs and warm layers; May is 5–12°C.</p>
+  </div>
+  <div class="notes">
+    <h4>Petrol Station Pit Stops</h4>
+    <p>Icelandic petrol stations (N1, Olis) serve toddler-approved hot dogs and soup — your go-to fuel + bathroom stop on long drive days.</p>
+  </div>
+  <div class="notes">
+    <h4>Iceland Tap Water</h4>
+    <p>Tap water is among the best in the world and perfectly safe — fill bottles everywhere instead of buying.</p>
+  </div>
+  <div class="notes">
+    <h4>Spotting Baby Lambies</h4>
+    <p>Sheep roam freely in May — spotting "baby lambies" from the car is pure toddler magic. Make a game of counting them on long drive days.</p>
   </div>
 </div>
 <div class="tripstats-wrap" data-plan="sep" style="max-width:960px;margin:0 auto 40px;padding:0 16px">
